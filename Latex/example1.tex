@@ -1,0 +1,77 @@
+\documentclass[
+%%%%% Styles and Sizes
+%10pt,
+%11pt,
+%12pt,
+fancyheadings, % headings with seplines and logo
+%
+%%%%% Printing, Color and Binding
+%a4paper, 
+%a5paper,
+%twoside, % single sided printout
+%oneside, % duplex printout (default)
+%% binding correction is used to compensate for the paper lost during binding
+%% of the document
+%BCOR=0.7cm, % binding correction
+%nobcorignoretitle, % do not ignore BCOR for title page
+%% the following two options only concern the graphics included by the document
+%% class
+%grayscaletitle, % keep the title in grayscale
+%grayscalebody, % keep the rest of the document in grayscale
+%
+%%%%% expert options: your mileage may vary
+%baseclass=..., % special option to use a different document baseclass
+]{stsreprt}
+
+% Information for the Titlepage
+\author{Robin Willenbrock}
+\title{Static Detection of Data Races in Interrupt-Driven Software Using Reduced Inter-Procedural Control Flow Graphs}
+\date{\today}
+\subject{Bachelor Thesis}
+\professor{}
+\advisor{}
+
+\usepackage[utf8]{inputenc}
+
+% Font and Fontencoding Magic
+% FAQ: 
+% http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
+% http://en.wikipedia.org/wiki/Computer_Modern
+% http://tex.stackexchange.com/questions/1390/latin-modern-vs-cm-super
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage{fix-cm}
+
+\begin{document}
+\frontmatter
+\maketitle
+
+\chapter*{\centering \begin{normalsize}Abstract\end{normalsize}}
+\begin{quotation}
+\end{quotation}
+
+\tableofcontents
+\listoffigures{dsfsdf}
+\mainmatter
+\chapter{Introduction}
+\chapter{Background}
+Recherche+Auschreiben 1,5 Wochen
+-Controll Flow Graphs
+--reduced interprocedural controll flow graph
+-Interrupts and Interrupt Handler
+
+\chapter{Race Conditions Detection}
+Recherche und Verständnis 0,5 Woche
+\chapter{Implementation}
+3,5 Wochen
+\chapter{Evaluation}
+1,5 Woche
+\chapter{Conclusion}
+Indroduction+Conclusion und Allgemeine Überarbeitung 0,5 Woche
+1 Wochen Korrekturlesen und Einarbeitung
+=9 Wochen bei Vollarbeitszeit an BE
+\appendix
+\backmatter
+\chapter{Bibliography}
+
+\end{document}
