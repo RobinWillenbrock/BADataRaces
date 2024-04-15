@@ -61,7 +61,7 @@ void detectDataRaces(const std::unordered_map<std::string, std::vector<VariableA
 
 int main() {
     // Provide the path to the CFG file
-    std::string cfgFilePath = "C:\C++Programms\Calculator\Calculator.cpp.011t.cfg";
+    std::string cfgFilePath = ;
 
     // Map to store variable accesses
     std::unordered_map<std::string, std::vector<VariableAccess>> variableAccesses;
