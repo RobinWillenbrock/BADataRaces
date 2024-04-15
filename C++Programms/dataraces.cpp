@@ -31,7 +31,7 @@ void parseAndAnalyzeCFG(const std::string& filename) {
     file.close();
 }
 int main() {
-    std::string cfgFile = "HelloWorld.cpp.011t.cfg";
+    std::string cfgFile = "NewCFG-HelloWorld.cpp.015t.cfg";
     parseAndAnalyzeCFG(cfgFile);
     return 0;
 }
