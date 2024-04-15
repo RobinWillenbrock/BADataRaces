@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  15 APR 2024 14:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  15 APR 2024 14:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/BA/BADataRaces/Latex/example1.tex
-(c:/BA/BADataRaces/Latex/example1.tex
+**c:/BA/BADataRaces/Latex/main.tex
+(c:/BA/BADataRaces/Latex/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
 (stsreprt.cls
@@ -240,8 +240,8 @@ File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [fancyheadings].
 
-No file example1.aux.
-\openout1 = `example1.aux'.
+No file main.aux.
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
@@ -373,9 +373,9 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 53.
 
 
 ]
-No file example1.toc.
+No file main.toc.
 \tf@toc=\write3
-\openout3 = `example1.toc'.
+\openout3 = `main.toc'.
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
@@ -385,9 +385,9 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 54.
 
 
 ]
-No file example1.lof.
+No file main.lof.
 \tf@lof=\write4
-\openout4 = `example1.lof'.
+\openout4 = `main.lof'.
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
@@ -462,7 +462,7 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 77.
 [13
 
 
-] (example1.aux)
+] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
@@ -470,14 +470,14 @@ L3 programming layer <2024-03-14>
  ) 
 Here is how much of TeX's memory you used:
  7326 strings out of 474424
- 171952 string characters out of 5741739
+ 171896 string characters out of 5741739
  1931496 words of memory out of 5000000
  29612 multiletter control sequences out of 15000+600000
  606437 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,26n,121p,10928b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,26n,121p,10924b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb>
-Output written on example1.pdf (21 pages, 258672 bytes).
+Output written on main.pdf (21 pages, 258671 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
