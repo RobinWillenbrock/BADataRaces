@@ -1,8 +1,0 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
-\contentsline {chapter}{\numberline {2}Background}{3}{}%
-\contentsline {chapter}{\numberline {3}Race Conditions Detection}{5}{}%
-\contentsline {chapter}{\numberline {4}Implementation}{7}{}%
-\contentsline {chapter}{\numberline {5}Evaluation}{9}{}%
-\contentsline {chapter}{\numberline {6}Conclusion}{11}{}%
-\contentsline {chapter}{\nonumberline Bibliography}{13}{}%
-\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
