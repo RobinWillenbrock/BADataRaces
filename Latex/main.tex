@@ -54,6 +54,21 @@ fancyheadings, % headings with seplines and logo
 \listoffigures{dsfsdf}
 \mainmatter{
 \chapter{Introduction}
+Shared Variables:
+Die Shared Resources sind "count", "random", "a", "b"
+
+Concurrency Analysis:
+"count" wird in bb3 aufgerufen und bearbeitet. In bb3 ist eine veränderung (+1) und eine if Abfrage basierent auf "count" zu finden. Der 
+Aufruf ist zwar in einem Loop aber da sie in der selben Execution ausgeführt sind glaube ich nicht, dass ein Data Race entstehen kann.
+Rand() muss ich noch genauer analysieren ob es kritisch für Data races ist.
+bb4,5,8 und 9 sind nicht concurrent zueienander und dadurch sind auch für die Variablen "a" und "b" kein Data Race Potential
+
+Conclusion:
+Es liegen keine offensichtlichen Data Races vor. In dieser Dateigröße ist es glaube ich auch sehr unwahrscheinlich Data Races direkt zu finden.
+
+
+
+
 \chapter{Background}
 Recherche+Auschreiben 1,5 Wochen
 -Controll Flow Graphs 
@@ -65,7 +80,7 @@ Recherche und Verständnis 0,5 Woche
 \chapter{Implementation}
 3,5 Wochen
 \chapter{Evaluation}
-1,5 Woche
+1,5 Woche 
 \chapter{Conclusion}
 Indroduction+Conclusion und Allgemeine Überarbeitung 0,5 Woche
 1 Wochen Korrekturlesen und Einarbeitung
