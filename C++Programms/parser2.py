@@ -17,11 +17,9 @@ def find_successors(text):
 
 file_path = "C++Programms\\NewCFGHelloWorld-HelloWorld.cpp.015t.cfg"
 
-# Read the contents of the file
 with open(file_path, 'r') as file:
     file_contents = file.read()
 
-# Find and print successors
 successors = find_successors(file_contents)
 for number, successors_set in successors.items():
     if successors_set:
@@ -43,16 +41,13 @@ def find_variable_blocks(text, variables):
 
     return variable_blocks
 
-file_path = "C++Programms\\NewCFGHelloWorld-HelloWorld.cpp.015t.cfg"
+file_path = "C++Programms\CountraceCFG-Countrace.cpp.015t.cfg"
 
-# Read the contents of the file
 with open(file_path, 'r') as file:
     file_contents = file.read()
 
-# Input variables to search for
 input_variables = input("Enter the variables to search for (comma-separated): ").split(',')
 
-# Find and print blocks containing the variables
 variable_blocks = find_variable_blocks(file_contents, [variable.strip() for variable in input_variables])
 for variable, blocks in variable_blocks.items():
     if blocks:
