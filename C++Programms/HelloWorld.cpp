@@ -1,31 +1,34 @@
 #include <iostream>
 #include <cstdlib>
-#include <time.h>
-int main() {
-    const char* a = "HelloWorld"; 
-    const char* b = "HelloTUHH"; 
-    srand(time(NULL));
+#include <ctime>
+#include <thread>
+
+void threadFunction(const char* Variable1, const char* Variable2) {
     int count = 0;
     int random;
 
-
-
-while(count < 5){
-    count = count +1;
-    random = rand() % 10;
-    std::cout << random << std::endl;
-    if (random % 2 == 0)
-        std::cout << a << std::endl;
-    else
-        std::cout << b << std::endl;
-}
-    if (random % 2 == 0){
-        a = "ByeWorld"; 
-        std::cout << a << std::endl;
-    }else
-    {
-        a = "ByeTUHH";
-        std::cout << a << std::endl;
+    while(count < 5){
+        count++;
+        random = rand() % 10;
+        std::cout << random << std::endl;
+        if (random % 2 == 0)
+            std::cout << Variable1 << std::endl;
+        else
+            std::cout << Variable2 << std::endl;
     }
-return 0;
+}
+
+int main() {
+    const char* Variable1 = "HelloWorld"; 
+    const char* Variable2 = "HelloTUHH"; 
+
+    srand(time(NULL));
+    
+    std::thread t1(threadFunction, Variable1, Variable2);
+    std::thread t2(threadFunction, Variable1, Variable2);
+
+    t1.join();
+    t2.join();
+
+    return 0;
 }
