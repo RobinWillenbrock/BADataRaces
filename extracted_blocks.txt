@@ -1,15 +1,25 @@
-<bb 11> :
-<L6>:
-  Variable1 = {CLOBBER(eol)};
-  Variable2 = {CLOBBER(eol)};
-  t1 = {CLOBBER(eol)};
-  t2 = {CLOBBER(eol)};
-  resx 1
+<bb 3> :
+  shared_variable.1_1 = shared_variable;
+  _2 = shared_variable.1_1 + 1;
+  shared_variable = _2;
+  i = i + 1;
+
+  
+
+<bb 2> :
+  shared_variable.0_1 = shared_variable;
+  _2 = shared_variable.0_1 + 1;
+  shared_variable = _2;
+  return;
 
 <bb 5> :
-  D.71205 = std::operator<< <std::char_traits<char> > (&cout, Variable2);
-  _6 = D.71205;
-  std::basic_ostream<char>::operator<< (_6, endl);
+  D.55796 = std::operator<< <std::char_traits<char> > (&cout, "Shared variable value: ");
+  _3 = D.55796;
+  shared_variable.2_4 = shared_variable;
+  D.55797 = std::basic_ostream<char>::operator<< (_3, shared_variable.2_4);
+  _5 = D.55797;
+  std::basic_ostream<char>::operator<< (_5, endl);
+  D.55794 = 0;
 
   
 

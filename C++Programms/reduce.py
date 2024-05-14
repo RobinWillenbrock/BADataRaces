@@ -18,7 +18,7 @@ def extract_basic_blocks(cfg_file, block_ids, output_file):
     with open(output_file, 'w') as f:
         f.write(extracted_blocks)
 
-cfg_file = r"C++Programms\NewCFGHelloWorld-HelloWorld.cpp.015t.cfg"
+cfg_file = "C++Programms\\BeispielCFG-Beispiel.cpp.015t.cfg"
 output_file = "extracted_blocks.txt"
 block_ids = input("Enter the IDs of the basic blocks to extract (separated by spaces): ").split()
 block_ids = [int(block_id) for block_id in block_ids]
