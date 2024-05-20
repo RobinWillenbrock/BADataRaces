@@ -1,60 +1,58 @@
 import re
+import os
 
-def parse_cfg_data(cfg_file):
-    basic_blocks = {}
-    current_bb = None
+def extract_functions_from_cfg(cfg_content, shared_variable):
+    # Regular expression to match function definitions
+    function_pattern = re.compile(r';; Function (.*?)\n(.*?)\n({.*?})\n\n', re.DOTALL)
+    
+    # Find all matches
+    matches = function_pattern.findall(cfg_content)
+    
+    functions = {}
+    for match in matches:
+        func_name = match[0].split()[1].strip('()')
+        func_signature = match[1].strip()
+        func_body = filter_basic_blocks(match[2].strip(), shared_variable)
+        if func_body:
+            functions[func_name] = f"{func_signature}\n{func_body}"
+    
+    return functions
 
+def filter_basic_blocks(func_body, shared_variable):
+    # Regular expression to match basic blocks
+    basic_block_pattern = re.compile(r'(<bb.*?>.*?)(?=<bb|\Z)', re.DOTALL)
+    
+    filtered_body = []
+    for block in basic_block_pattern.findall(func_body):
+        if shared_variable in block:
+            filtered_body.append(block.strip())
+    
+    return '\n'.join(filtered_body) if filtered_body else None
+
+def write_functions_to_files(functions):
+    for func_name, func_content in functions.items():
+        filename = f"{func_name}.c"
+        with open(filename, 'w') as file:
+            file.write(func_content)
+        print(f"Written to {filename}")
+
+def main():
+    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case10.c.011t.cfg"  # Using raw string for Windows path
+    shared_variable = input("Enter the name of the shared variable: ")
+    
     try:
-        with open(cfg_file, 'r') as file:
-            lines = file.readlines()
-            for line in lines:
-                line = line.strip()
-                print("Line:", line)  # Debug
-                match = re.match(r'<bb (\d+)> :', line)
-                if match:
-                    bb_id = int(match.group(1))  # Extracting basic block ID
-                    print("Basic block ID:", bb_id)  # Debug: Print the extracted ID
-                    current_bb = {"id": bb_id, "successors": []}
-                    basic_blocks[bb_id] = current_bb
-                elif line.startswith("  if"):
-                    # Extracting successor basic blocks from if statements
-                    successors = line.split("{")[1].split("}")[0].strip().split()
-                    current_bb["successors"] = [int(succ.strip("<>")) for succ in successors]
-                elif line.startswith(" goto"):
-                    # Extracting successor basic blocks from goto statements
-                    successor_match = re.search(r'<bb (\d+)>', line)
-                    if successor_match:
-                        successor = int(successor_match.group(1))
-                        current_bb["successors"].append(successor)
-                    else:
-                        print("Failed to extract successor ID from line:", line)
-                elif line.startswith("goto"):
-                    # Extracting successor basic blocks from goto statements without space
-                    successor_match = re.search(r'<bb (\d+)>', line)
-                    if successor_match:
-                        successor = int(successor_match.group(1))
-                        current_bb["successors"].append(successor)
-                    else:
-                        print("Failed to extract successor ID from line:", line)
-    except FileNotFoundError as e:
-        print("Failed to open file:", cfg_file)
-        print("Error:", e)
-    except Exception as e:
-        print("An error occurred:", e)
+        with open(cfg_file_path, 'r') as file:
+            cfg_content = file.read()
+        
+        functions = extract_functions_from_cfg(cfg_content, shared_variable)
+        if functions:
+            write_functions_to_files(functions)
+            print("All relevant functions have been written to separate files.")
+        else:
+            print(f"No basic blocks containing the variable '{shared_variable}' were found.")
+        
+    except FileNotFoundError:
+        print(f"Error: The file at {cfg_file_path} was not found.")
 
-    return basic_blocks
-
-# File containing CFG data
-cfg_file = "C++Programms/NewCFG-HelloWorld.cpp.015t.cfg"
-
-# Parse CFG data
-parsed_data = parse_cfg_data(cfg_file)
-
-# Print basic blocks and their successors
-if parsed_data:
-    for bb_id, bb_data in parsed_data.items():
-        print(f"Basic Block {bb_id}:")
-        print("Successors:", bb_data["successors"])
-        print()
-else:
-    print("No data parsed.")
+if __name__ == "__main__":
+    main()

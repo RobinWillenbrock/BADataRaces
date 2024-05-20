@@ -7,12 +7,10 @@ void isr() {
 }
 
 int main() {
-    // Simulate an interrupt triggering the ISR
     isr();
 
-    // Simulate some work being done
     for (int i = 0; i < 1000000; i++) {
-        // Some non-atomic operation
+        
         shared_variable++;
     }
 

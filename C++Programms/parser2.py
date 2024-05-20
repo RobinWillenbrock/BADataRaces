@@ -15,7 +15,7 @@ def find_successors(text):
 
     return successors
 
-file_path = "C++Programms\\NewCFGHelloWorld-HelloWorld.cpp.015t.cfg"
+file_path = "C++Programms\\Beispiel.cpp.011t.cfg"
 
 with open(file_path, 'r') as file:
     file_contents = file.read()
@@ -41,7 +41,6 @@ def find_variable_blocks(text, variables):
 
     return variable_blocks
 
-file_path = "C++Programms\CountraceCFG-Countrace.cpp.015t.cfg"
 
 with open(file_path, 'r') as file:
     file_contents = file.read()
