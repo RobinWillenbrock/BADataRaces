@@ -10,7 +10,6 @@ def read_function_from_file(filename):
         return None
 
 def extract_basic_blocks(func_content):
-    # Regular expression to match basic blocks
     basic_block_pattern = re.compile(r'(<bb.*?>.*?)(?=<bb|\Z)', re.DOTALL)
     return basic_block_pattern.findall(func_content)
 
@@ -26,13 +25,12 @@ def find_operations(basic_blocks, shared_resources):
     return operations
 
 def get_priority(filename):
-    # Extract the function type and number from the filename
     basename = os.path.basename(filename)
     if 'isr' in basename:
         match = re.search(r'isr(\d*)', basename)
         if match:
             return int(match.group(1)) if match.group(1) else 0
-    return float('inf')  # main or non-isr functions get lowest priority
+    return float('inf')  
 
 def detect_data_races(operations1, operations2, priority1, priority2):
     races = []

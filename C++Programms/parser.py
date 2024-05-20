@@ -2,10 +2,8 @@ import re
 import os
 
 def extract_functions_from_cfg(cfg_content, shared_variable):
-    # Regular expression to match function definitions
     function_pattern = re.compile(r';; Function (.*?)\n(.*?)\n({.*?})\n\n', re.DOTALL)
     
-    # Find all matches
     matches = function_pattern.findall(cfg_content)
     
     functions = {}
@@ -19,7 +17,6 @@ def extract_functions_from_cfg(cfg_content, shared_variable):
     return functions
 
 def filter_basic_blocks(func_body, shared_variable):
-    # Regular expression to match basic blocks
     basic_block_pattern = re.compile(r'(<bb.*?>.*?)(?=<bb|\Z)', re.DOTALL)
     
     filtered_body = []
@@ -37,7 +34,7 @@ def write_functions_to_files(functions):
         print(f"Written to {filename}")
 
 def main():
-    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case10.c.011t.cfg"  # Using raw string for Windows path
+    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case10.c.011t.cfg" 
     shared_variable = input("Enter the name of the shared variable: ")
     
     try:
