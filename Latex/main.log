@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  24 APR 2024 09:56
+=======
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  22 APR 2024 07:53
+>>>>>>> 9a711685081587e91547545a3e0e23defad0a577
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,6 +541,17 @@ L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
+ 7329 strings out of 474424
+ 171957 string characters out of 5741739
+ 1932496 words of memory out of 5000000
+ 29613 multiletter control sequences out of 15000+600000
+ 606437 words of font info for 66 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 122i,26n,121p,10924b,677s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb>
+Output written on main.pdf (21 pages, 263725 bytes).
+=======
  7334 strings out of 474423
  172101 string characters out of 5741718
  1932496 words of memory out of 5000000
@@ -552,6 +567,7 @@ Here is how much of TeX's memory you used:
 fb><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.
 pfb>
 Output written on main.pdf (21 pages, 264347 bytes).
+>>>>>>> 9a711685081587e91547545a3e0e23defad0a577
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
