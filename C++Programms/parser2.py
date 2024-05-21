@@ -15,7 +15,11 @@ def find_successors(text):
 
     return successors
 
+<<<<<<< HEAD
+file_path = "C++Programms\\Beispiel.cpp.011t.cfg"
+=======
 file_path = "C++Programms\\BeispielCFG-Beispiel.cpp.015t.cfg"
+>>>>>>> 64765ac2fb91c92977ca361fd8bbdf9ea1976081
 
 with open(file_path, 'r') as file:
     file_contents = file.read()

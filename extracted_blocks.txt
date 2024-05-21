@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 <bb 3> :
   shared_variable.1_1 = shared_variable;
   _2 = shared_variable.1_1 + 1;
@@ -23,3 +25,4 @@
 
   
 
+>>>>>>> 64765ac2fb91c92977ca361fd8bbdf9ea1976081
