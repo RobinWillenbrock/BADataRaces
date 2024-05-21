@@ -21,10 +21,12 @@ def filter_basic_blocks(func_body, shared_variable):
     
     filtered_body = []
     for block in basic_block_pattern.findall(func_body):
-        if shared_variable in block:
+        if "unlock ()" in block or shared_variable in block or "lock ()" in block:
             filtered_body.append(block.strip())
     
     return '\n'.join(filtered_body) if filtered_body else None
+
+
 
 def write_functions_to_files(functions):
     for func_name, func_content in functions.items():
@@ -34,7 +36,11 @@ def write_functions_to_files(functions):
         print(f"Written to {filename}")
 
 def main():
+<<<<<<< HEAD
     cfg_file_path = r"C:\BA\BADataRaces\Racebench\case10.c.011t.cfg"
+=======
+    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case13.c.011t.cfg" 
+>>>>>>> 1d9c5d47470bfdb7bdf41dc9b099b95b2ba452f9
     shared_variable = input("Enter the name of the shared variable: ")
     
     try:
