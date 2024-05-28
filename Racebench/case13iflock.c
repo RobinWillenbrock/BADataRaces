@@ -16,9 +16,10 @@ void case13_main(){
 	lock(); //disable high priority isr;
 	/* case13_isr_low might be triggerd here */
 	if(g1_case13 == 0)
-		g1_case13 = 0xff;
-
-	unlock();
+        unlock();
+		
+    g1_case13 = 0xff;
+	
 
 }
 

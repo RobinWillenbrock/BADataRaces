@@ -1,0 +1,207 @@
+digraph "Calculator.cpp.011t.cfg" {
+overlap=false;
+subgraph "cluster_int main()" {
+	style="dashed";
+	color="black";
+	label="int main() ()";
+	fn_1445_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1445_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1445_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 2\>:\l\
+|std::operator\>\>\<char,\ std::char_traits\<char\>\ \>\ (&cin,\ &op);\l\
+}"];
+
+	fn_1445_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 3\>:\l\
+|D.35869\ =\ std::basic_istream\<char\>::operator\>\>\ (&cin,\ &num1);\l\
+}"];
+
+	fn_1445_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 4\>:\l\
+|D.35852\ =\ D.35869;\l\
+|std::basic_istream\<char\>::operator\>\>\ (D.35852,\ &num2);\l\
+}"];
+
+	fn_1445_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 5\>:\l\
+|op.0\ =\ op;\l\
+|D.35854\ =\ (int)\ op.0;\l\
+|switch\ (D.35854)\ \<default:\ \<L4\>,\ case\ 42:\ \<L2\>,\ case\ 43:\ \<L0\>,\ case\ 45:\ \<L1\>,\ case\ 47:\ \<L3\>\>\l\
+}"];
+
+	fn_1445_basic_block_6 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 6\>:\l\
+|\<L0\>:\l\
+|num1.1\ =\ num1;\l\
+|num2.2\ =\ num2;\l\
+|D.35857\ =\ num1.1\ +\ num2.2;\l\
+|std::basic_ostream\<char\>::operator\<\<\ (&cout,\ D.35857);\l\
+}"];
+
+	fn_1445_basic_block_7 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 7\>:\l\
+goto\ \<bb\ 15\>;\l\
+}"];
+
+	fn_1445_basic_block_8 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 8\>:\l\
+|\<L1\>:\l\
+|num1.3\ =\ num1;\l\
+|num2.4\ =\ num2;\l\
+|D.35860\ =\ num1.3\ -\ num2.4;\l\
+|std::basic_ostream\<char\>::operator\<\<\ (&cout,\ D.35860);\l\
+}"];
+
+	fn_1445_basic_block_9 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 9\>:\l\
+goto\ \<bb\ 15\>;\l\
+}"];
+
+	fn_1445_basic_block_10 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 10\>:\l\
+|\<L2\>:\l\
+|num1.5\ =\ num1;\l\
+|num2.6\ =\ num2;\l\
+|D.35863\ =\ num1.5\ *\ num2.6;\l\
+|std::basic_ostream\<char\>::operator\<\<\ (&cout,\ D.35863);\l\
+}"];
+
+	fn_1445_basic_block_11 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 11\>:\l\
+goto\ \<bb\ 15\>;\l\
+}"];
+
+	fn_1445_basic_block_12 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 12\>:\l\
+|\<L3\>:\l\
+|num1.7\ =\ num1;\l\
+|num2.8\ =\ num2;\l\
+|D.35866\ =\ num1.7\ /\ num2.8;\l\
+|std::basic_ostream\<char\>::operator\<\<\ (&cout,\ D.35866);\l\
+}"];
+
+	fn_1445_basic_block_13 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 13\>:\l\
+goto\ \<bb\ 15\>;\l\
+}"];
+
+	fn_1445_basic_block_14 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 14\>:\l\
+|\<L4\>:\l\
+|std::operator\<\<\ \<std::char_traits\<char\>\ \>\ (&cout,\ \"Error!\ operator\ is\ not\ correct\");\l\
+}"];
+
+	fn_1445_basic_block_15 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 15\>:\l\
+|D.35867\ =\ 0;\l\
+|op\ =\ \{CLOBBER\};\l\
+|num1\ =\ \{CLOBBER\};\l\
+|num2\ =\ \{CLOBBER\};\l\
+}"];
+
+	fn_1445_basic_block_16 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 16\>:\l\
+|\<L7\>:\l\
+|return\ D.35867;\l\
+}"];
+
+	fn_1445_basic_block_17 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 17\>:\l\
+|\<L8\>:\l\
+|op\ =\ \{CLOBBER\};\l\
+|num1\ =\ \{CLOBBER\};\l\
+|num2\ =\ \{CLOBBER\};\l\
+|resx\ 1\l\
+}"];
+
+	fn_1445_basic_block_0:s -> fn_1445_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_2:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_2:s -> fn_1445_basic_block_3:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_3:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_3:s -> fn_1445_basic_block_4:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_4:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_4:s -> fn_1445_basic_block_5:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_5:s -> fn_1445_basic_block_14:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_5:s -> fn_1445_basic_block_10:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_5:s -> fn_1445_basic_block_6:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_5:s -> fn_1445_basic_block_8:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_5:s -> fn_1445_basic_block_12:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_6:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_6:s -> fn_1445_basic_block_7:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_7:s -> fn_1445_basic_block_15:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_8:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_8:s -> fn_1445_basic_block_9:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_9:s -> fn_1445_basic_block_15:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_10:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_10:s -> fn_1445_basic_block_11:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_11:s -> fn_1445_basic_block_15:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_12:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_12:s -> fn_1445_basic_block_13:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_13:s -> fn_1445_basic_block_15:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_14:s -> fn_1445_basic_block_17:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_14:s -> fn_1445_basic_block_15:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_15:s -> fn_1445_basic_block_16:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1445_basic_block_16:s -> fn_1445_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1445_basic_block_0:s -> fn_1445_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_void __static_initialization_and_destruction_0(int, int)" {
+	style="dashed";
+	color="black";
+	label="void __static_initialization_and_destruction_0(int, int) ()";
+	fn_1874_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1874_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1874_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 2\>:\l\
+|if\ (__initialize_p\ ==\ 1)\l\
+\ \ goto\ \<bb\ 3\>;\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\l\
+}"];
+
+	fn_1874_basic_block_3 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 3\>:\l\
+|if\ (__priority\ ==\ 65535)\l\
+\ \ goto\ \<bb\ 4\>;\l\
+else\l\
+\ \ goto\ \<bb\ 5\>;\l\
+}"];
+
+	fn_1874_basic_block_4 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 4\>:\l\
+|std::ios_base::Init::Init\ (&__ioinit);\l\
+|atexit\ (__tcf_0);\l\
+}"];
+
+	fn_1874_basic_block_5 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 5\>:\l\
+|return;\l\
+}"];
+
+	fn_1874_basic_block_0:s -> fn_1874_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1874_basic_block_2:s -> fn_1874_basic_block_3:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1874_basic_block_2:s -> fn_1874_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1874_basic_block_3:s -> fn_1874_basic_block_4:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1874_basic_block_3:s -> fn_1874_basic_block_5:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1874_basic_block_4:s -> fn_1874_basic_block_5:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1874_basic_block_5:s -> fn_1874_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1874_basic_block_0:s -> fn_1874_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_void __tcf_0()" {
+	style="dashed";
+	color="black";
+	label="void __tcf_0() ()";
+	fn_1875_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1875_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1875_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 2\>:\l\
+|std::ios_base::Init::~Init\ (&__ioinit);\l\
+|return;\l\
+}"];
+
+	fn_1875_basic_block_0:s -> fn_1875_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1875_basic_block_2:s -> fn_1875_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1875_basic_block_0:s -> fn_1875_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster_(static initializers for Calculator.cpp)" {
+	style="dashed";
+	color="black";
+	label="(static initializers for Calculator.cpp) ()";
+	fn_1876_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_1876_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_1876_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{ FREQ:0 |\<bb\ 2\>:\l\
+|__static_initialization_and_destruction_0\ (1,\ 65535);\l\
+|return;\l\
+}"];
+
+	fn_1876_basic_block_0:s -> fn_1876_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true, label="[0%]"];
+	fn_1876_basic_block_2:s -> fn_1876_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true, label="[0%]"];
+	fn_1876_basic_block_0:s -> fn_1876_basic_block_1:n [style="invis",constraint=true];
+}
+}

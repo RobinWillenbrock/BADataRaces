@@ -24,9 +24,24 @@ def filter_basic_blocks(func_body, shared_variable):
         if "unlock ()" in block or shared_variable in block or "lock ()" in block:
             filtered_body.append(block.strip())
     
-    return '\n'.join(filtered_body) if filtered_body else None
+    if not filtered_body:
+        return None
 
+    successors = extract_successors(func_body)
+    filtered_body.append(successors)
+    
+    return '\n'.join(filtered_body)
 
+def extract_successors(func_body):
+    succ_pattern = re.compile(r'(<bb \d+>.*?)(?:;;.*?succs { (.*?) })', re.DOTALL)
+    successors = []
+    
+    for match in succ_pattern.findall(func_body):
+        block_info = match[0].strip()
+        succ_blocks = match[1].strip() if match[1].strip() else 'None'
+        successors.append(f"{block_info}\nSuccessors: {succ_blocks}")
+    
+    return '\n'.join(successors)
 
 def write_functions_to_files(functions):
     for func_name, func_content in functions.items():
@@ -36,7 +51,7 @@ def write_functions_to_files(functions):
         print(f"Written to {filename}")
 
 def main():
-    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case13iflock.c.011t.cfg"
+    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case13.c.011t.cfg" 
     shared_variable = input("Enter the name of the shared variable: ")
     
     try:
