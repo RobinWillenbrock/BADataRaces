@@ -22,9 +22,9 @@ def find_operations(basic_blocks, shared_resources):
         lines = block.split('\n')
         for idx, line in enumerate(lines):
             # Check for entering or exiting critical section
-            if re.search(r'\block\s*\(\s*\)|\block\s*\(\s*\)', line):
+            if re.search(r'\block\s*\(\s*\)', line):
                 in_critical_section = True
-            elif re.search(r'\bunlock\s*\(\s*\)|\bunlock\s*\(\s*\)', line):
+            elif re.search(r'\bunlock\s*\(\s*\)', line):
                 in_critical_section = False
 
             if not in_critical_section:
