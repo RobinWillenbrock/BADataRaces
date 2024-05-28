@@ -21,17 +21,16 @@ def find_operations(basic_blocks, shared_resources):
     for block in basic_blocks:
         lines = block.split('\n')
         for idx, line in enumerate(lines):
-            # Check for entering or exiting critical section
-            if re.search(r'\block\s*\(\s*\)|\block\s*\(\s*\)', line):
+            if re.search(r'\block\s*\(\s*\)', line):
                 in_critical_section = True
-            elif re.search(r'\bunlock\s*\(\s*\)|\bunlock\s*\(\s*\)', line):
+            elif re.search(r'\bunlock\s*\(\s*\)', line):
                 in_critical_section = False
 
             if not in_critical_section:
                 for resource in shared_resources:
                     if resource in line:
                         if re.search(rf'\b{resource}\b\s*=', line):
-                            operations.append((resource, 'write', idx + 1))  # line number within the block
+                            operations.append((resource, 'write', idx + 1)) 
                         elif re.search(rf'\b{resource}\b', line):
                             operations.append((resource, 'read', idx + 1))
     return operations
