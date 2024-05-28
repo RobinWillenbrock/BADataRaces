@@ -37,6 +37,9 @@ def write_functions_to_files(functions):
 
 def main():
 <<<<<<< HEAD
+    cfg_file_path = r"C:\BA\Github\BADataRaces\Racebench\case13new.c.011t.cfg" 
+=======
+<<<<<<< HEAD
 
     cfg_file_path = r"C:\BA\BADataRaces\Racebench\case13.c.011t.cfg"
 
@@ -51,6 +54,7 @@ def main():
 >>>>>>> 1d9c5d47470bfdb7bdf41dc9b099b95b2ba452f9
 >>>>>>> 53e0d2ca8eff65df91535a5312a9fe0b7a603a81
 >>>>>>> 682c2de31c2a278967e6dcee40143d8a4e20b8ba
+>>>>>>> 069c1c567fc00304c47d61cc5237ee743aedfc9f
     shared_variable = input("Enter the name of the shared variable: ")
     
     try:
