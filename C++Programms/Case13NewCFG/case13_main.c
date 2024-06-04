@@ -11,6 +11,7 @@ void case13_main() ()
 <bb 2>:
   g1_case13.1 = g1_case13;
   retval.0 = g1_case13.1 == 0;
+  lock ();
   if (retval.0 != 0)
     goto
 <bb 3>:

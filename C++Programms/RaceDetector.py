@@ -21,10 +21,6 @@ def find_operations(basic_blocks, shared_resources):
     for block in basic_blocks:
         lines = block.split('\n')
         for idx, line in enumerate(lines):
-<<<<<<< HEAD
-=======
-            # Check for entering or exiting critical section
->>>>>>> aea3755a612adbd2fb976884fb45e418f4e3f3fe
             if re.search(r'\block\s*\(\s*\)', line):
                 in_critical_section = True
             elif re.search(r'\bunlock\s*\(\s*\)', line):
