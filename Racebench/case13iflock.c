@@ -12,25 +12,22 @@
 volatile unsigned long g1_case13;
 
 void case13_main(){
-
-	lock(); //disable high priority isr;
+	init();
+	disable_isr(1); //disable high priority isr;
 	/* case13_isr_low might be triggerd here */
 	if(g1_case13 == 0)
-        unlock();
+        enable_isr(1);
 		
     g1_case13 = 0xff;
 	
 
 }
 
-void case13_isr_low(){
+void case13_isr_2(){
 
-	lock();
-	idlerun();
-	unlock();
-
+	enable_isr(1);
 }
 
-void case13_isr_high(){
+void case13_isr_1(){
 	g1_case13 = 0x01;  /* bug */
 }
