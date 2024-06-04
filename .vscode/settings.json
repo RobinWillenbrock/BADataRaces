@@ -53,6 +53,7 @@
         "ratio": "cpp",
         "semaphore": "cpp",
         "stop_token": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "svp_simple_013_changed": "c"
     }
 }
