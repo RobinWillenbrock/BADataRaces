@@ -1,0 +1,122 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackage{beamerthemests}
+
+\mode<presentation>
+
+\usecolortheme{rose}
+\useinnertheme[shadow]{rounded}
+\usecolortheme{dolphin}
+\useoutertheme{infolines}
+
+% Customize colors appropriately...
+
+\definecolor{darksts}{rgb}{0.5,0.3,0.1}
+%\definecolor{sts}{rgb}{1.0,0.5,0.1}
+%\definecolor{sts}{rgb}{0.31,0.57,0.70}
+\definecolor{sts}{RGB}{110,148,209}
+\definecolor{darksts}{RGB}{50, 88, 149} % sts-logo-blue
+
+\definecolor{graysts}{rgb}{0.67,0.67,0.67}
+
+\setbeamercolor{structure}{fg=black}
+
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=sts}
+\setbeamercolor*{palette primary}{fg=black,bg=sts}
+\setbeamercolor*{palette secondary}{fg=black,bg=gray!15!white}
+%\setbeamercolor*{palette tertiary}{bg=graysts,fg=black,left=graysts,right=white}
+\setbeamercolor*{palette tertiary}{bg=graysts,fg=black}
+\setbeamercolor*{palette quaternary}{fg=black,bg=sts}
+\setbeamercolor*{sidebar}{fg=darksts,bg=white}
+\setbeamercolor{titlelike}{parent=pallette primary,fg=darksts}
+\setbeamercolor*{item projected}{fg=black,bg=sts!75!white}
+
+\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in head/foot}{parent=palette primary}
+
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{subsection in head/foot}{parent=palette primary}
+
+\setbeamercolor{block title}{fg=black,bg=sts}
+\setbeamercolor{block title alerted}{use=alerted text,fg=black,bg=alerted text.fg!75!bg}
+\setbeamercolor{block title example}{use=example text,fg=black,bg=example text.fg!75!bg}
+
+\setbeamercolor{block body}{parent=normal text,use=block title,bg=block title.bg!25!bg}
+\setbeamercolor{block body alerted}{parent=normal text,use=block title alerted,bg=block title alerted.bg!25!bg}
+\setbeamercolor{block body example}{parent=normal text,use=block title example,bg=block title example.bg!25!bg}
+
+\setbeamercolor*{separation line}{}
+\setbeamercolor*{fine separation line}{}
+\setbeamercolor{description item}{parent=alerted text}
+
+
+% Define a header with a nice gradient...
+
+\usebeamercolor[bg]{section in head/foot}\colorlet{headl}{bg}
+\usebeamercolor[bg]{subsection in head/foot}\colorlet{headr}{bg}
+
+\pgfdeclarehorizontalshading[headl,headr]{headshading}{3.5ex}{
+  color(.00\paperwidth)=(headl);
+  color(.40\paperwidth)=(headl);
+  color(.50\paperwidth)=(headr);
+  color(1.0\paperwidth)=(headr)
+} 
+
+\setbeamertemplate{headline}
+{
+  \pgfuseshading{headshading}\vskip-3.25ex%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,ignorebg,right]{section in head/foot}%
+    \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{12ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,ignorebg,left]{subsection in head/foot}%
+    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+% Define a footer with a nice gradient...
+
+\usebeamercolor[bg]{author in head/foot}\colorlet{footl}{bg}
+\usebeamercolor[bg]{title in head/foot}\colorlet{footc}{bg}
+\usebeamercolor[bg]{date in head/foot}\colorlet{footr}{bg}
+
+\pgfdeclarehorizontalshading[footl,footc,footr]{footshading}{3.5ex}{
+  color(.00\paperwidth)=(footl);
+  color(.15\paperwidth)=(footl);
+  color(.25\paperwidth)=(footc);
+  color(.70\paperwidth)=(footc);
+  color(.80\paperwidth)=(footr);
+  color(1.0\paperwidth)=(footr)
+}
+
+\setbeamertemplate{footline}
+{
+  \pgfuseshading{footshading}\vskip-3.25ex%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.20\paperwidth,ht=2.25ex,dp=1ex,ignorebg,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.55\paperwidth,ht=2.25ex,dp=1ex,ignorebg,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,ignorebg,right]{date in head/foot}%
+   % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\mode
+<all>
