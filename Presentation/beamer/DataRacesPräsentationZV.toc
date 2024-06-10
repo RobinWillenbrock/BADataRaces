@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Data Races}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Basics of Data Race}{4}{0}{1}
+\beamer@subsectionintoc {1}{2}{Detection of Data Race}{7}{0}{1}
+\beamer@sectionintoc {2}{Control Flow Graph}{9}{0}{2}
+\beamer@sectionintoc {3}{Evaluating the Output}{12}{0}{3}
