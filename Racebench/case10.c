@@ -1,26 +1,28 @@
 /*
  * case10.c
- * Ä£Ê½3£ºµ¥±äÁ¿µ¥´Î·ÃÎÊµÄÔ­×ÓÐÔÎ¥·´
+ * Ä£Ê½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î·ï¿½ï¿½Êµï¿½Ô­ï¿½ï¿½ï¿½ï¿½Î¥ï¿½ï¿½
  *
- * »ù±¾ÀàÐÍ ÈÎÎñÓëÖÐ¶Ï ±äÁ¿¶ÁÐ´
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´
  *
- *  Created on: 2013Äê11ÔÂ6ÈÕ
+ *  Created on: 2013ï¿½ï¿½11ï¿½ï¿½6ï¿½ï¿½
  *      Author: chenrui
  */
 #include "case10.h"
 
-volatile unsigned long shared1_case10;
-
-
-void case10_main(){
+long shared1;
+void main(){
 	unsigned char tmp;
-
-	tmp = shared1_case10;
+	disable_isr (1);
+		if(shared1 = 0);
+			enable_isr (1);
+	tmp = shared1;
+	enable_isr (1);
 }
-
-void case10_isr(){
-
+void isr1(){
 	idlerun();
-	shared1_case10 = 1;  /* bug */
+	shared1 = 1; 
 	idlerun();
 }
+void isr2();
+	idlerun();
+	idlerun();
