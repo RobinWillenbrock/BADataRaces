@@ -26,9 +26,8 @@ def parse_basic_blocks(file_path, shared_resource_names):
     shared_resources = []
     enable_disable_calls = []
     code_lines = []
-    line_number = 0  # Track line numbers
+    line_number = 0  
 
-    # First pass: collect basic block information without successors
     for line in lines:
         line = line.strip()
         line_number += 1
@@ -62,11 +61,9 @@ def parse_basic_blocks(file_path, shared_resource_names):
 
         code_lines.append((line, line_number))
 
-    # Add the last parsed block
     if bb_num is not None and current_function is not None:
         blocks[(current_function, bb_num)] = BasicBlock(current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
 
-    # Second pass: collect successors for relevant blocks
     current_function = None
     bb_num = None
     for line in lines:
@@ -90,7 +87,7 @@ def parse_basic_blocks(file_path, shared_resource_names):
 
 def track_isr_status(blocks):
     isr_count = len(set(block.function_name for block in blocks.values() if re.search(r'isr[_]?\d+', block.function_name)))
-    return [0] * isr_count  # Initialize ISR status array with zeros
+    return [0] * isr_count  
 
 def extract_isr_index(function_name):
     match = re.search(r'isr[_]?(\d+)', function_name)
@@ -103,7 +100,6 @@ def detect_data_races(blocks):
     resource_accesses = defaultdict(list)
     isr_enabling_map = defaultdict(set)
 
-    # Parse enable/disable relationships
     for block in blocks.values():
         for call, line_number in block.enable_disable_calls:
             if 'enable_isr' in call:
@@ -114,13 +110,11 @@ def detect_data_races(blocks):
                     isr_enabling_map[enabler_isr].add(enabled_isr_idx)
 
     def process_block(block, current_isr_status):
-        # Process each line in the basic block in order
         for line, line_number in block.code:
-            # Update ISR status based on enable/disable calls
             if 'enable_isr' in line or 'disable_isr' in line:
                 isr_idx_match = re.search(r'\((\d+)\)', line)
                 if isr_idx_match:
-                    isr_idx = int(isr_idx_match.group(1)) - 1  # Convert to 0-based index
+                    isr_idx = int(isr_idx_match.group(1)) - 1  
                     if "disable_isr" in line:
                         if 0 <= isr_idx < len(current_isr_status):
                             current_isr_status[isr_idx] = 1
@@ -128,7 +122,7 @@ def detect_data_races(blocks):
                         if 0 <= isr_idx < len(current_isr_status):
                             current_isr_status[isr_idx] = 0
 
-            # Record accesses to shared resources
+
             for resource_name, access_type, res_line_number in block.shared_resources:
                 if res_line_number == line_number:
                     resource_accesses[resource_name].append((block.function_name, block.number, access_type, line_number, current_isr_status.copy()))
@@ -147,28 +141,28 @@ def detect_data_races(blocks):
             for successor in block.successors:
                 dfs(successor, set(visited_blocks), current_isr_status.copy(), path.copy())
 
-    # Process bb2 first to set initial conditions
+
     for (func_name, bb_num), block in blocks.items():
-        if bb_num == 2:  # Assuming entry block is always <bb 2>
+        if bb_num == 2:  
             initial_isr_status = track_isr_status(blocks).copy()
             process_block(block, initial_isr_status)
             for successor in block.successors:
                 dfs(successor, set(), initial_isr_status.copy(), [(func_name, bb_num)])
 
-    # Check for data races based on collected accesses
+
     def check_for_data_races():
         for resource, accesses in resource_accesses.items():
             for i, (func1, bb_num1, access_type1, line_number1, isr_status1) in enumerate(accesses):
                 for j, (func2, bb_num2, access_type2, line_number2, isr_status2) in enumerate(accesses):
                     if i >= j:
-                        continue  # Avoid duplicate checks and self-comparisons
+                        continue  
                     if func1 != func2 and (access_type1 == "write" or access_type2 == "write"):
                         potential_data_races.append((resource, (func1, bb_num1, access_type1, line_number1, isr_status1),
                                                      (func2, bb_num2, access_type2, line_number2, isr_status2)))
 
     check_for_data_races()
 
-    # Filter out false positives where ISR is disabled during access
+
     def filter_data_races(potential_data_races):
         filtered_data_races = []
         for resource, access1, access2 in potential_data_races:
@@ -203,7 +197,7 @@ def detect_data_races(blocks):
 
     return filtered_data_races
 
-# Main execution
+
 shared_resource_input = input("Enter the names of shared resources, separated by commas: ")
 shared_resource_names = [name.strip() for name in shared_resource_input.split(',')]
 
