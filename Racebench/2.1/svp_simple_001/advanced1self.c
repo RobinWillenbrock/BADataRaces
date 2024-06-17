@@ -19,8 +19,7 @@
 long shared1;
 void main(){
 	unsigned char tmp;
-	disable_isr (1);
-	if(shared1 = 0){
+	if(shared1 == 0){
 		enable_isr (1);
     }else{
         int variable2 = 1;
