@@ -66,7 +66,7 @@ shared_resource_input = input("Enter the names of shared resources, separated by
 shared_resource_names = [name.strip() for name in shared_resource_input.split(',')]
 
 # Use raw string literal to avoid issues with backslashes
-file_path = r"C:\BA\Github\BADataRaces\Racebench\case13iflock.c.011t.cfg"
+file_path = r"C:\BA\BADataRaces\Racebench\2.1\svp_simple_013\svp_simple_013_001.c.011t.cfg"
 blocks = parse_basic_blocks(file_path, shared_resource_names)
 
 for (func_name, bb_num), bb in blocks.items():

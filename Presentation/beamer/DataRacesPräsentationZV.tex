@@ -24,6 +24,7 @@
 	\begin{itemize}
 		\item Consequences: Data corruption, security vulnerabilities, system crashes
 		\item Not reconstructable or predictable
+		\item Real examples of data races:
 	\end{itemize}
 	
 	\vspace{0.5cm} % Adjust the vertical space as needed
@@ -42,11 +43,11 @@
 		\end{flushleft} &
 		\begin{flushleft}
 			% Content for the right side
-			\centering \textbf{Kubernetes API Server Vulnerability} \\[0.2cm]
+			\centering \textbf{Kubernetes Server Vulnerability} \\[0.2cm]
 			\raggedright % Make the following text left-aligned
 				\begin{figure}
 					\centering
-					\includegraphics[width=3\linewidth]{Files/Securitybreach}
+					\includegraphics[width=3.1\linewidth]{Files/Securitybreach}
 					\caption{}
 					\label{fig:securitybreach}
 				\end{figure}
@@ -63,10 +64,26 @@
 }
 
 \section{Data Races}
-\subsection{Basics of Data Race}
 \begin{frame}[t]
 \frametitle{What are Data Races?}
 		\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
+		\begin{flushleft}
+			% Content for the left side
+			\centering \textbf{Interrupt Driven Systems} \\[0.2cm]
+			\raggedright % Make the following text left-aligned
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\textwidth]{../../Presentation/beamer/Files/The-Mechanism-of-Interrupt}
+				\caption{Interrupt Driven System}
+				\label{fig:the-mechanism-of-interrupt}
+			\end{figure}
+		\end{flushleft} &
+	
+	\end{tabular}
+\end{frame}
+\begin{frame}[t]
+	\frametitle{What are Data Races?}
+	\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
 		\begin{flushleft}
 			% Content for the left side
 			\centering \textbf{Interrupt Driven Systems} \\[0.2cm]
@@ -83,22 +100,23 @@
 			\centering \textbf{Shared Resources} \\[0.2cm]
 			\raggedright % Make the following text left-aligned
 			\vspace{0.8cm}
-			
-		\begin{tikzpicture}[node distance=0.8cm, every node/.style={align=center}]
-			% Nodes
-			\node (main) [rectangle, draw] {Main Function};
-			\node (isr1) [rectangle, draw, below left=of main] {ISR1};
-			\node (isr2) [rectangle, draw, below right=of main] {ISR2};
-			\node (shared) [circle, draw, below=of main] {Shared\\Resource};
-			
-			% Arrows
-			\draw[->] (main) -- (shared);
-			\draw[->] (isr1) -- (shared);
-			\draw[->] (isr2) -- (shared);
-			\draw[->] (shared) -- (main);
-			\draw[->] (shared) -- (isr1);
-			\draw[->] (shared) -- (isr2);
-		\end{tikzpicture}
+			\begin{figure}
+			\begin{tikzpicture}[node distance=0.8cm, every node/.style={align=center}]
+				% Nodes
+				\node (main) [rectangle, draw] {Main Function};
+				\node (isr1) [rectangle, draw, below left=of main] {ISR1};
+				\node (isr2) [rectangle, draw, below right=of main] {ISR2};
+				\node (shared) [circle, draw, below=of main] {Shared\\Resource};
+				
+				% Arrows
+				\draw[->] (main) -- (shared);
+				\draw[->] (isr1) -- (shared);
+				\draw[->] (isr2) -- (shared);
+				\draw[->] (shared) -- (main);
+				\draw[->] (shared) -- (isr1);
+				\draw[->] (shared) -- (isr2);
+			\end{tikzpicture}
+			\end{figure}
 		\end{flushleft}
 	\end{tabular}
 \end{frame}
@@ -114,7 +132,7 @@
 
 \end{frame}
 \begin{frame}
-\frametitle{Example of an Data Race}
+\frametitle{Example of a Data Race}
 \begin{algorithm}[H]
 	\caption{Example 1}
 	\KwData{long shared1;}
@@ -142,7 +160,6 @@
 	}
 \end{algorithm}
 \end{frame}
-\subsection{Detection of Data Race}
 \begin{frame}[t]
 	\frametitle{Static Detection}
 	\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
@@ -161,7 +178,7 @@
 		\centering \textbf{Downsides} \\[0.2cm]
 		\raggedright % Make the following text left-aligned
 		\begin{itemize}
-			\item False Positives
+			\item False positives
 			\item Results need to be interpreted
 		\end{itemize}
 	\end{flushleft}
@@ -275,8 +292,31 @@
 		\end{flushleft}
 	\end{tabular}
 \end{frame}
-\section{Evaluating the Output}
-
+\section{Interrupt Handling}
+\begin{frame}
+	\frametitle{Interrupt Status}
+	\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
+		\begin{flushleft}
+			\raggedright % Make the following text left-aligned
+			\begin{itemize}
+				\item Need an Array to keep track of the enabled/disabled ISR's
+				\item Updated after every Basic Block
+				\item Special Case: \\
+				ISR enabled/disabled by another ISR
+			\end{itemize}
+		\end{flushleft} &
+		\begin{flushleft}
+			\raggedright % Make the following text left-aligned
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.8\textheight]{../../Presentation/beamer/Files/VortragCFG2}
+				\caption{Full CFG}
+				\label{fig:vortragcfg}
+			\end{figure}
+		\end{flushleft}
+	\end{tabular}
+	\section{Summary}
+\end{frame}
 \begin{frame}[fragile]
 	\frametitle{Interrupt Enabling/Disabling ISR}
 	\scriptsize % Adjust font size to fit content
@@ -319,29 +359,6 @@
 	\end{algorithm}
 \end{frame}
 \begin{frame}
-	\frametitle{Interrupt Status}
-	\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
-		\begin{flushleft}
-			\raggedright % Make the following text left-aligned
-			\begin{itemize}
-				\item Need an Array to keep track of the enabled/disabled ISR's
-				\item Updated after every Basic Block
-				\item Special Case: \\
-					ISR enabled/disabled by another ISR
-			\end{itemize}
-		\end{flushleft} &
-		\begin{flushleft}
-			\raggedright % Make the following text left-aligned
-			\begin{figure}
-				\centering
-				\includegraphics[height=0.8\textheight]{../../Presentation/beamer/Files/VortragCFG2}
-				\caption{Full CFG}
-				\label{fig:vortragcfg}
-			\end{figure}
-		\end{flushleft}
-	\end{tabular}
-\end{frame}
-\begin{frame}
 \frametitle{Summary}
 	\begin{tabular}{p{0.48\textwidth} p{0.48\textwidth}}
 		\begin{flushleft}
@@ -349,9 +366,9 @@
 			\centering \textbf{Solved Problems} \\[0.2cm]
 			\raggedright % Make the following text left-aligned
 			\begin{itemize}
-				\item Detecting Data Races reliably 
-				\item Tracking Interrupt Status in all states of the programm
-				\item Generating an reduced Control Flow Graph and analysing it inter-procedural 
+				\item Detecting data races reliably 
+				\item Tracking interrupt status in all states of the programm
+				\item Generating a reduced control flow graph and analysing it inter-proceduraly
 			\end{itemize}
 		\end{flushleft} &
 		\begin{flushleft}
@@ -359,9 +376,9 @@
 			\centering \textbf{Future Work} \\[0.2cm]
 			\raggedright % Make the following text left-aligned
 			\begin{itemize}
-				\item Minimizing the amount of false Positives
+				\item Minimizing the amount of false positives
 				\item Automatic detection of shared resources
-				\item Further analysis of interrupt enabling/disabling ISR's
+				\item Further analysis of interrupt enable status
 			\end{itemize}
 		\end{flushleft}
 	\end{tabular}
