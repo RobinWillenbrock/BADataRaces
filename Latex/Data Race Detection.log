@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  17 JUN 2024 17:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  19 JUN 2024 11:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./main.tex
-(main.tex
+**"./Data Race Detection.tex"
+(Data Race Detection.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
 (stsreprt.cls
@@ -283,8 +283,8 @@ File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 LaTeX Warning: Unused global option(s):
     [fancyheadings].
 
-(main.aux)
-\openout1 = `main.aux'.
+(Data Race Detection.aux)
+\openout1 = `"Data Race Detection.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
@@ -432,22 +432,21 @@ put line 48.
  [2
 
 
-] (main.toc)
+] (Data Race Detection.toc)
 \tf@toc=\write3
-\openout3 = `main.toc'.
+\openout3 = `"Data Race Detection.toc"'.
 
 <logo/logo_sts_letters.png, id=17, 177.0615pt x 79.9788pt>
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
 Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 49.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [3 <./logo/logo_sts_letters.png>]
-[4
+ [3 <./logo/logo_sts_letters.png>] [4
 
 
-] (main.lof)
+] (Data Race Detection.lof)
 \tf@lof=\write4
-\openout4 = `main.lof'.
+\openout4 = `"Data Race Detection.lof"'.
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
@@ -460,7 +459,7 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 50.
 chapter 1.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 67.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 55.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 [1
 
@@ -470,27 +469,36 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 67.
 
 ]
 chapter 2.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 74.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 71.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[3] [4
+ [3]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 80.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 
-
-]
+[4]
 chapter 3.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 76.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 82.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[5] [6
+[5
+
+
+] [6
 
 
 ]
 chapter 4.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 78.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 84.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 [7] [8
 
@@ -499,43 +507,34 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 78.
 chapter 5.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 80.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 90.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 [9] [10
-
-
-]
-chapter 6.
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 86.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[11] [12
 
 
 ]
 chapter without number
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 93.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 97.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[13
+[11
 
 
-] (main.aux)
+] (Data Race Detection.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7343 strings out of 474423
- 172416 string characters out of 5741718
- 1934496 words of memory out of 5000000
- 29626 multiletter control sequences out of 15000+600000
+ 7350 strings out of 474423
+ 173054 string characters out of 5741718
+ 1938496 words of memory out of 5000000
+ 29633 multiletter control sequences out of 15000+600000
  609205 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,26n,121p,10902b,707s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 122i,26n,121p,10919b,707s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
 ><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb
 ><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb
@@ -543,9 +542,9 @@ Here is how much of TeX's memory you used:
 ><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.p
 fb><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.
 pfb>
-Output written on main.pdf (19 pages, 263705 bytes).
+Output written on "Data Race Detection.pdf" (17 pages, 267091 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 95 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
