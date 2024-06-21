@@ -1,5 +1,9 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
 \contentsline {chapter}{\numberline {2}Background}{3}{}%
+\contentsline {section}{\numberline {2.1}Interrupt Driven System}{3}{}%
+\contentsline {section}{\numberline {2.2}Control Flow Graphs}{3}{}%
+\contentsline {section}{\numberline {2.3}Synchronization Mechanism}{3}{}%
+\contentsline {section}{\numberline {2.4}Data Races}{3}{}%
 \contentsline {chapter}{\numberline {3}Race Conditions Detection}{5}{}%
 \contentsline {chapter}{\numberline {4}Implementation}{7}{}%
 \contentsline {chapter}{\numberline {5}Evaluation}{9}{}%

@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  11 JUN 2024 15:07
+=======
+<<<<<<< HEAD
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  10 JUN 2024 21:28
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  10 JUN 2024 10:11
+>>>>>>> 68bc31f5c68f51c2ca4e42e2bbba8cbae7da78a1
+>>>>>>> ede4f4d7a55f61bbe88b3e1959f2fd31a2f915e0
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1430,11 +1438,26 @@ d.
 (rerunfilecheck)             Checksum: C93AD10EF4674DBDEF8D806E3AA30326;449.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  26283 strings out of 474424
  530232 string characters out of 5741739
  1942496 words of memory out of 5000000
  48065 multiletter control sequences out of 15000+600000
  568210 words of font info for 72 fonts, out of 8000000 for 9000
+=======
+<<<<<<< HEAD
+ 26323 strings out of 474423
+ 531459 string characters out of 5741718
+ 1942496 words of memory out of 5000000
+ 48107 multiletter control sequences out of 15000+600000
+=======
+ 26303 strings out of 474424
+ 530721 string characters out of 5741739
+ 1941496 words of memory out of 5000000
+ 48085 multiletter control sequences out of 15000+600000
+>>>>>>> 68bc31f5c68f51c2ca4e42e2bbba8cbae7da78a1
+ 568515 words of font info for 73 fonts, out of 8000000 for 9000
+>>>>>>> ede4f4d7a55f61bbe88b3e1959f2fd31a2f915e0
  1141 hyphenation exceptions out of 8191
  128i,24n,123p,445b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
