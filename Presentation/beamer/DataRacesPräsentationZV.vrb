@@ -1,4 +1,6 @@
 \frametitle{Interrupt Enabling/Disabling ISR}
+	\hspace{0.5cm}
+	\begin{minipage}{0.8\textwidth}
 	\scriptsize % Adjust font size to fit content
 	\tiny
 	\begin{algorithm}[H]
@@ -37,3 +39,4 @@
 			idlerun()\;
 		}
 	\end{algorithm}
+\end{minipage}

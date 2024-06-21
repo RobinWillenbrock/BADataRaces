@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  10 JUN 2024 10:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  11 JUN 2024 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -918,6 +918,9 @@ File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 \l__pdf_internal_box=\box89
 ) (DataRacesPräsentationZV.aux
 
+LaTeX Warning: Label `fig:the-mechanism-of-interrupt' multiply defined.
+
+
 LaTeX Warning: Label `fig:vortragcfg' multiply defined.
 
 
@@ -1109,33 +1112,23 @@ erncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<Files/DataCorruption.png, id=70, 2881.76625pt x 1329.46687pt>
+<Files/DataCorruption.png, id=70, 509.5035pt x 284.86424pt>
 File: Files/DataCorruption.png Graphic file (type png)
 <use Files/DataCorruption.png>
 Package pdftex.def Info: Files/DataCorruption.png  used on input line 56.
-(pdftex.def)             Requested size: 492.90083pt x 227.38582pt.
-
-Overfull \hbox (328.60056pt too wide) in paragraph at lines 56--56
- [] 
- []
-
-<Files/Securitybreach.png, id=71, 2881.76625pt x 1329.46687pt>
+(pdftex.def)             Requested size: 131.44072pt x 73.48485pt.
+<Files/Securitybreach.png, id=72, 438.438pt x 248.127pt>
 File: Files/Securitybreach.png Graphic file (type png)
 <use Files/Securitybreach.png>
 Package pdftex.def Info: Files/Securitybreach.png  used on input line 56.
-(pdftex.def)             Requested size: 509.33186pt x 234.9728pt.
-
-Overfull \hbox (345.03159pt too wide) in paragraph at lines 56--56
- [] 
- []
-
+(pdftex.def)             Requested size: 131.44072pt x 74.38565pt.
 
 Overfull \hbox (10.30525pt too wide) in paragraph at lines 56--56
 [][]  
  []
 
 
-Overfull \vbox (188.45135pt too high) detected at line 56
+Overfull \vbox (14.04893pt too high) detected at line 56
  []
 
 [2
@@ -1144,7 +1137,7 @@ Overfull \vbox (188.45135pt too high) detected at line 56
 (DataRacesPräsentationZV.toc) [3
 
 ]
-<../../Presentation/beamer/Files/The-Mechanism-of-Interrupt.png, id=136, 495.85
+<../../Presentation/beamer/Files/The-Mechanism-of-Interrupt.png, id=139, 495.85
 25pt x 343.2825pt>
 File: ../../Presentation/beamer/Files/The-Mechanism-of-Interrupt.png Graphic fi
 le (type png)
@@ -1152,6 +1145,45 @@ le (type png)
 Package pdftex.def Info: ../../Presentation/beamer/Files/The-Mechanism-of-Inter
 rupt.png  used on input line 83.
 (pdftex.def)             Requested size: 171.14764pt x 118.48495pt.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.83 \end{frame}
+                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+\beamer@doifinframe ...f-Interrupt_fig1_262161194}
+                                                   \label {fig:the-mechanism...
+l.83 \end{frame}
+                
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.83 \end{frame}
+                
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.83 \end{frame}
+                
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
 
 Overfull \hbox (6.84737pt too wide) in paragraph at lines 83--83
  [] 
@@ -1162,10 +1194,6 @@ Overfull \hbox (10.30525pt too wide) in paragraph at lines 83--83
 [][]  
  []
 
-
-Overfull \vbox (0.20796pt too high) detected at line 83
- []
-
 [4
 
  <../../Presentation/beamer/Files/The-Mechanism-of-Interrupt.png (PNG copy)>]
@@ -1173,49 +1201,84 @@ File: ../../Presentation/beamer/Files/The-Mechanism-of-Interrupt.png Graphic fi
 le (type png)
 <use ../../Presentation/beamer/Files/The-Mechanism-of-Interrupt.png>
 Package pdftex.def Info: ../../Presentation/beamer/Files/The-Mechanism-of-Inter
-rupt.png  used on input line 121.
+rupt.png  used on input line 123.
 (pdftex.def)             Requested size: 171.14764pt x 118.48495pt.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.123 \end{frame}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-Overfull \hbox (6.84737pt too wide) in paragraph at lines 121--121
- [] 
- []
+! Extra }, or forgotten $.
+\beamer@doifinframe ...f-Interrupt_fig1_262161194}
+                                                   \label {fig:the-mechanism...
+l.123 \end{frame}
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:the-mecha
 nism-of-interrupt}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 \end{frame}
+l.123 \end{frame}
                  
-Overfull \hbox (0.9142pt too wide) in paragraph at lines 121--121
-[][] 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.123 \end{frame}
+                 
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.123 \end{frame}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (6.84737pt too wide) in paragraph at lines 123--123
+ [] 
  []
 
 
-Overfull \hbox (10.30525pt too wide) in paragraph at lines 121--121
+Overfull \hbox (0.9142pt too wide) in paragraph at lines 123--123
+ [] 
+ []
+
+
+Overfull \hbox (10.30525pt too wide) in paragraph at lines 123--123
 [][]  
- []
-
-
-Overfull \vbox (0.20796pt too high) detected at line 121
  []
 
 [5
 
 ]
-<../../Presentation/beamer/Files/Data Races.png, id=197, 656.4525pt x 347.04657
+<../../Presentation/beamer/Files/Data Races.png, id=201, 656.4525pt x 347.04657
 pt>
 File: ../../Presentation/beamer/Files/Data Races.png Graphic file (type png)
 <use ../../Presentation/beamer/Files/Data Races.png>
 Package pdftex.def Info: ../../Presentation/beamer/Files/Data Races.png  used o
-n input line 132.
+n input line 134.
 (pdftex.def)             Requested size: 273.83728pt x 144.7683pt.
  [6
 
  <../../Presentation/beamer/Files/Data Races.png>] [7
 
 ]
-Overfull \hbox (10.30525pt too wide) in paragraph at lines 185--185
+Overfull \hbox (10.30525pt too wide) in paragraph at lines 191--191
 [][]  
  []
 
@@ -1226,43 +1289,39 @@ Overfull \hbox (10.30525pt too wide) in paragraph at lines 185--185
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 247.
+(Font)              using `OT1/cmss/b/it' instead on input line 260.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/b/it' undefined
-(Font)              using `OT1/cmss/b/n' instead on input line 247.
+(Font)              using `OT1/cmss/b/n' instead on input line 260.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 247.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 260.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 247.
+(Font)              using `OT1/cmss/b/it' instead on input line 260.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/it' in size <6> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 247.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 260.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 247.
+(Font)              using `OT1/cmss/b/it' instead on input line 260.
 
 [10
 
 ]
-<../../Presentation/beamer/Files/VortragCFG.png, id=353, 804.00375pt x 1253.683
+<../../Presentation/beamer/Files/VortragCFG.png, id=356, 804.00375pt x 1253.683
 75pt>
 File: ../../Presentation/beamer/Files/VortragCFG.png Graphic file (type png)
 <use ../../Presentation/beamer/Files/VortragCFG.png>
 Package pdftex.def Info: ../../Presentation/beamer/Files/VortragCFG.png  used o
-n input line 270.
-(pdftex.def)             Requested size: 128.50827pt x 200.38478pt.
+n input line 283.
+(pdftex.def)             Requested size: 112.43707pt x 175.33525pt.
 
-Overfull \hbox (10.30525pt too wide) in paragraph at lines 270--270
+Overfull \hbox (10.30525pt too wide) in paragraph at lines 283--283
 [][]  
- []
-
-
-Overfull \vbox (39.5227pt too high) detected at line 270
  []
 
 [11
@@ -1271,51 +1330,47 @@ Overfull \vbox (39.5227pt too high) detected at line 270
 File: ../../Presentation/beamer/Files/VortragCFG.png Graphic file (type png)
 <use ../../Presentation/beamer/Files/VortragCFG.png>
 Package pdftex.def Info: ../../Presentation/beamer/Files/VortragCFG.png  used o
-n input line 293.
-(pdftex.def)             Requested size: 96.37814pt x 150.28954pt.
+n input line 306.
+(pdftex.def)             Requested size: 112.43707pt x 175.33525pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:vortragcf
 g}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.293 \end{frame}
+l.306 \end{frame}
                  
-<../../Presentation/beamer/Files/VortragReducedCFG.png, id=384, 603.0028pt x 94
+<../../Presentation/beamer/Files/VortragReducedCFG.png, id=387, 603.0028pt x 94
 0.26282pt>
 File: ../../Presentation/beamer/Files/VortragReducedCFG.png Graphic file (type 
 png)
 <use ../../Presentation/beamer/Files/VortragReducedCFG.png>
 Package pdftex.def Info: ../../Presentation/beamer/Files/VortragReducedCFG.png 
- used on input line 293.
-(pdftex.def)             Requested size: 96.3812pt x 150.28954pt.
+ used on input line 306.
+(pdftex.def)             Requested size: 112.43707pt x 175.33525pt.
 
-Overfull \hbox (10.30525pt too wide) in paragraph at lines 293--293
+Overfull \hbox (10.30525pt too wide) in paragraph at lines 306--306
 [][]  
  []
 
 [12
 
  <../../Presentation/beamer/Files/VortragReducedCFG.png>]
-<../../Presentation/beamer/Files/VortragCFG2.png, id=416, 809.0225pt x 1253.683
+<../../Presentation/beamer/Files/VortragCFG2.png, id=418, 809.0225pt x 1253.683
 75pt>
 File: ../../Presentation/beamer/Files/VortragCFG2.png Graphic file (type png)
 <use ../../Presentation/beamer/Files/VortragCFG2.png>
 Package pdftex.def Info: ../../Presentation/beamer/Files/VortragCFG2.png  used 
-on input line 318.
-(pdftex.def)             Requested size: 129.31046pt x 200.38478pt.
+on input line 331.
+(pdftex.def)             Requested size: 113.13893pt x 175.33525pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:vortragcf
 g}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.318 \end{frame}
+l.331 \end{frame}
                  
-Overfull \hbox (10.30525pt too wide) in paragraph at lines 318--318
+Overfull \hbox (10.30525pt too wide) in paragraph at lines 331--331
 [][] 
- []
-
-
-Overfull \vbox (40.5227pt too high) detected at line 318
  []
 
 [13
@@ -1327,20 +1382,20 @@ Overfull \vbox (40.5227pt too high) detected at line 318
 (DataRacesPräsentationZV.vrb
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 25.
+(Font)              using `OT1/cmss/b/it' instead on input line 27.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 32.
+(Font)              using `OT1/cmss/b/it' instead on input line 34.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/b/it' instead on input line 39.
+(Font)              using `OT1/cmss/b/it' instead on input line 41.
 
 ) [14
 
 ]
-Overfull \hbox (10.30525pt too wide) in paragraph at lines 385--385
+Overfull \hbox (10.30525pt too wide) in paragraph at lines 401--401
 [][]  
  []
 
@@ -1375,13 +1430,13 @@ d.
 (rerunfilecheck)             Checksum: C93AD10EF4674DBDEF8D806E3AA30326;449.
  ) 
 Here is how much of TeX's memory you used:
- 26303 strings out of 474424
- 530721 string characters out of 5741739
- 1941496 words of memory out of 5000000
- 48085 multiletter control sequences out of 15000+600000
- 568515 words of font info for 73 fonts, out of 8000000 for 9000
+ 26283 strings out of 474424
+ 530232 string characters out of 5741739
+ 1942496 words of memory out of 5000000
+ 48065 multiletter control sequences out of 15000+600000
+ 568210 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,22n,123p,445b,815s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,24n,123p,445b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmmi10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmss10.pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -1394,9 +1449,9 @@ ill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6
 .pfb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
 cm/cmtt10.pfb>
-Output written on DataRacesPräsentationZV.pdf (16 pages, 4255264 bytes).
+Output written on DataRacesPräsentationZV.pdf (16 pages, 2262123 bytes).
 PDF statistics:
- 592 PDF objects out of 1000 (max. 8388607)
+ 594 PDF objects out of 1000 (max. 8388607)
  43 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

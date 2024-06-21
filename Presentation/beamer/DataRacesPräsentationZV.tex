@@ -36,8 +36,8 @@
 			\raggedright % Make the following text left-aligned
 				\begin{figure}
 					\centering
-					\includegraphics[width=3\linewidth]{Files/DataCorruption}
-					\caption{}
+					\includegraphics[width=0.8\linewidth]{Files/DataCorruption}
+					{\tiny https://scotcomp.medium.com/overcoming-data-corruption-tools-and-techniques-b7edfce2e8bb}
 					\label{fig:datacorruption}
 				\end{figure}
 		\end{flushleft} &
@@ -47,8 +47,8 @@
 			\raggedright % Make the following text left-aligned
 				\begin{figure}
 					\centering
-					\includegraphics[width=3.1\linewidth]{Files/Securitybreach}
-					\caption{}
+					\includegraphics[width=0.8\linewidth]{Files/Securitybreach}
+					{\tiny https://www.nowsecure.com/blog/2022/12/28/top-5-mobile-app-security-breaches-of-2022/}
 					\label{fig:securitybreach}
 				\end{figure}
 		\end{flushleft}
@@ -74,7 +74,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=0.5\textwidth]{../../Presentation/beamer/Files/The-Mechanism-of-Interrupt}
-				\caption{Interrupt Driven System}
+				{\tiny https://www.researchgate.net/figure/The-Mechanism-of-Interrupt_fig1_262161194}
 				\label{fig:the-mechanism-of-interrupt}
 			\end{figure}
 		\end{flushleft} &
@@ -91,7 +91,7 @@
 			\begin{figure}
 				\centering
 				\includegraphics[width=0.5\textwidth]{../../Presentation/beamer/Files/The-Mechanism-of-Interrupt}
-				\caption{Interrupt Driven System}
+				{\tiny https://www.researchgate.net/figure/The-Mechanism-of-Interrupt_fig1_262161194}
 				\label{fig:the-mechanism-of-interrupt}
 			\end{figure}
 		\end{flushleft} &
@@ -116,6 +116,7 @@
 				\draw[->] (shared) -- (isr1);
 				\draw[->] (shared) -- (isr2);
 			\end{tikzpicture}
+			{\tiny Shared Resources Image}
 			\end{figure}
 		\end{flushleft}
 	\end{tabular}
@@ -126,39 +127,42 @@
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{../../Presentation/beamer/Files/Data Races} % Adjust the width as needed
-	\caption{Data Races}
+	{\tiny https://de.mathworks.com/products/polyspace/static-analysis-notes/what-data-races-how-avoid-during-software-development.htm}
 	\label{fig:data-races}
 \end{figure}
 
 \end{frame}
 \begin{frame}
-\frametitle{Example of a Data Race}
-\begin{algorithm}[H]
-	\caption{Example 1}
-	\KwData{long shared1;}
-	
-	\BlankLine
-	\SetKwFunction{FMain}{main}
-	\SetKwProg{Fn}{Function}{:}{}
-	\Fn{\FMain()}{
-		\BlankLine
-		\textbf{Variables}:\\
-		unsigned char tmp\;
-		\BlankLine
-		\textbf{Code}:\\
-		tmp $\leftarrow$ shared1\;
-	}
-	
-	\BlankLine
-	\SetKwFunction{FIsr}{isr1}
-	\Fn{\FIsr()}{
-		\BlankLine
-		\textbf{Code}:\\
-		idlerun()\;
-		shared1 $\leftarrow$ 1\;
-		idlerun()\;
-	}
-\end{algorithm}
+	\frametitle{Example of a Data Race}
+	\hspace{0.5cm} 
+	\begin{minipage}{0.8\textwidth} 
+		\begin{algorithm}[H]
+			\caption{Example 1}
+			\KwData{long shared1;}
+			
+			\BlankLine
+			\SetKwFunction{FMain}{main}
+			\SetKwProg{Fn}{Function}{:}{}
+			\Fn{\FMain()}{
+				\BlankLine
+				\textbf{Variables}:\\
+				unsigned char tmp\;
+				\BlankLine
+				\textbf{Code}:\\
+				tmp $\leftarrow$ shared1\;
+			}
+			
+			\BlankLine
+			\SetKwFunction{FIsr}{isr1}
+			\Fn{\FIsr()}{
+				\BlankLine
+				\textbf{Code}:\\
+				idlerun()\;
+				shared1 $\leftarrow$ 1\;
+				idlerun()\;
+			}
+		\end{algorithm}
+	\end{minipage}
 \end{frame}
 \begin{frame}[t]
 	\frametitle{Static Detection}
@@ -171,6 +175,7 @@
 			\item Code-based
 			\item Scalability
 			\item Detection in development process
+			\item No execution needed
 		\end{itemize}
 	\end{flushleft} &
 	\begin{flushleft}
@@ -186,6 +191,8 @@
 \end{frame}
 \begin{frame}
 	\frametitle{How to detect Data Races}
+		\hspace{0.5cm} 
+	\begin{minipage}{0.8\textwidth} 
 	\begin{algorithm}[H]
 		\caption{Static Race Detection}
 		\KwIn{RICFGs of P}
@@ -202,11 +209,15 @@
 			}
 		}
 	\end{algorithm}
+	{\tiny Automatic Detection, Validation, and Repair of Race Conditions in Interrupt-Driven Embedded Software Author: Yu Wang et al.}
+	\end{minipage}
 \end{frame}
 \section{Control Flow Graph}
 \begin{frame}[t]
 	\frametitle{Why do we need Control Flow Graphs?}
 	\scriptsize % Adjust font size to fit content
+	\hspace{0.5cm} 
+	\begin{minipage}{0.8\textwidth} 
 	\tiny
 	\begin{algorithm}[H]
 		\caption{Example 2}
@@ -245,6 +256,7 @@
 			idlerun()\;
 		}
 	\end{algorithm}
+	\end{minipage}
 \end{frame}
 \begin{frame}
 	\frametitle{What are Inter-Procedural CFG's?}
@@ -252,20 +264,20 @@
 	\begin{flushleft}
 		\raggedright % Make the following text left-aligned
 		\begin{itemize}
-			\item Using information of all functions
-			\item Potential interrupts at any points need to be considered
+			\item Considering interactions between different tasks
 			\item Analysing each CFG alone would not show all potential races
-			\item Example: Potential interrupts from isr1 here must be considered at any given time
+			\item Edges between CFG's
+			\item Comlpexity can be an issue
 		\end{itemize}
 	\end{flushleft} &
 	\begin{flushleft}
 		\raggedright % Make the following text left-aligned
 		\begin{figure}
 			\centering
-			\includegraphics[height=0.8\textheight]{../../Presentation/beamer/Files/VortragCFG}
-			\caption{Full CFG}
+			\includegraphics[height=0.7\textheight]{../../Presentation/beamer/Files/VortragCFG}
 			\label{fig:vortragcfg}
 		\end{figure}
+		{\tiny CFG of Example 2}
 	\end{flushleft}
 	\end{tabular}
 	\end{frame}
@@ -276,19 +288,19 @@
 			\raggedright % Make the following text left-aligned
 			\begin{figure}
 				\centering
-				\includegraphics[height=0.6\textheight]{../../Presentation/beamer/Files/VortragCFG}
-				\caption{Full CFG}
+				\includegraphics[height=0.7\textheight]{../../Presentation/beamer/Files/VortragCFG}
 				\label{fig:vortragcfg}
 			\end{figure}
+			{\tiny CFG of Example 2}
 		\end{flushleft} &
 		\begin{flushleft}
 			\raggedright % Make the following text left-aligned
 			\begin{figure}
 				\centering
-				\includegraphics[height=0.6\textheight]{../../Presentation/beamer/Files/VortragReducedCFG}
-				\caption{Reduced CFG}
+				\includegraphics[height=0.7\textheight]{../../Presentation/beamer/Files/VortragReducedCFG}
 				\label{fig:vortragreducedcfg}
 			\end{figure}
+			{\tiny Reduced CFG of Example 2}
 		\end{flushleft}
 	\end{tabular}
 \end{frame}
@@ -302,23 +314,25 @@
 				\item Need an Array to keep track of the enabled/disabled ISR's
 				\item Updated after every Basic Block
 				\item Special Case: \\
-				ISR enabled/disabled by another ISR
+				ISR enabled by another ISR
 			\end{itemize}
 		\end{flushleft} &
 		\begin{flushleft}
 			\raggedright % Make the following text left-aligned
 			\begin{figure}
 				\centering
-				\includegraphics[height=0.8\textheight]{../../Presentation/beamer/Files/VortragCFG2}
-				\caption{Full CFG}
+				\includegraphics[height=0.7\textheight]{../../Presentation/beamer/Files/VortragCFG2}
 				\label{fig:vortragcfg}
 			\end{figure}
+			{\tiny CFG of Example 3}
 		\end{flushleft}
 	\end{tabular}
 	\section{Summary}
 \end{frame}
 \begin{frame}[fragile]
 	\frametitle{Interrupt Enabling/Disabling ISR}
+	\hspace{0.5cm} 
+	\begin{minipage}{0.8\textwidth} 
 	\scriptsize % Adjust font size to fit content
 	\tiny
 	\begin{algorithm}[H]
@@ -357,6 +371,7 @@
 			idlerun()\;
 		}
 	\end{algorithm}
+\end{minipage}
 \end{frame}
 \begin{frame}
 \frametitle{Summary}
