@@ -32,7 +32,9 @@ fancyheadings, % headings with seplines and logo
 \advisor{Ulrike Engeln}
 
 \usepackage[utf8]{inputenc}
-
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{xcolor}
 % Font and Fontencoding Magic
 % FAQ: 
 % http://tex.stackexchange.com/questions/664/why-should-i-use-usepackaget1fontenc
@@ -41,6 +43,22 @@ fancyheadings, % headings with seplines and logo
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 %\usepackage{fix-cm}
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue},
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	frame=single,
+	breaklines=true,
+	showstringspaces=false,
+	tabsize=4,
+	captionpos=b
+}
 
 \begin{document}
 \frontmatter
@@ -63,51 +81,42 @@ There are different types of interrupts based on the source they come from. Ther
 
 The unpredictivness and asynchronous nature of the interrupts bring a lot of challenges in designing and implementing an interrupt-driven system. One of the biggest challenges is the correct handling of high-priority interrupts without delaying them substantually. Which needs an sophisticated scheduling and prioritization mechanism. The execution of main programm and ISR needs to be handled properly to ensure data intergrity. Furthermore, handling context switches, preserving system state and avoiding deadlocks complitcate the development of an interrupt-driven system \cite{labrosse2002}.
 
+\section{Shared Resources}
+Shared resources are data or hardware components that can be accessed by multiple threads or processes in a concurrent system. These resources include memory locations, files, I/O devices, and communication channels. In interrupt-driven systems, shared resources often involve variables or data structures that are accessed by both the main program and ISRs. Proper management of shared resources is critical to ensure data consistency and avoid conflicts \cite{herlihy2008}.
+\subsection{Types of Shared Resources}
+\begin{itemize}
+	\item \texttt{Memory}: Shared memory locations, such as global variables or heap-allocated data structures, are accessed by multiple threads. Proper synchronization mechanisms, like locks or atomic operations, are required to ensure that memory access is controlled and consistent \cite{herlihy2008}.
 
+	\item \texttt{:I/O Devices}: Hardware devices, such as printers, disk drives, and network interfaces, can be shared among different processes or threads. Access to these devices must be coordinated to prevent conflicts and ensure that operations are performed correctly \cite{burns2009}.
+
+	\item \texttt{Files}: Files on a disk can be accessed by multiple processes. File locks or similar mechanisms are used to manage concurrent access, ensuring that read and write operations do not interfere with each other \cite{labrosse2002}.
+
+	\item \texttt{Communication Channels}: Pipes, message queues, and shared memory segments used for inter-process communication are shared resources that require careful management to avoid data races and ensure the integrity of the communicated data \cite{herlihy2008}
+\end{itemize}
+\subsection{Managing Shared Resources}
+Proper management of shared resources involves the use of synchronization mechanisms to coordinate access and ensure data consistency. Mutexes, semaphores, and condition variables are common tools used to control access to shared resources. Mutexes provide mutual exclusion, ensuring that only one thread can access the resource at a time. Semaphores can limit the number of threads accessing the resource simultaneously. Condition variables allow threads to wait for certain conditions to be met before proceeding, facilitating complex synchronization scenarios \cite{herlihy2008}.
 \section{Reduced Inter-Procedural Control Flow Graphs (RICFG)}
 Control Flow Graphs (CFG) are representations of all possible path through a programm or a function during its execution. An Inter-Procedural Control Flow Graph (ICFG) adds possible edges between multiple programms or functions to also show possible control flows between those. A Reduced Inter-Procedural Control Flow Graph (RICFG) is an optimized version of the ICFG which simplifys the the graph to only the necessary informations needed for the analysis \cite{engler2003}.
 
-
-A Control Flow Graph (CFG) is a representation of all paths that might be traversed through a program during its execution. In the context of inter-procedural analysis, an Inter-Procedural Control Flow Graph (ICFG) extends this concept by incorporating the control flow between different procedures or functions in a program. Reduced Inter-Procedural Control Flow Graphs (RIPCFG) are optimized versions of ICFGs, designed to simplify the analysis while preserving essential information \cite{engler2003}.
-
-There are multiple techniques to reduce the graph, such as node merging, edge contraction and eliminaition of non-important nodes, without losing any informations required for the analysis and to reduce the complexity of the RICFG. The reduction of the ICFG makes the analysis of large and complex software a lot more efficient. By minimizing the amount of data but retaining enough detail, RICFG are great to use for static analysis of data races. 
-
-RIPCFGs utilize various techniques such as node merging, edge contraction, and the elimination of non-essential nodes to reduce the complexity of the graph without losing critical control flow information. These reduction techniques make it feasible to analyze large and complex software systems, which would be computationally prohibitive with full ICFGs. By retaining enough detail, RIPCFGs facilitate accurate static analysis, including data flow analysis, control flow analysis, and the detection of potential data races and other concurrency issues. The reduced size and complexity result in more efficient analysis algorithms, enabling faster detection and resolution of issues in the software \cite{wang2020}.
-
-\subsection{Techniques for Constructing RICFGs}
+There are multiple techniques to reduce the graph, such as node merging, edge contraction and eliminaition of non-important nodes, without losing any informations required for the analysis and to reduce the complexity of the RICFG. The reduction of the ICFG makes the analysis of large and complex software a lot more efficient. By minimizing the amount of data but retaining enough detail, RICFG are great to use for static analysis of data races \cite{wang2020}.
 
 There are several techniques to construct a RICFG. Node merging is combining nodes that represent redundant control flow paths, to reduce the number of nodes in the graph. Edge contraction is simplifying the graph by reducing the amount of edges between nodes. It collapses edges, that do not significally affect the control flow of the graph. The elimination of nodes is the main tool used in this work to reduce the CFG. Eliminating nodes, which do not carry any essential information for the applied data analysis significally reduces the amount of data the algorithm has to analyze. Overall these techniques enhance the scalability of the static analysis and make it more practical to analyze more complex data \cite{muchnick1997}.
 
-Several techniques are employed to construct RIPCFGs effectively. Node merging involves combining nodes that represent similar or redundant control flow paths, reducing the overall number of nodes in the graph. Edge contraction simplifies the graph by collapsing edges that do not significantly affect the control flow, thereby minimizing the number of connections between nodes. The elimination of non-essential nodes focuses on removing nodes that do not contribute to the primary control flow, such as nodes representing trivial or inline functions. These techniques collectively enhance the scalability and efficiency of static analysis, making it practical to analyze complex software systems \cite{muchnick1997}.
-
-\subsection{Applications of RIPCFGs}
-
-RIPCFGs are widely used in various static analysis applications, including data flow analysis, control flow analysis, and the detection of concurrency issues such as data races and deadlocks. By providing a simplified yet accurate representation of the program's control flow, RIPCFGs enable efficient analysis of large codebases, facilitating the identification and resolution of potential issues early in the development process. Additionally, RIPCFGs are instrumental in optimizing compilers, where they assist in optimizing code by identifying redundant or inefficient paths and enabling more effective code generation strategies \cite{muchnick1997}.
 
 \section{Data Races}
 
-Data races can occur when two or more functions or threads access a shared resource concurrently and also one of those accesses has to be a write opperation. This can lead to unpredictable behavior and errors in the system. This makes the detection of data races a critical aspect of concurrent programming.
-
-Data races occur when two or more threads access shared data concurrently, and at least one of the accesses is a write. This condition can lead to unpredictable and erroneous behavior, making the detection and resolution of data races a critical aspect of concurrent programming \cite{flanagan2009}.
+Data races can occur when two or more functions or threads access a shared resource concurrently and also one of those accesses has to be a write opperation. This can lead to unpredictable behavior and errors in the system. This makes the detection of data races a critical aspect of concurrent programming \cite{flanagan2009}.
 
 Without proper synchronization a system with multiple threads or functions which use shared data lead to data races. The outcome of a program with data races is non-deterministic. The order of execution of operations can vary, leading to not reproducable or hard-to-reproduce bugs. 
 
-
-In systems where multiple threads execute without proper synchronization, data races arise from conflicting operations on shared data. The outcome of a program with data races is non-deterministic, as the order of execution and interleaving of operations can vary, leading to inconsistent results and hard-to-reproduce bugs.
-
 \subsection{Types of Data Races}
-There are primarily two types of data races. Two write operations lead to unpredictable data corruption since the value of the shared resource depends on the order of execution of the two write operations. Data races with one read operation and one write operation can cause faulse programm behavior since the data that is read can be inconsistent due to the possibility of the concurrent write operation.
+There are primarily two types of data races. Two write operations lead to unpredictable data corruption since the value of the shared resource depends on the order of execution of the two write operations. Data races with one read operation and one write operation can cause faulse programm behavior since the data that is read can be inconsistent due to the possibility of the concurrent write operation \cite{flanagan2009}.
 
 
-There are primarily two types of data races. Write-write races occur when multiple threads write to the same variable simultaneously, potentially causing data corruption as the final value of the variable depends on the order of writes, which is non-deterministic. Read-write races occur when one thread reads a variable while another thread writes to it concurrently, leading to the possibility of reading stale or inconsistent data, which can cause erroneous program behavior \cite{flanagan2009}.
 
 \subsection{Detection Techniques}
 
 Static analysis examines the code without executing it. Static analysis tools analyze the source code to detect data races by simulating different execution paths of the program. It can identify potential data races by examining the control flow  and data dependencies of shared data in the code. This enables early detection of possible issues.
-
-Various static and dynamic analysis techniques are used to detect data races. Static analysis involves examining the code without executing it. Tools such as RacerX \cite{engler2003} analyze the program's source code to detect race conditions and deadlocks by simulating different execution paths. Static analysis can identify potential data races by examining the control flow and data dependencies in the code, enabling early detection and resolution of issues.
-
-On the other hand there are dynamic analysis tools which monitors the program during execution to identify possible data races.
 
 Dynamic analysis, on the other hand, monitors the program during execution to identify potential race conditions. FastTrack \cite{flanagan2009} is a dynamic analysis tool that efficiently detects data races by maintaining a happens-before relationship among the threads' operations and checking for violations. Dynamic analysis provides a runtime perspective, capturing actual execution scenarios and detecting data races that may not be evident through static analysis alone.
 
@@ -123,20 +132,310 @@ Preventing data races requires careful design and implementation of concurrent p
 
 \section{Static Detection of Data Races in Interrupt-Driven Systems}
 
-In interrupt-driven systems, the asynchronous nature of interrupts and the concurrent execution of ISRs and the main program introduce significant challenges in ensuring data consistency and detecting data races. Static analysis techniques, particularly those using RIPCFGs, offer a promising approach to identifying potential data races without the need for exhaustive testing or runtime monitoring \cite{wang2020}.
+In interrupt-driven systems, the asynchronous nature of interrupts and the concurrent execution of ISRs and the main program introduce significant challenges in ensuring data consistency and detecting data races. Static analysis techniques, particularly those using RICFGs, offer a promising approach to identifying potential data races without the need for exhaustive testing or runtime monitoring \cite{wang2020}.
 
-The approach involves constructing RIPCFGs for the program, including both the main code and ISRs, capturing the control flow and potential interactions between them. By analyzing the RIPCFGs, paths where shared data is accessed concurrently without proper synchronization can be identified, indicating potential data races. Integrating the static analysis tool with the development workflow enables continuous detection and resolution of data races during the software development lifecycle, improving the reliability and correctness of interrupt-driven systems \cite{wang2020}.
+The approach involves constructing RICFGs for the program, including both the main code and ISRs, capturing the control flow and potential interactions between them. By analyzing the RICFGs, paths where shared data is accessed concurrently without proper synchronization can be identified, indicating potential data races. Integrating the static analysis tool with the development workflow enables continuous detection and resolution of data races during the software development lifecycle, improving the reliability and correctness of interrupt-driven systems \cite{wang2020}.
 
-\subsection{Methodology for Static Detection}
-
-The methodology for static detection of data races in interrupt-driven systems involves several key steps. First, the RIPCFGs are constructed for the entire program, including the main code and ISRs. This involves analyzing the control flow and identifying points where the main program and ISRs interact with shared data. Next, the RIPCFGs are analyzed to identify potential race conditions, focusing on paths where concurrent access to shared data may occur without proper synchronization. Finally, the analysis results are integrated with the development workflow, allowing developers to address identified race conditions early in the development process. This methodology ensures comprehensive coverage of potential race conditions and facilitates timely resolution of issues \cite{wang2020}.
+The methodology for static detection of data races in interrupt-driven systems involves several key steps. First, the RICFGs are constructed for the entire program, including the main code and ISRs. This involves analyzing the control flow and identifying points where the main program and ISRs interact with shared data. Next, the RICFGs are analyzed to identify potential race conditions, focusing on paths where concurrent access to shared data may occur without proper synchronization. Finally, the analysis results are integrated with the development workflow, allowing developers to address identified race conditions early in the development process. This methodology ensures comprehensive coverage of potential race conditions and facilitates timely resolution of issues \cite{wang2020}.
 
 
 
 
 
 \chapter{Implementation}
-3,5 Wochen
+\subsection*{Class BasicBlock}
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	class BasicBlock:
+	def __init__(self, function_name, number, shared_resources=[], successors=[], enable_disable_calls=[], code=[]):
+	self.function_name = function_name
+	self.number = number
+	self.shared_resources = shared_resources
+	self.successors = successors
+	self.enable_disable_calls = enable_disable_calls
+	self.code = code
+	
+	def __repr__(self):
+	return ("BasicBlock(function_name={}, number={}, shared_resources={}, "
+	"successors={}, enable_disable_calls={}, code={})".format(
+	self.function_name, self.number, self.shared_resources, 
+	[succ.number for succ in self.successors], self.enable_disable_calls, 
+	' '.join(self.code)))
+\end{lstlisting}
+
+The class \texttt{BasicBlock} represents a basic block in a control flow graph. Each block has the following attributes:
+\begin{itemize}
+	\item \texttt{function\_name}: The name of the function to which the block belongs.
+	\item \texttt{number}: The number of the basic block.
+	\item \texttt{shared\_resources}: A list of the shared resources used in the block.
+	\item \texttt{successors}: A list of the successor blocks.
+	\item \texttt{enable\_disable\_calls}: A list of calls to enable/disable ISRs within the block.
+	\item \texttt{code}: The lines of code of the block.
+\end{itemize}
+
+
+\subsection*{Function parse\_basic\_blocks}
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def parse_basic_blocks(file_path, shared_resource_names):
+	blocks = {}
+	current_function = None
+	
+	with open(file_path, 'r') as file:
+	lines = file.readlines()
+\end{lstlisting}
+
+The function \texttt{parse\_basic\_blocks} starts with the initialisation of a dictionary \texttt{blocks} and a variable \texttt{current\_function}. It opens the file and reads its lines into a list \texttt{lines}.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	bb_num = None
+	shared_resources = []
+	enable_disable_calls = []
+	code_lines = []
+	line_number = 0  
+\end{lstlisting}
+
+These variables are initialised to collect information on basic blocks: 
+\begin{itemize}
+	\item \texttt{bb\_num}: Number of the current basic block.
+	\item \texttt{shared\_resources}: List of shared resources in the current block.
+	\item \texttt{enable\_disable\_calls}: List of ISR activation/deactivation calls.
+	\item \texttt{code\_lines}: The lines of code of the current block.
+	\item \texttt{line\_number}: The current line number in the file.
+\end{itemize}
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	for line in lines:
+	line = line.strip()
+	line_number += 1
+	
+	func_match = re.match(r';; Function (.+?) \(', line)
+	if func_match:
+	if bb_num is not None and current_function is not None:
+	blocks[(current_function, bb_num)] = BasicBlock(
+	current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
+	current_function = func_match.group(1)
+	bb_num = None
+	continue
+\end{lstlisting}
+
+The loop runs through each line of the file, removes leading and trailing spaces and increments the line number. If a new function is recognised (by the pattern \texttt{;; Function ... (}), the current block is saved and the current function is updated.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	bb_match = re.match(r'<bb (\d+)>:', line)
+	if bb_match:
+	if bb_num is not None and current_function is not None:
+	blocks[(current_function, bb_num)] = BasicBlock(
+	current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
+	bb_num = int(bb_match.group(1))
+	shared_resources = []
+	enable_disable_calls = []
+	code_lines = []
+\end{lstlisting}
+
+If a new basic block number is detected (\texttt{<bb \(\d+\)>:}), the previous block is saved and the information for the new block is initialised.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	for resource_name in shared_resource_names:
+	if re.search(fr'\b{resource_name}\b', line):
+	if re.search(fr'\b{resource_name}\b\s*=', line):
+	shared_resources.append((resource_name, 'write', line_number))
+	else:
+	shared_resources.append((resource_name, 'read', line_number))
+	
+	if 'enable_isr' in line or 'disable_isr' in line:
+	enable_disable_calls.append((line.strip(), line_number))
+	
+	code_lines.append((line, line_number))
+\end{lstlisting}
+
+This section searches each line for shared resources and ISR activation/deactivation calls. Resources and calls found are added to the corresponding list and the current line is added to \texttt{code\_lines}.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	if bb_num is not None and current_function is not None:
+	blocks[(current_function, bb_num)] = BasicBlock(
+	current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
+\end{lstlisting}
+
+At the end of the loop, the last basic block is saved if there is still an open block.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	current_function = None
+	bb_num = None
+	for line in lines:
+	line = line.strip()
+	
+	func_match = re.match(r';; Function (.+?) \(', line)
+	if func_match:
+	current_function = func_match.group(1)
+	bb_num = None
+	continue
+	
+	if 'succs' in line:
+	succ_match = re.match(r';; (\d+) succs \{(.+?)\}', line)
+	if succ_match:
+	bb_num = int(succ_match.group(1))
+	succ_list = [int(succ.strip()) for succ in succ_match.group(2).split()]
+	if (current_function, bb_num) in blocks:
+	blocks[(current_function, bb_num)].successors = [
+	blocks[(current_function, succ)] for succ in succ_list if (current_function, succ) in blocks]
+	
+	return blocks
+\end{lstlisting}
+
+In a second pass through the lines, the successor blocks for each basic block are identified and linked accordingly. Finally, the function returns the \texttt{blocks} dictionary.
+
+\subsection*{Function track\_isr\_status}
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def track_isr_status(blocks):
+	isr_count = len(set(block.function_name for block in blocks.values() if re.search(r'isr[_]?\d+', block.function_name)))
+	return [0] * isr_count  
+\end{lstlisting}
+
+The function \texttt{track\_isr\_status} initialises the tracking of the ISR status. It returns a list of zeros whose length corresponds to the number of unique ISRs in the programme. This list is used to track the activation/deactivation status of each ISR.
+
+\subsection*{Function extract\_isr\_index}
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def extract_isr_index(function_name):
+	match = re.search(r'isr[_]?(\d+)', function_name)
+	if match:
+	return int(match.group(1)) - 1
+	return None
+\end{lstlisting}
+
+The function \texttt{extract\_isr\_index} extracts the index of an ISR from a function name that follows the pattern \texttt{isr\_\d+}. It returns the index of the ISR reduced by one to enable zero-based indexing.
+
+\subsection*{Function detect\_data\_races}
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def detect_data_races(blocks):
+	potential_data_races = []
+	resource_accesses = defaultdict(list)
+	isr_enabling_map = defaultdict(set)
+	
+	for block in blocks.values():
+	for call, line_number in block.enable_disable_calls:
+	if 'enable_isr' in call:
+	isr_idx_match = re.search(r'\((\d+)\)', call)
+	if isr_idx_match:
+	enabled_isr_idx = int(isr_idx_match.group(1)) - 1
+	enabler_isr = block.function_name
+	isr_enabling_map[enabler_isr].add(enabled_isr_idx)
+\end{lstlisting}
+
+The first part of the function \texttt{detect\_data\_races} runs through all blocks and collects information about ISR activations. This information is stored in the \texttt{isr\_enabling\_map}, which tracks the ISR activation relationships.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def process_block(block, current_isr_status):
+	for line, line_number in block.code:
+	if 'enable_isr' in line or 'disable_isr' in line:
+	isr_idx_match = re.search(r'\((\d+)\)', line)
+	if isr_idx_match:
+	isr_idx = int(isr_idx_match.group(1)) - 1  
+	if "disable_isr" in line:
+	if 0 <= isr_idx < len(current_isr_status):
+	current_isr_status[isr_idx] = 1
+	elif "enable_isr" in line:
+	if 0 <= isr_idx < len(current_isr_status):
+	current_isr_status[isr_idx] = 0
+	
+	for resource_name, access_type, res_line_number in block.shared_resources:
+	if res_line_number == line_number:
+	resource_accesses[resource_name].append((block.function_name, block.number, access_type, line_number, current_isr_status.copy()))
+\end{lstlisting}
+
+The \texttt{process\_block} function processes a single block and updates the current ISR status based on \texttt{enable\_isr} and \texttt{disable\_isr} calls. Accesses to shared resources are stored in \texttt{resource\_accesses}.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def dfs(block, visited_blocks, current_isr_status, path):
+	if (block.function_name, block.number) in visited_blocks:
+	return
+	visited_blocks.add((block.function_name, block.number))
+	path.append((block.function_name, block.number))
+	
+	process_block(block, current_isr_status)
+	
+	if not block.successors:
+	pass
+	else:
+	for successor in block.successors:
+	dfs(successor, set(visited_blocks), current_isr_status.copy(), path.copy())
+\end{lstlisting}
+
+The function \texttt{dfs} (Depth-First Search) runs through the control flow graph and tracks the ISR status. Each block is processed and the ISR status and accesses to resources are updated.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	for (func_name, bb_num), block in blocks.items():
+	if bb_num == 2:  
+	initial_isr_status = track_isr_status(blocks).copy()
+	process_block(block, initial_isr_status)
+	for successor in block.successors:
+	dfs(successor, set(), initial_isr_status.copy(), [(func_name, bb_num)])
+\end{lstlisting}
+
+This section initialises the depth search for basic blocks with the number 2 and starts processing and running through the successor blocks.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def check_for_data_races():
+	for resource, accesses in resource_accesses.items():
+	for i, (func1, bb_num1, access_type1, line_number1, isr_status1) in enumerate(accesses):
+	for j, (func2, bb_num2, access_type2, line_number2, isr_status2) in enumerate(accesses):
+	if i >= j:
+	continue  
+	if func1 != func2 and (access_type1 == "write" or access_type2 == "write"):
+	potential_data_races.append((resource, (func1, bb_num1, access_type1, line_number1, isr_status1),
+	(func2, bb_num2, access_type2, line_number2, isr_status2)))
+\end{lstlisting}
+
+The function \texttt{check\_for\_data\_races} identifies potential data races by comparing pairs of resource accesses. If two accesses to the same resource originate from different functions and at least one of them is a write access, a potential data race is identified.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	check_for_data_races()
+\end{lstlisting}
+
+Calling \texttt{check\_for\_data\_races} performs a check of the potential data races.
+
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	def filter_data_races(potential_data_races):
+	filtered_data_races = []
+	for resource, access1, access2 in potential_data_races:
+	func1, bb_num1, access_type1, line_number1, isr_status1 = access1
+	func2, bb_num2, access_type2, line_number2, isr_status2 = access2
+	
+	def is_isr_disabled(isr_status, func_name):
+	isr_idx = extract_isr_index(func_name)
+	if isr_idx is not None and isr_idx < len(isr_status):
+	return isr_status[isr_idx] == 1
+	return False
+	
+	def is_isr_enabled_by_another(isr_status, func_name):
+	isr_idx = extract_isr_index(func_name)
+	if isr_idx is not None:
+	for enabler_isr, enabled_isrs in isr_enabling_map.items():
+	enabler_idx = extract_isr_index(enabler_isr)
+	if enabler_idx is not None and not is_isr_disabled(isr_status, enabler_isr):
+	if isr_idx in enabled_isrs:
+	return True
+	return False
+	
+	relevant_isr_disabled1 = is_isr_disabled(isr_status1, func2) and not is_isr_enabled_by_another(isr_status1, func2)
+	relevant_isr_disabled2 = is_isr_disabled(isr_status2, func1) and not is_isr_enabled_by_another(isr_status2, func1)
+	
+	if not (relevant_isr_disabled1 or relevant_isr_disabled2):
+	filtered_data_races.append((resource, access1, access2))
+	
+	return filtered_data_races
+	
+	filtered_data_races = filter_data_races(potential_data_races)
+	
+	return filtered_data_races
+\end{lstlisting}
+
+The function \texttt{filter\_data\_races} filters false positives from the list of potential data races. It checks the ISR status during resource accesses and only confirms data races if relevant ISRs were not deactivated at access time or activated by another function. At the end, \texttt{detect\_data\_races} returns the filtered data races.
+
+
 \chapter{Evaluation}
 1,5 Woche 
 \chapter{Conclusion}
@@ -176,5 +475,224 @@ A Deployable Sampling Strategy for Data Race Detection by Yan Cai1, Jian Zhang, 
 	\bibitem{herlihy2008}
 	Herlihy, M., \& Shavit, N. (2008). The Art of Multiprocessor Programming. Morgan Kaufmann.
 \end{thebibliography}
-
+\chapter{Attachments}
+\begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]
+	class BasicBlock:
+	def __init__(function_name, number, shared_resources=[], successors=[], enable_disable_calls=[], code=[]):
+	self.function_name = function_name
+	self.number = number
+	self.shared_resources = shared_resources
+	self.successors = successors
+	self.enable_disable_calls = enable_disable_calls
+	self.code = code
+	
+	def __repr__():
+	return ("BasicBlock(function_name={}, number={}, shared_resources={}, "
+	"successors={}, enable_disable_calls={}, code={})".format(
+	self.function_name, self.number, self.shared_resources, 
+	[succ.number for succ in self.successors], self.enable_disable_calls, 
+	' '.join(self.code)))
+	
+	def parse_basic_blocks(file_path, shared_resource_names):
+	blocks = {}
+	current_function = None
+	
+	with open(file_path, 'r') as file:
+	lines = file.readlines()
+	
+	bb_num = None
+	shared_resources = []
+	enable_disable_calls = []
+	code_lines = []
+	line_number = 0  
+	
+	for line in lines:
+	line = line.strip()
+	line_number += 1
+	
+	func_match = re.match(r';; Function (.+?) \(', line)
+	if func_match:
+	if bb_num is not None and current_function is not None:
+	blocks[(current_function, bb_num)] = BasicBlock(
+	current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
+	current_function = func_match.group(1)
+	bb_num = None
+	continue
+	
+	bb_match = re.match(r'<bb (\d+)>:', line)
+	if bb_match:
+	if bb_num is not None and current_function is not None:
+	blocks[(current_function, bb_num)] = BasicBlock(
+	current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
+	bb_num = int(bb_match.group(1))
+	shared_resources = []
+	enable_disable_calls = []
+	code_lines = []
+	
+	for resource_name in shared_resource_names:
+	if re.search(fr'\b{resource_name}\b', line):
+	if re.search(fr'\b{resource_name}\b\s*=', line):
+	shared_resources.append((resource_name, 'write', line_number))
+	else:
+	shared_resources.append((resource_name, 'read', line_number))
+	
+	if 'enable_isr' in line or 'disable_isr' in line:
+	enable_disable_calls.append((line.strip(), line_number))
+	
+	code_lines.append((line, line_number))
+	
+	if bb_num is not None and current_function is not None:
+	blocks[(current_function, bb_num)] = BasicBlock(
+	current_function, bb_num, shared_resources, [], enable_disable_calls, code_lines)
+	
+	current_function = None
+	bb_num = None
+	for line in lines:
+	line = line.strip()
+	
+	func_match = re.match(r';; Function (.+?) \(', line)
+	if func_match:
+	current_function = func_match.group(1)
+	bb_num = None
+	continue
+	
+	if 'succs' in line:
+	succ_match = re.match(r';; (\d+) succs \{(.+?)\}', line)
+	if succ_match:
+	bb_num = int(succ_match.group(1))
+	succ_list = [int(succ.strip()) for succ in succ_match.group(2).split()]
+	if (current_function, bb_num) in blocks:
+	blocks[(current_function, bb_num)].successors = [
+	blocks[(current_function, succ)] for succ in succ_list if (current_function, succ) in blocks]
+	
+	return blocks
+	
+	def track_isr_status(blocks):
+	isr_count = len(set(block.function_name for block in blocks.values() if re.search(r'isr[_]?\d+', block.function_name)))
+	return [0] * isr_count  
+	
+	def extract_isr_index(function_name):
+	match = re.search(r'isr[_]?(\d+)', function_name)
+	if match:
+	return int(match.group(1)) - 1
+	return None
+	
+	def detect_data_races(blocks):
+	potential_data_races = []
+	resource_accesses = defaultdict(list)
+	isr_enabling_map = defaultdict(set)
+	
+	for block in blocks.values():
+	for call, line_number in block.enable_disable_calls:
+	if 'enable_isr' in call:
+	isr_idx_match = re.search(r'\((\d+)\)', call)
+	if isr_idx_match:
+	enabled_isr_idx = int(isr_idx_match.group(1)) - 1
+	enabler_isr = block.function_name
+	isr_enabling_map[enabler_isr].add(enabled_isr_idx)
+	
+	def process_block(block, current_isr_status):
+	for line, line_number in block.code:
+	if 'enable_isr' in line or 'disable_isr' in line:
+	isr_idx_match = re.search(r'\((\d+)\)', line)
+	if isr_idx_match:
+	isr_idx = int(isr_idx_match.group(1)) - 1  
+	if "disable_isr" in line:
+	if 0 <= isr_idx < len(current_isr_status):
+	current_isr_status[isr_idx] = 1
+	elif "enable_isr" in line:
+	if 0 <= isr_idx < len(current_isr_status):
+	current_isr_status[isr_idx] = 0
+	
+	
+	for resource_name, access_type, res_line_number in block.shared_resources:
+	if res_line_number == line_number:
+	resource_accesses[resource_name].append((block.function_name, block.number, access_type, line_number, current_isr_status.copy()))
+	
+	def dfs(block, visited_blocks, current_isr_status, path):
+	if (block.function_name, block.number) in visited_blocks:
+	return
+	visited_blocks.add((block.function_name, block.number))
+	path.append((block.function_name, block.number))
+	
+	process_block(block, current_isr_status)
+	
+	if not block.successors:
+	pass
+	else:
+	for successor in block.successors:
+	dfs(successor, set(visited_blocks), current_isr_status.copy(), path.copy())
+	
+	
+	for (func_name, bb_num), block in blocks.items():
+	if bb_num == 2:  
+	initial_isr_status = track_isr_status(blocks).copy()
+	process_block(block, initial_isr_status)
+	for successor in block.successors:
+	dfs(successor, set(), initial_isr_status.copy(), [(func_name, bb_num)])
+	
+	
+	def check_for_data_races():
+	for resource, accesses in resource_accesses.items():
+	for i, (func1, bb_num1, access_type1, line_number1, isr_status1) in enumerate(accesses):
+	for j, (func2, bb_num2, access_type2, line_number2, isr_status2) in enumerate(accesses):
+	if i >= j:
+	continue  
+	if func1 != func2 and (access_type1 == "write" or access_type2 == "write"):
+	potential_data_races.append((resource, (func1, bb_num1, access_type1, line_number1, isr_status1),
+	(func2, bb_num2, access_type2, line_number2, isr_status2)))
+	
+	check_for_data_races()
+	
+	
+	def filter_data_races(potential_data_races):
+	filtered_data_races = []
+	for resource, access1, access2 in potential_data_races:
+	func1, bb_num1, access_type1, line_number1, isr_status1 = access1
+	func2, bb_num2, access_type2, line_number2, isr_status2 = access2
+	
+	def is_isr_disabled(isr_status, func_name):
+	isr_idx = extract_isr_index(func_name)
+	if isr_idx is not None and isr_idx < len(isr_status):
+	return isr_status[isr_idx] == 1
+	return False
+	
+	def is_isr_enabled_by_another(isr_status, func_name):
+	isr_idx = extract_isr_index(func_name)
+	if isr_idx is not None:
+	for enabler_isr, enabled_isrs in isr_enabling_map.items():
+	enabler_idx = extract_isr_index(enabler_isr)
+	if enabler_idx is not None and not is_isr_disabled(isr_status, enabler_isr):
+	if isr_idx in enabled_isrs:
+	return True
+	return False
+	
+	relevant_isr_disabled1 = is_isr_disabled(isr_status1, func2) and not is_isr_enabled_by_another(isr_status1, func2)
+	relevant_isr_disabled2 = is_isr_disabled(isr_status2, func1) and not is_isr_enabled_by_another(isr_status2, func1)
+	
+	if not (relevant_isr_disabled1 or relevant_isr_disabled2):
+	filtered_data_races.append((resource, access1, access2))
+	
+	return filtered_data_races
+	
+	filtered_data_races = filter_data_races(potential_data_races)
+	
+	return filtered_data_races
+	
+	
+	shared_resource_input = input("Enter the names of shared resources, separated by commas: ")
+	shared_resource_names = [name.strip() for name in shared_resource_input.split(',')]
+	
+	file_path = input("Enter the file path: ").strip()
+	blocks = parse_basic_blocks(file_path, shared_resource_names)
+	
+	data_races = detect_data_races(blocks)
+	
+	print("Detected Data Races:")
+	for resource, access1, access2 in data_races:
+	print(f"Resource: {resource}")
+	print(f"  Access 1: Function {access1[0]} (BB {access1[1]}), {access1[2]}, Line {access1[3]}, ISR Status: {access1[4]}")
+	print(f"  Access 2: Function {access2[0]} (BB {access2[1]}), {access2[2]}, Line {access2[3]}, ISR Status: {access2[4]}")
+	print()
+\end{lstlisting}
 \end{document}
