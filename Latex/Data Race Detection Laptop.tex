@@ -95,6 +95,7 @@ Shared resources are data or hardware components that can be accessed by multipl
 \end{itemize}
 \subsection{Managing Shared Resources}
 Proper management of shared resources involves the use of synchronization mechanisms to coordinate access and ensure data consistency. Mutexes, semaphores, and condition variables are common tools used to control access to shared resources. Mutexes provide mutual exclusion, ensuring that only one thread can access the resource at a time. Semaphores can limit the number of threads accessing the resource simultaneously. Condition variables allow threads to wait for certain conditions to be met before proceeding, facilitating complex synchronization scenarios \cite{herlihy2008}.
+
 \section{Reduced Inter-Procedural Control Flow Graphs (RICFG)}
 Control Flow Graphs (CFG) are representations of all possible path through a programm or a function during its execution. An Inter-Procedural Control Flow Graph (ICFG) adds possible edges between multiple programms or functions to also show possible control flows between those. A Reduced Inter-Procedural Control Flow Graph (RICFG) is an optimized version of the ICFG which simplifys the the graph to only the necessary informations needed for the analysis \cite{engler2003}.
 
