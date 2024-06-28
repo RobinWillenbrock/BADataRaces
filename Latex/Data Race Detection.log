@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  22 JUN 2024 18:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  26 JUN 2024 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -9,47 +9,47 @@ L3 programming layer <2024-03-14>
 (stsreprt.cls
 Document Class: stsreprt 
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbook.cls
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbook.cls
 Document Class: scrbook 2023/07/07 v3.41 KOMA-Script document class (book)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.st
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.st
 y
 Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
 Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.st
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.st
 y
 Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-ho
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-ho
 ok.sty
 Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
 
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
 Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
 Already applied: [0000/00/00] Usage of raw or classic option list on input line
  368.
 ))
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.st
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.st
 y
 Package: tocbasic 2023/07/07 v3.41 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip48
@@ -62,12 +62,12 @@ Class scrbook Info: File `scrsize11pt.clo' used instead of
 (scrbook)           file `scrsize11.clo' to setup font sizes on input line 2691
 .
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrsize11pt
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrsize11pt
 .clo
 File: scrsize11pt.clo 2023/07/07 v3.41 KOMA-Script font size class option (11pt
 )
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\typearea.st
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\typearea.st
 y
 Package: typearea 2023/07/07 v3.41 KOMA-Script package (type area)
 \ta@bcor=\skip49
@@ -148,12 +148,12 @@ Package tocbasic Info: omitting babel extension for `lot'
 Class scrbook Info: Redefining `\numberline' on input line 7430.
 \bibindent=\dimen140
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer-sc
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer-sc
 rpage.sty
 Package: scrlayer-scrpage 2023/07/07 v3.41 KOMA-Script package (end user interf
 ace for scrlayer)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer.st
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlayer.st
 y
 Package: scrlayer 2023/07/07 v3.41 KOMA-Script package (defining layers and pag
 e styles)
@@ -167,30 +167,30 @@ Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
 1: chapter
 1: chapter
 1: section
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
 fg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-) (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 
@@ -207,7 +207,7 @@ LaTeX has been asked to set an option called 'fancyheadings' but the package
 
 
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -224,15 +224,110 @@ Package: titlepage 2013/08/06 v0.4d KOMA presents the title page project
 ) (title-TUHH-STS.def
 File: title-TUHH-STS.def 2013/10/25 v0.1 KOMA presents the title page project 
 ))
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count199
+\lst@gtempboxa=\box54
+\lst@token=\toks20
+\lst@length=\count266
+\lst@currlwidth=\dimen143
+\lst@column=\count267
+\lst@pos=\count268
+\lst@lostspace=\dimen144
+\lst@width=\dimen145
+\lst@newlines=\count269
+\lst@lineno=\count270
+\lst@maxwidth=\dimen146
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/03/11 1.10a (Carsten Heinz)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/03/11 1.10a (Carsten Heinz)
+\c@lstnumber=\count271
+\lst@skipnumbers=\count272
+\lst@framebox=\box55
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2024/03/11 1.10a listings configuration
+))
+Package: listings 2024/03/11 1.10a (Carsten Heinz)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip65
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen147
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen148
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count273
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count274
+\leftroot@=\count275
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count276
+\DOTSCASE@=\count277
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box56
+\strutbox@=\box57
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen149
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count278
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count279
+\dotsspace@=\muskip16
+\c@parentequation=\count280
+\dspbrk@lvl=\count281
+\tag@help=\toks22
+\row@=\count282
+\column@=\count283
+\maxfields@=\count284
+\andhelp@=\toks23
+\eqnshift@=\dimen150
+\alignsep@=\dimen151
+\tagshift@=\dimen152
+\tagwidth@=\dimen153
+\totwidth@=\dimen154
+\lineht@=\dimen155
+\@envbody=\toks24
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -267,17 +362,427 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 45
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/03/11 1.10a listings language file
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+y
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-common.tex
+\pgfutil@everybye=\toks26
+\pgfutil@tempdima=\dimen156
+\pgfutil@tempdimb=\dimen157
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+-latex.def
+\pgfutil@abb=\box58
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+code.tex
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s.code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+libraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks29
+))
+\pgf@x=\dimen158
+\pgf@y=\dimen159
+\pgf@xa=\dimen160
+\pgf@ya=\dimen161
+\pgf@xb=\dimen162
+\pgf@yb=\dimen163
+\pgf@xc=\dimen164
+\pgf@yc=\dimen165
+\pgf@xd=\dimen166
+\pgf@yd=\dimen167
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count285
+\c@pgf@countb=\count286
+\c@pgf@countc=\count287
+\c@pgf@countd=\count288
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count289
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+fg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-pdftex.def
+File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+s-common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+ssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count290
+\pgfsyssoftpath@bigbuffer@items=\count291
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+sprotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+e.code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+r.code.tex
+\pgfmath@dimen=\dimen168
+\pgfmath@count=\count292
+\pgfmath@box=\box59
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.basic.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.trigonometric.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.random.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.comparison.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.base.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.round.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.misc.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+ions.integerarithmetics.code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+code.tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+.code.tex
+\c@pgfmathroundto@lastzeros=\count293
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+tex)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epoints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen169
+\pgf@picmaxx=\dimen170
+\pgf@picminy=\dimen171
+\pgf@picmaxy=\dimen172
+\pgf@pathminx=\dimen173
+\pgf@pathmaxx=\dimen174
+\pgf@pathminy=\dimen175
+\pgf@pathmaxy=\dimen176
+\pgf@xx=\dimen177
+\pgf@xy=\dimen178
+\pgf@yx=\dimen179
+\pgf@yy=\dimen180
+\pgf@zx=\dimen181
+\pgf@zy=\dimen182
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen183
+\pgf@path@lasty=\dimen184
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen185
+\pgf@shorten@start@additional=\dimen186
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+escopes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box60
+\pgf@hbox=\box61
+\pgf@layerbox@main=\box62
+\pgf@picture@serial@count=\count294
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+egraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen187
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen188
+\pgf@pt@y=\dimen189
+\pgf@pt@temp=\dimen190
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+equick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eobjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+earrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen191
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eshade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen192
+\pgf@sys@shading@range@num=\count295
+\pgf@shadingcount=\count296
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eimage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+eexternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box63
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+elayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+etransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+epatterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+erdf.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+shapes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box64
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+plot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen193
+\pgf@nodesepend=\dimen194
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+mp-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+y
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+ty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+.code.tex))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+.tex))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+code.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen195
+\pgffor@skip=\dimen196
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z\tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count297
+\pgfplotmarksize=\dimen197
+)
+\tikz@lastx=\dimen198
+\tikz@lasty=\dimen199
+\tikz@lastxsaved=\dimen256
+\tikz@lastysaved=\dimen257
+\tikz@lastmovetox=\dimen258
+\tikz@lastmovetoy=\dimen259
+\tikzleveldistance=\dimen260
+\tikzsiblingdistance=\dimen261
+\tikz@figbox=\box65
+\tikz@figbox@bg=\box66
+\tikz@tempbox=\box67
+\tikz@tempbox@bg=\box68
+\tikztreelevel=\count298
+\tikznumberofchildren=\count299
+\tikznumberofcurrentchild=\count300
+\tikz@fig@count=\count301
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+matrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count302
+\pgfmatrixcurrentcolumn=\count303
+\pgf@matrix@numberofcolumns=\count304
+)
+\tikz@expandcount=\count305
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+aryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen262
+))
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen263
+\captionmargin=\dimen264
+\caption@leftmargin=\dimen265
+\caption@rightmargin=\dimen266
+\caption@width=\dimen267
+\caption@indent=\dimen268
+\caption@parindent=\dimen269
+\caption@hangindent=\dimen270
+Package caption Info: KOMA-Script document class detected.
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-koma.st
+o
+File: caption-koma.sto 2023/09/08 v2.0e Adaption of the caption package to the 
+KOMA-Script document classes (AR)
+))
+\c@caption@flags=\count306
+\c@continuedfloat=\count307
+Package caption Info: listings package is loaded.
+Package caption Info: KOMA-Script scrextend package detected.
+\caption@addmargin@hsize=\dimen271
+\caption@addmargin@linewidth=\dimen272
+) (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count308
+\float@exts=\toks38
+\float@box=\box69
+\@float@everytoks=\toks39
+\@floatcapt=\box70
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm2e
+.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count309
+ (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip68
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count310
+) (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip69
+\skiplinenumber=\skip70
+\skiprule=\skip71
+\skiphlne=\skip72
+\skiptext=\skip73
+\skiplength=\skip74
+\algomargin=\skip75
+\skipalgocfslide=\skip76
+\algowidth=\dimen273
+\inoutsize=\dimen274
+\inoutindent=\dimen275
+\interspacetitleruled=\dimen276
+\interspacealgoruled=\dimen277
+\interspacetitleboxruled=\dimen278
+\algocf@ruledwidth=\skip77
+\algocf@inoutbox=\box71
+\algocf@inputbox=\box72
+\AlCapSkip=\skip78
+\AlCapHSkip=\skip79
+\algoskipindent=\skip80
+\algocf@nlbox=\box73
+\algocf@hangingbox=\box74
+\algocf@untilbox=\box75
+\algocf@skipuntil=\skip81
+\algocf@capbox=\box76
+\algocf@lcaptionbox=\skip82
+\algoheightruledefault=\skip83
+\algoheightrule=\skip84
+\algotitleheightruledefault=\skip85
+\algotitleheightrule=\skip86
+\c@algocfline=\count311
+\c@algocfproc=\count312
+\c@algocf=\count313
+\algocf@algoframe=\box77
+\algocf@algobox=\box78
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 74
 .
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count199
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count314
+\l__pdf_internal_box=\box79
 )
 
 LaTeX Warning: Unused global option(s):
@@ -286,180 +791,202 @@ LaTeX Warning: Unused global option(s):
 (Data Race Detection.aux)
 \openout1 = `"Data Race Detection.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-Package scrbase Info: activating english \partname on input line 45.
-Package scrbase Info: activating english \chaptername on input line 45.
-Package scrbase Info: activating english \appendixname on input line 45.
-Package scrbase Info: activating english \figurename on input line 45.
-Package scrbase Info: activating english \tablename on input line 45.
-Package scrbase Info: activating english \contentsname on input line 45.
-Package scrbase Info: activating english \listfigurename on input line 45.
-Package scrbase Info: activating english \listtablename on input line 45.
-Package scrbase Info: activating english \bibname on input line 45.
-Package scrbase Info: activating english \indexname on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+Package scrbase Info: activating english \partname on input line 74.
+Package scrbase Info: activating english \chaptername on input line 74.
+Package scrbase Info: activating english \appendixname on input line 74.
+Package scrbase Info: activating english \figurename on input line 74.
+Package scrbase Info: activating english \tablename on input line 74.
+Package scrbase Info: activating english \contentsname on input line 74.
+Package scrbase Info: activating english \listfigurename on input line 74.
+Package scrbase Info: activating english \listtablename on input line 74.
+Package scrbase Info: activating english \bibname on input line 74.
+Package scrbase Info: activating english \indexname on input line 74.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count266
-\scratchdimen=\dimen143
-\scratchbox=\box55
-\nofMPsegments=\count267
-\nofMParguments=\count268
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count269
-\MPscratchDim=\dimen144
-\MPnumerator=\count270
-\makeMPintoPDFobject=\count271
-\everyMPtoPDFconversion=\toks21
+\scratchcounter=\count315
+\scratchdimen=\dimen279
+\scratchbox=\box80
+\nofMPsegments=\count316
+\nofMParguments=\count317
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count318
+\MPscratchDim=\dimen280
+\MPnumerator=\count319
+\makeMPintoPDFobject=\count320
+\everyMPtoPDFconversion=\toks41
 )
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package scrbase Info: activating english \projectpapername on input line 45.
-Package scrbase Info: activating english \seminarpapername on input line 45.
-Package scrbase Info: activating english \studentresearchname on input line 45.
+Package scrbase Info: activating english \projectpapername on input line 74.
+Package scrbase Info: activating english \seminarpapername on input line 74.
+Package scrbase Info: activating english \studentresearchname on input line 74.
 
-Package scrbase Info: activating english \diplomathesisname on input line 45.
-Package scrbase Info: activating english \degreethesisname on input line 45.
-Package scrbase Info: activating english \masterthesisname on input line 45.
-Package scrbase Info: activating english \bachelorthesisname on input line 45.
-Package scrbase Info: activating english \ordinal on input line 45.
-Package scrbase Info: activating english \presentedbyname on input line 45.
-Package scrbase Info: activating english \advisorname on input line 45.
-Package scrbase Info: activating english \thename on input line 45.
-Package scrbase Info: activating english \ofthename on input line 45.
-Package scrbase Info: activating english \fromname on input line 45.
-Package scrbase Info: activating english \fromplacename on input line 45.
-Package scrbase Info: activating english \refereename on input line 45.
+Package scrbase Info: activating english \diplomathesisname on input line 74.
+Package scrbase Info: activating english \degreethesisname on input line 74.
+Package scrbase Info: activating english \masterthesisname on input line 74.
+Package scrbase Info: activating english \bachelorthesisname on input line 74.
+Package scrbase Info: activating english \ordinal on input line 74.
+Package scrbase Info: activating english \presentedbyname on input line 74.
+Package scrbase Info: activating english \advisorname on input line 74.
+Package scrbase Info: activating english \thename on input line 74.
+Package scrbase Info: activating english \ofthename on input line 74.
+Package scrbase Info: activating english \fromname on input line 74.
+Package scrbase Info: activating english \fromplacename on input line 74.
+Package scrbase Info: activating english \refereename on input line 74.
 Package scrbase Info: activating english \oralexaminationdatename on input line
- 45.
-Package scrbase Info: activating english \durationname on input line 45.
+ 74.
+Package scrbase Info: activating english \durationname on input line 74.
 Package scrbase Info: activating english \matriculationnumbername on input line
- 45.
-Package scrbase Info: activating english \coursename on input line 45.
-Package scrbase Info: activating english \companyname on input line 45.
-Package scrbase Info: activating english \examinationname on input line 45.
+ 74.
+Package scrbase Info: activating english \coursename on input line 74.
+Package scrbase Info: activating english \companyname on input line 74.
+Package scrbase Info: activating english \examinationname on input line 74.
+\c@lstlisting=\count321
+Package tocbasic Info: omitting babel extension for `lol'
+(tocbasic)             because of missing \bbl@set@language on input line 74.
+\scr@dte@lstlisting@maxnumwidth=\skip87
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: End \AtBeginDocument code.
 Package titlepage Info: leaving not defined pre-title page empty on input line 
-48.
+77.
 Package titlepage Info: leaving not defined back of pre-title page empty on inp
-ut line 48.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 4
-8.
- (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
+ut line 77.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
+7.
+ (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<logo/logo_tuhh.png, id=1, 632.3625pt x 445.665pt>
+<logo/logo_tuhh.png, id=4, 632.3625pt x 445.665pt>
 File: logo/logo_tuhh.png Graphic file (type png)
 <use logo/logo_tuhh.png>
-Package pdftex.def Info: logo/logo_tuhh.png  used on input line 48.
+Package pdftex.def Info: logo/logo_tuhh.png  used on input line 77.
 (pdftex.def)             Requested size: 65.43994pt x 45.52115pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-8.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+7.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-8.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+7.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-48.
+77.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-48.
+77.
 
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 48.
+(Font)              <14.4> on input line 77.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 48.
+(Font)              <10> on input line 77.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 48.
+(Font)              <7> on input line 77.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 48.
+(Font)              <10.95> on input line 77.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 48.
+(Font)              <8> on input line 77.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 48.
-<logo/logo_sts.png, id=3, 252.2223pt x 271.2534pt>
+(Font)              <6> on input line 77.
+<logo/logo_sts.png, id=6, 252.2223pt x 271.2534pt>
 File: logo/logo_sts.png Graphic file (type png)
 <use logo/logo_sts.png>
-Package pdftex.def Info: logo/logo_sts.png  used on input line 48.
+Package pdftex.def Info: logo/logo_sts.png  used on input line 77.
 (pdftex.def)             Requested size: 60.85016pt x 65.44133pt.
  [1
 
 
 
 
-{C:/Users/rwill/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/rwil
-l/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./logo/logo_tuhh
+{C:/Users/robin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/robi
+n/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./logo/logo_tuhh
 .png> <./logo/logo_sts.png>]
 Package titlepage Info: leaving not defined back of main-title page empty on in
-put line 48.
+put line 77.
 Package titlepage Info: leaving not defined post-title page empty on input line
- 48.
+ 77.
 Package titlepage Info: leaving not defined back of post-title page empty on in
-put line 48.
+put line 77.
  [2
 
 
 ] (Data Race Detection.toc)
-\tf@toc=\write3
-\openout3 = `"Data Race Detection.toc"'.
+\tf@toc=\write4
+\openout4 = `"Data Race Detection.toc"'.
 
-<logo/logo_sts_letters.png, id=17, 177.0615pt x 79.9788pt>
+<logo/logo_sts_letters.png, id=20, 177.0615pt x 79.9788pt>
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 49.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 78.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [3 <./logo/logo_sts_letters.png>] [4
 
 
 ] (Data Race Detection.lof)
-\tf@lof=\write4
-\openout4 = `"Data Race Detection.lof"'.
+\tf@lof=\write5
+\openout5 = `"Data Race Detection.lof"'.
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 50.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 79.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [5] [6
 
 
 ]
 chapter 1.
+
+Class scrbook Warning: \float@addtolists detected!
+(scrbook)              Implementation of \float@addtolist became
+(scrbook)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrbook)              has been replaced by several more flexible
+(scrbook)              features of package `tocbasic`.
+(scrbook)              Since Version 3.12 support for deprecated
+(scrbook)              \float@addtolist interface has been
+(scrbook)              restricted to only some of the KOMA-Script
+(scrbook)              features and been removed from others.
+(scrbook)              Loading of package `scrhack' may help to
+(scrbook)              avoid this warning, if you are using a
+(scrbook)              a package that still implements the
+(scrbook)              deprecated \float@addtolist interface.
+
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 55.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 84.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 [1
 
@@ -469,96 +996,175 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 55.
 
 ]
 chapter 2.
+
+Underfull \vbox (badness 2384) has occurred while \output is active []
+
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 72.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 114.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[3]
+ [3]
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 91.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 125.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [4]
+
+[4]
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 110.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 168.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [5]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+44.
+ (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \vbox (badness 1721) has occurred while \output is active []
+
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 121.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 257.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [6]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
+68.
+
+(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 275.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [7{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.e
+nc}{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 332.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [8]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 338.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+
+[9]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 365.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [10{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
+enc}{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+]
 chapter 3.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 123.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 366.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[7
+[11
 
 
-] [8
+] [12
 
 
 ]
 chapter 4.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 125.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 367.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[9] [10
+[13] [14
 
 
 ]
 chapter 5.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 131.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 370.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[11] [12
+[15] [16
+
+
+]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 396.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [17
+
+
+] [18
 
 
 ]
 chapter without number
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 137.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 445.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[13
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-] [14
-
-
-]
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 163.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 494.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [15] (Data Race Detection.aux)
+ [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 545.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [21]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 591.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [22]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 616.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+
+[23] (Data Race Detection.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 7374 strings out of 474424
- 173654 string characters out of 5741739
- 1938496 words of memory out of 5000000
- 29656 multiletter control sequences out of 15000+600000
- 611973 words of font info for 68 fonts, out of 8000000 for 9000
+ 23779 strings out of 474423
+ 509242 string characters out of 5741718
+ 2274496 words of memory out of 5000000
+ 45764 multiletter control sequences out of 15000+600000
+ 633485 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,26n,121p,10919b,715s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
-><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb
-><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb
-><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb
-><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.p
-fb><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.
-pfb>
-Output written on "Data Race Detection.pdf" (21 pages, 279017 bytes).
+ 122i,27n,121p,10919b,2325s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
+b><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb
+><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pf
+b><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
+b><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
+><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
+<C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C
+:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C
+:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C
+:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C
+:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C
+:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+<C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb
+><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
+><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb
+><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
+
+Output written on "Data Race Detection.pdf" (29 pages, 493429 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 196 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
