@@ -2,16 +2,18 @@
 \contentsline {chapter}{\numberline {2}Background}{3}{}%
 \contentsline {section}{\numberline {2.1}Interrupt-Driven Systems}{3}{}%
 \contentsline {section}{\numberline {2.2}Shared Resources}{4}{}%
-\contentsline {section}{\numberline {2.3}Reduced Inter-Procedural Control Flow Graphs (RICFG)}{4}{}%
-\contentsline {section}{\numberline {2.4}Data Races}{6}{}%
-\contentsline {subsection}{\numberline {2.4.1}Detection Techniques}{7}{}%
-\contentsline {subsubsection}{\nonumberline Static Data Race Detection \cite {wang2020}}{7}{}%
-\contentsline {subsubsection}{\nonumberline Dynamic Data Race Detection \cite {flanagan2009}}{8}{}%
-\contentsline {subsection}{\numberline {2.4.2}Strategies for Preventing Data Races}{8}{}%
-\contentsline {section}{\numberline {2.5}Static Detection of Data Races in Interrupt-Driven Systems}{9}{}%
-\contentsline {chapter}{\numberline {3}Implementation}{11}{}%
-\contentsline {chapter}{\numberline {4}Evaluation}{21}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{23}{}%
-\contentsline {chapter}{\nonumberline Bibliography}{25}{}%
-\contentsline {chapter}{\nonumberline Attachments}{29}{}%
+\contentsline {subsection}{\numberline {2.2.1}Types of Shared Resources}{4}{}%
+\contentsline {subsection}{\numberline {2.2.2}Managing Shared Resources}{5}{}%
+\contentsline {section}{\numberline {2.3}Reduced Inter-Procedural Control Flow Graphs (RICFG)}{5}{}%
+\contentsline {section}{\numberline {2.4}Data Races}{7}{}%
+\contentsline {subsection}{\numberline {2.4.1}Detection Techniques}{8}{}%
+\contentsline {subsubsection}{\nonumberline Static Data Race Detection \cite {wang2020}}{8}{}%
+\contentsline {subsubsection}{\nonumberline Dynamic Data Race Detection \cite {flanagan2009}}{9}{}%
+\contentsline {subsection}{\numberline {2.4.2}Strategies for Preventing Data Races}{9}{}%
+\contentsline {section}{\numberline {2.5}Static Detection of Data Races in Interrupt-Driven Systems}{10}{}%
+\contentsline {chapter}{\numberline {3}Implementation}{13}{}%
+\contentsline {chapter}{\numberline {4}Evaluation}{23}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{25}{}%
+\contentsline {chapter}{\nonumberline Bibliography}{27}{}%
+\contentsline {chapter}{\nonumberline Attachments}{31}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

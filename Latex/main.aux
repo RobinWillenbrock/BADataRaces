@@ -1,32 +1,104 @@
 \relax 
 \providecommand*\new@tpo@label[2]{}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{}\protected@file@percent }
+\providecommand \oddpage@label [2]{}
+\citation{wang2020}
+\citation{wang2020}
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Background}{1}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Background}{3}{}\protected@file@percent }
+\@writefile{lol}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Interrupt-Driven Systems}{1}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Flowchart of the interrupt-driven system}}{1}{}\protected@file@percent }
+\citation{wang2020}
+\citation{herlihy2008}
+\citation{herlihy2008}
+\citation{burns2009}
+\citation{labrosse2002}
+\citation{herlihy2008}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Shared Resources}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.1}Types of Shared Resources}{2}{}\protected@file@percent }
+\citation{herlihy2008}
+\citation{chopra2019}
+\citation{engler2003}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2.2}Managing Shared Resources}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Reduced Inter-Procedural Control Flow Graphs (RICFG)}{3}{}\protected@file@percent }
+\citation{wang2020}
+\citation{muchnick1997}
+\citation{wang2020}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Example of Inter-Procedural Control Flow Graph}}{4}{}\protected@file@percent }
+\citation{chen2011}
+\citation{chen2011}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Example of Reduced Inter-Procedural Control Flow Graph}}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Data Races}{5}{}\protected@file@percent }
+\citation{wang2020}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Data Race Example}}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Simple Example of a Data Race}}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.1}Detection Techniques}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Static Data Race Detection \cite  {wang2020}}{6}{}\protected@file@percent }
+\citation{flanagan2009}
+\citation{herlihy2008}
+\citation{herlihy2008}
+\@writefile{toc}{\contentsline {subsubsection}{\nonumberline Dynamic Data Race Detection \cite  {flanagan2009}}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.4.2}Strategies for Preventing Data Races}{7}{}\protected@file@percent }
+\citation{wang2020}
+\citation{wang2020}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces Enable/Disable ISR Call Example}}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Example of a Data Race with Enable/Disable ISR Calls}}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Static Detection of Data Races in Interrupt-Driven Systems}{8}{}\protected@file@percent }
+\citation{wang2020}
+\citation{wang2020}
+\citation{wang2020}
+\citation{wang2020}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Static Race Detection}}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Static Race Detection Approach by \cite  {wang2020}}}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Implementation}{11}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Interrupt Driven System}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Control Flow Graphs}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Synchronization Mechanism}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Data Races}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Race Conditions Detection}{5}{}\protected@file@percent }
+\@writefile{lol}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\@writefile{loa}{\contentsline {algocf}{\numberline {4}{\ignorespaces BasicBlock Class Definition}}{11}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {5}{\ignorespaces Parse Basic Blocks}}{12}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {6}{\ignorespaces Track ISR Status}}{13}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {7}{\ignorespaces Extract ISR Index}}{13}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {8}{\ignorespaces Initialization and ISR Enabling Map}}{14}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {9}{\ignorespaces Process Block}}{15}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {10}{\ignorespaces Depth-First Search (DFS) for Blocks}}{16}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {11}{\ignorespaces Initial Processing and Recursive Depth-First Search}}{16}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {12}{\ignorespaces Check for Data Races}}{17}{}\protected@file@percent }
+\@writefile{loa}{\contentsline {algocf}{\numberline {13}{\ignorespaces Filter Data Races}}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Evaluation}{21}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Implementation}{7}{}\protected@file@percent }
+\@writefile{lol}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusion}{23}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Evaluation}{9}{}\protected@file@percent }
+\@writefile{lol}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{25}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{11}{}\protected@file@percent }
+\@writefile{lol}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
+\bibcite{wang2020}{1}
+\bibcite{engler2003}{2}
+\bibcite{chopra2019}{3}
+\bibcite{flanagan2009}{4}
+\bibcite{chen2011}{5}
+\bibcite{muchnick1997}{6}
+\bibcite{adve1996}{7}
+\bibcite{herlihy2008}{8}
+\@writefile{toc}{\contentsline {chapter}{\nonumberline Attachments}{29}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\nonumberline Bibliography}{13}{}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{lol}{\addvspace {10\p@ }}
+\@writefile{loa}{\addvspace {10\p@ }}
 \global\@namedef{scr@dte@chapter@lastmaxnumwidth}{10.84041pt}
 \global\@namedef{scr@dte@section@lastmaxnumwidth}{18.37155pt}
+\global\@namedef{scr@dte@subsection@lastmaxnumwidth}{26.88818pt}
+\global\@namedef{scr@dte@figure@lastmaxnumwidth}{18.37155pt}
 \@writefile{toc}{\providecommand\tocbasic@end@toc@file{}\tocbasic@end@toc@file}
 \@writefile{lof}{\providecommand\tocbasic@end@toc@file{}\tocbasic@end@toc@file}
-\gdef \@abspage@last{19}
+\gdef \@abspage@last{39}

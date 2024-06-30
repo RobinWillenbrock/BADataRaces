@@ -1,11 +1,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Flow-Chart des interruptgesteuerten Systems}}{3}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of Inter-Procedural Control Flow Graph}}{5}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of Reduced Inter-Procedural Control Flow Graph}}{6}{}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Simple Example of a Data Race}}{7}{}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Example of a Data Race with Enable/Disable ISR Calls}}{9}{}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Static Race Detection Approach by \cite {wang2020}}}{10}{}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of Inter-Procedural Control Flow Graph}}{6}{}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of Reduced Inter-Procedural Control Flow Graph}}{7}{}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Simple Example of a Data Race}}{8}{}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Example of a Data Race with Enable/Disable ISR Calls}}{10}{}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Static Race Detection Approach by \cite {wang2020}}}{11}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
