@@ -80,7 +80,7 @@ fancyheadings, % headings with seplines and logo
 \chapter{Background}
 
 \section{Interrupt-Driven Systems}
-An interrupt-driven system is an architecture where the flow of execution is changed by unpredictable events in the system, also known as interrupts. Interrupts can be caused by hardware devices, software conditions, or external signals forcing the processor to suspend the current task to execute an interrupt handler or interrupt service routine (ISR). Interrupt-driven systems are used in real-time operating systems, embedded systems, and generally in systems where timely responses are necessary \cite{wang2020}.
+An interrupt-driven system is an architecture where the flow of execution is determined by unpredictable events in the system, also known as interrupts. Interrupts can be caused by hardware devices, software conditions, or external signals forcing the processor to suspend the current task to execute an interrupt handler or interrupt service routine (ISR). Interrupt-driven systems are used in real-time operating systems, embedded systems, and generally in systems where timely responses are necessary \cite{wang2020}.
 
 \begin{figure}[H]
 	\centering
@@ -103,7 +103,7 @@ An interrupt-driven system is an architecture where the flow of execution is cha
 		\draw [arrow] (interrupt.east) -- ++(1.5,0) node[anchor=north] {No} |- (exec.east);
 		
 	\end{tikzpicture}
-	\caption{Flowchart of the interrupt-driven system}
+	\caption{Flowchart of an interrupt-driven system}
 \end{figure}
 
 In Figure 2.1, a basic execution flow of a simple interrupt-driven system is displayed. The system executes a function as long as no interrupt occurs. When an interrupt occurs, it switches to the ISR, executes it, and then resumes the function executed before the interrupt happened.
