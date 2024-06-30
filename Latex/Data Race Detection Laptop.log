@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  25 JUN 2024 10:20
-=======
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  28 JUN 2024 12:51
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.3.31) (preloaded format=pdflatex 2024.4.15)  28 JUN 2024 20:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,42 +365,42 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.
 sty
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.st
 y
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -common.tex
 \pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen156
 \pgfutil@tempdimb=\dimen157
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil
 -latex.def
 \pgfutil@abb=\box58
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.
 code.tex
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.
 sty
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.
 sty
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 s.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 .code.tex
 \pgfkeys@pathtoks=\toks27
 \pgfkeys@temptoks=\toks28
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 libraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks29
 ))
@@ -429,39 +425,39 @@ libraryfiltered.code.tex
 \t@pgf@tokc=\toks32
 \pgf@sys@id@count=\count289
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.c
 fg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 s-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 s-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 ssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfsyssoftpath@smallbuffer@items=\count290
 \pgfsyssoftpath@bigbuffer@items=\count291
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsy
 sprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 e.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
 .tex
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.
 code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparse
 r.code.tex
 \pgfmath@dimen=\dimen168
 \pgfmath@count=\count292
@@ -470,33 +466,33 @@ r.code.tex
 \pgfmath@stack@operand=\toks34
 \pgfmath@stack@operation=\toks35
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.basic.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.trigonometric.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.random.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.comparison.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.base.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.round.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.misc.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunct
 ions.integerarithmetics.code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.
 code.tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat
 .code.tex
 \c@pgfmathroundto@lastzeros=\count293
 ))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.
 tex)
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen169
@@ -514,19 +510,19 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@zx=\dimen181
 \pgf@zy=\dimen182
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen183
 \pgf@path@lasty=\dimen184
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathusage.code.tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen185
 \pgf@shorten@start@additional=\dimen186
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 escopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box60
@@ -534,96 +530,96 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@layerbox@main=\box62
 \pgf@picture@serial@count=\count294
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 egraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen187
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 etransformations.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen188
 \pgf@pt@y=\dimen189
 \pgf@pt@temp=\dimen190
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 equick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eobjects.code.tex
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epathprocessing.code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 earrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen191
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen192
 \pgf@sys@shading@range@num=\count295
 \pgf@shadingcount=\count296
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 eexternal.code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box63
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 elayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 etransparency.code.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 epatterns.code.tex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcor
 erdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 shapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodeparttextbox=\box64
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 plot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-0-65.sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen193
 \pgf@nodesepend=\dimen194
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfco
 mp-version-1-18.sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 ))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.st
 y
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.s
 ty
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys
 .code.tex))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code
 .tex))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.
 code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen195
@@ -631,11 +627,11 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@stack=\toks36
 \pgffor@toks=\toks37
 ))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z\tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count297
@@ -658,7 +654,7 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikznumberofcurrentchild=\count300
 \tikz@fig@count=\count301
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodule
 matrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfmatrixcurrentrow=\count302
@@ -667,31 +663,31 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 \tikz@expandcount=\count305
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/shapes\
 pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibr
 aryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen262
 ))
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen263
 \captionmargin=\dimen264
@@ -703,7 +699,7 @@ Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@hangindent=\dimen270
 Package caption Info: KOMA-Script document class detected.
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-koma.st
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption-koma.st
 o
 File: caption-koma.sto 2023/09/08 v2.0e Adaption of the caption package to the 
 KOMA-Script document classes (AR)
@@ -714,7 +710,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: KOMA-Script scrextend package detected.
 \caption@addmargin@hsize=\dimen271
 \caption@addmargin@linewidth=\dimen272
-) (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count308
 \float@exts=\toks38
@@ -722,22 +718,22 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks39
 \@floatcapt=\box70
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm2e
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm2e
 .sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
 \c@AlgoLine=\count309
- (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+ (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip68
 
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
 \c@checkoddpage=\count310
-) (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+) (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
 \skiptotal=\skip69
@@ -879,17 +875,10 @@ Package caption Info: End \AtBeginDocument code.
 Package titlepage Info: leaving not defined pre-title page empty on input line 
 77.
 Package titlepage Info: leaving not defined back of pre-title page empty on inp
-<<<<<<< HEAD
-ut line 66.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
-6.
- (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
-=======
 ut line 77.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 7
 7.
- (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+ (C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 <logo/logo_tuhh.png, id=4, 632.3625pt x 445.665pt>
@@ -1007,19 +996,6 @@ Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 84.
 
 ]
 chapter 2.
-<<<<<<< HEAD
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 8
-8.
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
-8.
-
-(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-=======
 
 Underfull \vbox (badness 2384) has occurred while \output is active []
 
@@ -1028,98 +1004,77 @@ File: logo/logo_sts_letters.png Graphic file (type png)
 Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 114.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [3]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 125.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+24.
 
-[4]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 168.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [5]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-44.
- (C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Underfull \vbox (badness 1721) has occurred while \output is active []
-
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 257.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [6]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-68.
-
-(C:\Users\robin\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 275.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-<<<<<<< HEAD
- [3{C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
-]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 105.
-=======
- [7{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.e
-nc}{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
-]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 332.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [8]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 129.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 338.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+24.
 
-[9]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 141.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+(C:\Users\rwill\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
-[6]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 146.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [7] [8
+LaTeX Warning: Citation `burns2009' on page 4 undefined on input line 126.
 
 
-]
-chapter 3.
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 197.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[9]
-
-LaTeX Warning: Command \d invalid in math mode on input line 237.
+LaTeX Warning: Citation `labrosse2002' on page 4 undefined on input line 128.
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 247.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 365.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 131.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [10{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
-enc}{C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+[4{C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 180.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [5]
+Underfull \vbox (badness 3098) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 237.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 274.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [7]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 292.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+
+[8{C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.en
+c}]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 349.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [9]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 355.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [10]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 382.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [11{C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.
+enc}{C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}
+] [12
+
+
 ]
 chapter 3.
 
@@ -1127,270 +1082,189 @@ Underfull \vbox (badness 1342) has occurred while \output is active []
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 435.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [11
-
-
-]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 295.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 444.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-
-[12]
-
-LaTeX Warning: Command \d invalid in math mode on input line 449.
-
-
-LaTeX Warning: Command \d invalid in math mode on input line 521.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 346.
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [12]
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 394.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 524.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 452.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [13]
-
-LaTeX Warning: Command \d invalid in math mode on input line 558.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 440.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 561.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 461.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[14]
+
+LaTeX Warning: Command \d invalid in math mode on input line 466.
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 589.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 513.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [15]
+[15]
+
+LaTeX Warning: Command \d invalid in math mode on input line 539.
+
+
+LaTeX Warning: Command \d invalid in math mode on input line 576.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 634.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 579.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 691.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 607.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [17]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 691.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 652.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 709.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 709.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [20]
 Overfull \vbox (21.2898pt too high) has occurred while \output is active []
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 691.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 709.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 
-[19]
+[21]
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 694.
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 712.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [20]
+ [22]
 chapter 4.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 442.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 696.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 714.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[21
+[23
 
 
-] [22
+] [24
 
 
 ]
 chapter 5.
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 448.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 702.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 720.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[23] [24
+[25] [26
 
 
 ]
 chapter without number
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 454.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 708.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 726.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[25
+[27
 
 
-] [26
+] [28
 
 
 ]
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 479.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 733.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 751.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [27] [28
+ [29] [30
 
 
 ]
 chapter without number
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 529.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 783.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 801.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
-[29]
+[31]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 579.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 833.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [30]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 630.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 884.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
- [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-File: logo/logo_sts_letters.png Graphic file (type png)
-<use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 677.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 931.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 851.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
  [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: logo/logo_sts_letters.png Graphic file (type png)
 <use logo/logo_sts_letters.png>
-<<<<<<< HEAD
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 699.
-=======
-Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 953.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 902.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 949.
+(pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
+ [34]
+File: logo/logo_sts_letters.png Graphic file (type png)
+<use logo/logo_sts_letters.png>
+Package pdftex.def Info: logo/logo_sts_letters.png  used on input line 971.
 (pdftex.def)             Requested size: 14.22636pt x 6.42528pt.
 
-[33] (Data Race Detection Laptop.aux)
+[35] (Data Race Detection Laptop.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 10077 strings out of 474424
- 210802 string characters out of 5741739
+ 23787 strings out of 474424
+ 509486 string characters out of 5741739
  2277496 words of memory out of 5000000
- 32316 multiletter control sequences out of 15000+600000
- 618961 words of font info for 73 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 122i,27n,121p,10926b,2327s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb
-><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><
-C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><
-C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><
-C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><
-C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb
-><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pf
-b><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pf
-b><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb
->
-Output written on "Data Race Detection Laptop.pdf" (33 pages, 405139 bytes).
-PDF statistics:
- 165 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
- 23787 strings out of 474423
- 509549 string characters out of 5741718
- 2277496 words of memory out of 5000000
- 45772 multiletter control sequences out of 15000+600000
+ 45771 multiletter control sequences out of 15000+600000
  633485 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,27n,121p,10926b,2325s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
-b><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb
-><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pf
-b><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
-b><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
-><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
-<C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C
-:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C
-:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C
-:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C
-:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C
-:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
-<C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb
-><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
-><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb
-><C:/Users/robin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
+<C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pf
+b><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb
+><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pf
+b><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pf
+b><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb
+><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
+<C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C
+:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C
+:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmro10.pfb><C
+:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C
+:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C
+:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+<C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb
+><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb
+><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb
+><C:/Users/rwill/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt9.pfb>
 
-Output written on "Data Race Detection Laptop.pdf" (39 pages, 529146 bytes).
+Output written on "Data Race Detection Laptop.pdf" (41 pages, 535226 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
+ 236 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
 

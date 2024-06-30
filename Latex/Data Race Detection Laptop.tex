@@ -508,9 +508,10 @@ The function \texttt{track\_isr\_status} initialises the tracking of the ISR sta
 The function \texttt{extract\_isr\_index} extracts the index of an ISR from a function name that follows the pattern \texttt{isr\_\d+}. It returns the index of the ISR reduced by one to enable zero-based indexing.
 
 \subsection*{Data Race Detection}
+The following functions are used to determine all possible data races which are filtered later in the code. The intention of this is to find all possible data races to minimize the amount of false negatives. Since false positives can be evaluated later by interpreting the output.
 
 \begin{algorithm}[H]
-	\caption{Detect Data Races}
+	\caption{Initialization and ISR Enabling Map}
 	\DontPrintSemicolon
 	\SetAlgoLined
 	\KwData{blocks}
@@ -538,7 +539,7 @@ The function \texttt{extract\_isr\_index} extracts the index of an ISR from a fu
 \end{algorithm}
 
 
-The first part of the function \texttt{detect\_data\_races} runs through all blocks and collects information about ISR activations. This information is stored in the \texttt{isr\_enabling\_map}, which tracks the ISR activation relationships.
+The first part of the function \texttt{detect\_data\_races} takes a list of all basic block items as input. It also initializes the empty list of \texttt{potential\_data\_races}, a dictionary for \texttt{resource\_access} and a dictionary for the \texttt{isr\_enabling\_map}. \texttt{Potential\_data\_races} and \texttt{resource\_access} are used later in the code. The main loop of the function iterates through every item in blocks and finds basic blocks with \texttt{enable\_disable\_calls}. If there is an enable call in a block item, the index of the enabled ISR gets read and the basic block gets added to the \texttt{isr\_enabling\_map} with the information which ISR it enables.
 
 \begin{algorithm}[H]
 	\caption{Process Block}
@@ -575,7 +576,7 @@ The first part of the function \texttt{detect\_data\_races} runs through all blo
 \end{algorithm}
 
 
-The \texttt{process\_block} function processes a single block and updates the current ISR status based on \texttt{enable\_isr} and \texttt{disable\_isr} calls. Accesses to shared resources are stored in \texttt{resource\_accesses}.
+This part of the code runs thorugh each line of an basic block to find the current ISR status while resources get accessed. When a resource is found all the informations are added to the \texttt{resource\_accesses} dictionary which include the function name and the block number of the current basic block aswell as the access type, the line number and the ISR status of the access. All those informations are used later for the detection of the data races.
 
 \begin{algorithm}[H]
 	\caption{Depth-First Search (DFS) for Blocks}
@@ -603,7 +604,7 @@ The \texttt{process\_block} function processes a single block and updates the cu
 	}
 \end{algorithm}
 
-The function \texttt{dfs} (Depth-First Search) runs through the control flow graph and tracks the ISR status. Each block is processed and the ISR status and accesses to resources are updated.
+The \texttt{Depth-First Search (DFS)} function is recursively processing each block in a possible path of the RICFG. 
 
 \begin{algorithm}[H]
 	\caption{Initial Processing and Recursive Depth-First Search}
