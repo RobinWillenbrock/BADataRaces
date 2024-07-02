@@ -1,19 +1,18 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
-\contentsline {chapter}{\numberline {2}Background}{3}{}%
-\contentsline {section}{\numberline {2.1}Interrupt-Driven Systems}{3}{}%
-\contentsline {section}{\numberline {2.2}Shared Resources}{4}{}%
-\contentsline {subsection}{\numberline {2.2.1}Types of Shared Resources}{4}{}%
-\contentsline {subsection}{\numberline {2.2.2}Managing Shared Resources}{5}{}%
-\contentsline {section}{\numberline {2.3}Reduced Inter-Procedural Control Flow Graphs (RICFG)}{5}{}%
-\contentsline {section}{\numberline {2.4}Data Races}{7}{}%
-\contentsline {subsection}{\numberline {2.4.1}Detection Techniques}{8}{}%
-\contentsline {subsubsection}{\nonumberline Static Data Race Detection \cite {wang2020}}{8}{}%
-\contentsline {subsubsection}{\nonumberline Dynamic Data Race Detection \cite {flanagan2009}}{9}{}%
-\contentsline {subsection}{\numberline {2.4.2}Strategies for Preventing Data Races}{9}{}%
-\contentsline {section}{\numberline {2.5}Static Detection of Data Races in Interrupt-Driven Systems}{10}{}%
-\contentsline {chapter}{\numberline {3}Implementation}{13}{}%
-\contentsline {chapter}{\numberline {4}Evaluation}{23}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{25}{}%
-\contentsline {chapter}{\nonumberline Bibliography}{27}{}%
-\contentsline {chapter}{\nonumberline Attachments}{31}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Interrupt-Driven Systems}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Shared Resources}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Reduced Inter-Procedural Control Flow Graphs}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Reduction of Control Flow Graphs}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Depth-First Search}{6}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Data Races}{7}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Detection Techniques}{8}{subsection.2.4.1}%
+\contentsline {subsubsection}{\nonumberline Static Data Race Detection \cite {wang2020}}{8}{subsubsection*.15}%
+\contentsline {subsubsection}{\nonumberline Dynamic Data Race Detection \cite {flanagan2009}}{9}{subsubsection*.17}%
+\contentsline {subsection}{\numberline {2.4.2}Strategies for Preventing Data Races}{9}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Static Detection of Data Races in Interrupt-Driven Systems}{10}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Implementation}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Evaluation}{27}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusion}{29}{chapter.5}%
+\contentsline {chapter}{\nonumberline Attachments}{33}{chapter*.42}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

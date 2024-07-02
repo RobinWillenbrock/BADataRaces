@@ -23,6 +23,11 @@ void isr1(){
 	shared1 = 1; 
 	idlerun();
 }
-void isr2();
+void isr2(){
 	idlerun();
+	nestedfunc();
 	idlerun();
+}
+void nestedfunc(){
+	disable_isr (1);
+}

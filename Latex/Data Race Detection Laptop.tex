@@ -28,7 +28,7 @@ fancyheadings, % headings with seplines and logo
 \title{Static Detection of Data Races in Interrupt-Driven Software Using Reduced Inter-Procedural Control Flow Graphs}
 \date{\today}
 \subject{Bachelor Thesis}
-\professor{}
+\professor{Prof. Dr. Sibylle Schupp }
 \advisor{Ulrike Engeln}
 
 \usepackage[utf8]{inputenc}
@@ -60,10 +60,11 @@ fancyheadings, % headings with seplines and logo
 	captionpos=b
 }
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
 \usepackage{caption}
 \usepackage{float}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\raggedbottom
 
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
 \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
@@ -71,445 +72,439 @@ fancyheadings, % headings with seplines and logo
 \tikzstyle{arrow} = [thick,->,>=stealth]
 \tikzstyle{redarrow} = [thick,->,>=stealth,draw=red]
 
+% Package for Abbreviations
+\usepackage{acronym}
+\usepackage{hyperref} 
+
 \begin{document}
-\frontmatter
-\maketitle
-\tableofcontents
-\listoffigures{}
-\mainmatter{
-\chapter{Introduction}
-
-
-
-\chapter{Background}
-
-\section{Interrupt-Driven Systems}
-An interrupt-driven system is an architecture where the flow of execution is changed by unpredictable events in the system, also known as interrupts. Interrupts can be caused by hardware devices, software conditions, or external signals forcing the processor to suspend the current task to execute an interrupt handler or interrupt service routine (ISR). Interrupt-driven systems are used in real-time operating systems, embedded systems, and generally in systems where timely responses are necessary \cite{wang2020}.
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[node distance=2cm, scale=0.95, transform shape]
+	\frontmatter
+	\maketitle
+	\tableofcontents
+	\listoffigures{}
+	
+	% Abbreviations
+	\chapter*{Abbreviations}
+	\begin{acronym}
+		\acro{ISR}{Interrupt Service Routine}
+		\acro{CFG}{Control Flow Graph}
+		\acro{ICFG}{Inter-Procedural Control Flow Graph}
+		\acro{RICFG}{Reduced Inter-Procedural Control Flow Graph}
+		\acro{GCC}{GNU Compiler Collection}
+		\acro{DFS}{Depth-First Search}
+		\acro{BB}{BasicBlock}
+	\end{acronym}
+	
+	\mainmatter{
+		\chapter{Introduction}
 		
-		\node (start) [startstop] {Start};
-		\node (init) [process, below of=start] {Initialise System};
-		\node (exec) [process, below of=init] {Execute Function};
-		\node (interrupt) [decision, below of=exec, yshift=-0.8cm] {Interrupt Occurs?};
-		\node (isr) [process, below of=interrupt, yshift=-0.8cm] {Execute ISR};
-		\node (resume) [process, below of=isr] {Resume Function};
-		\node (end) [startstop, below of=resume] {End};
+		\chapter{Background}
+		In this chapter, I am going to provide a brief overview of all the necessary background information needed to understand static data races in interrupt-driven software using \acp{RICFG}. This information includes basics about interrupt-driven systems, shared resources, \acp{RICFG}, and data races as a whole.
 		
-		\draw [arrow] (start) -- (init);
-		\draw [arrow] (init) -- (exec);
-		\draw [arrow] (exec) -- (interrupt);
-		\draw [arrow] (interrupt) -- node[anchor=east] {Yes} (isr);
-		\draw [arrow] (isr) -- (resume);
-		\draw [arrow] (resume) -- (end);
-		\draw [arrow] (interrupt.east) -- ++(1.5,0) node[anchor=north] {No} |- (exec.east);
+		\section{Interrupt-Driven Systems}
+		An interrupt-driven system is an architecture where the flow of execution is changed by unpredictable events in the system, also known as interrupts. Interrupts can be caused by hardware devices, software conditions, or external signals, forcing the processor to suspend the current task to execute an interrupt handler or Interrupt Service Routine (\ac{ISR}). Interrupt-driven systems are used in real-time operating systems, embedded systems, and generally in systems where timely responses are necessary \cite{wang2020}.
 		
-	\end{tikzpicture}
-	\caption{Flow-Chart des interruptgesteuerten Systems}
-\end{figure}
-
-In Figure 2.1, a basic execution flow of a simple interrupt-driven system is displayed. The system executes a function as long as no interrupt occurs. When an interrupt occurs, it switches to the ISR, executes it, and then resumes the function executed before the interrupt happened.
-
-The management of the interrupts to maintain the fast responsiveness of the system is the most challenging part of an interrupt-driven system. Interrupts occur in unpredictable ways, so you have to consider every possible execution flow. To ensure the execution of critical interrupts, interrupts are often prioritised, so higher priority events can interrupt lower ones and be handled immediately. When handling an interrupt, the current state of the processos is saved, and the context is switched to the ISR \cite{wang2020}.
-
-The unpredictivity and asynchronous nature of the interrupts present a lot of challenges in designing and implementing an interrupt-driven system. One of the biggest challenges is the correct handling of high-priority interrupts without delaying them substantially. Which needs a sophisticated scheduling and prioritisation mechanism. The execution of the main programme and ISR needs to be handled properly to ensure data tegrity. Furthermore, handling context switches, preserving system state, and avoiding deadlocks all contribute to the development of an interrupt-driven system.
-
-\section{Shared Resources}
-<<<<<<< HEAD
-Shared resources are data or hardware components that can be accessed by multiple threads or processes in a concurrent system. These resources include memory locations, files, I/O devices, and communication channels. In interrupt-driven systems, shared resources often involve variables or data structures that are accessed by both the main program and ISRs. Proper management of shared resources is critical to ensure data consistency and avoid conflicts \cite{herlihy2008}.
-\subsection{Types of Shared Resources}
-\begin{itemize}
-	\item \texttt{Memory}: Shared memory locations, such as global variables or heap-allocated data structures, are accessed by multiple threads. Proper synchronization mechanisms, like locks or atomic operations, are required to ensure that memory access is controlled and consistent \cite{herlihy2008}.
-
-	\item \texttt{:I/O Devices}: Hardware devices, such as printers, disk drives, and network interfaces, can be shared among different processes or threads. Access to these devices must be coordinated to prevent conflicts and ensure that operations are performed correctly \cite{burns2009}.
-
-	\item \texttt{Files}: Files on a disk can be accessed by multiple processes. File locks or similar mechanisms are used to manage concurrent access, ensuring that read and write operations do not interfere with each other \cite{labrosse2002}.
-
-	\item \texttt{Communication Channels}: Pipes, message queues, and shared memory segments used for inter-process communication are shared resources that require careful management to avoid data races and ensure the integrity of the communicated data \cite{herlihy2008}
-\end{itemize}
-\subsection{Managing Shared Resources}
-Proper management of shared resources involves the use of synchronization mechanisms to coordinate access and ensure data consistency. Mutexes, semaphores, and condition variables are common tools used to control access to shared resources. Mutexes provide mutual exclusion, ensuring that only one thread can access the resource at a time. Semaphores can limit the number of threads accessing the resource simultaneously. Condition variables allow threads to wait for certain conditions to be met before proceeding, facilitating complex synchronization scenarios \cite{herlihy2008}.
-
-=======
-Shared resources, often referred to as shared memory or shared variables, are data that can be accessed simultaneously by multiple threads or processes. Proper management of these resources is crucial because improper handling can lead to issues like data races, deadlocks, and other synchronisation problems. In interrupt-driven systems, shared resources often involve variables or data structures that are accessed by both the main programme and ISRs. Proper management of shared resources is critical to ensuring data consistency and avoiding conflicts \cite{herlihy2008}.
-Proper management of shared resources involves the use of synchronisation mechanisms to coordinate access and ensure data consistency. Mutexes, semaphores, and condition variables are common tools used to control access to shared resources. Mutexes provide mutual exclusion, ensuring that only one thread can access the resource at a time. Semaphores can limit the number of threads accessing the resource simultaneously. Condition variables allow threads to wait for certain conditions to be met before proceeding, facilitating complex synchronisation scenarios \cite{herlihy2008}. In interrupt driven software, the synchronisation of the shared resources often implies disabling-enabling interrupts \cite{chopra2019}. Analysing the management of the shared resources is a large part of the data race analysis, which is further explained later.
->>>>>>> 37cb75fcc2c2a83b5a9697cc4c5099580d15940a
-\section{Reduced Inter-Procedural Control Flow Graphs (RICFG)}
-Control Flow Graphs (CFG) are representations of all possible paths through a programme or a function during its execution. An Inter-Procedural Control Flow Graph (ICFG) adds possible edges between multiple programmes or functions to also show possible control flows between those.
-A Reduced Inter-Procedural Control Flow Graph (RICFG) is an optimised version of the ICFG that simplifies the graph to only the necessary information needed for the analysis \cite{engler2003}.
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[node distance=2cm, scale=0.85, transform shape]
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[node distance=2cm, scale=0.8, transform shape]
+				
+				\node (start) [startstop] {Start};
+				\node (init) [process, below of=start] {Initialize System};
+				\node (exec) [process, below of=init] {Execute Function};
+				\node (interrupt) [decision, below of=exec, yshift=-0.8cm] {Interrupt Occurs?};
+				\node (isr) [process, below of=interrupt, yshift=-0.8cm] {Execute \ac{ISR}};
+				\node (resume) [process, below of=isr] {Resume Function};
+				\node (end) [startstop, below of=resume] {End};
+				
+				\draw [arrow] (start) -- (init);
+				\draw [arrow] (init) -- (exec);
+				\draw [arrow] (exec) -- (interrupt);
+				\draw [arrow] (interrupt) -- node[anchor=east] {Yes} (isr);
+				\draw [arrow] (isr) -- (resume);
+				\draw [arrow] (resume) -- (end);
+				\draw [arrow] (resume.east) -- ++(1.5,0) node[anchor=north]  |- (exec.east);
+				
+			\end{tikzpicture}
+			\caption{Flowchart of the Interrupt-Driven System}
+		\end{figure}
 		
-		% Nodes for main function
-		\node (start) [startstop] {Start main()};
-		\node (init) [process, below of=start] {Initialise};
-		\node (callsidefunction) [process, below of=init] {Call sidefunction()};
-		\node (resume) [process, below of=callsidefunction, yshift=-0.5cm] {Resume main()};
-		\node (end) [startstop, below of=resume] {End main()};
+		In Figure 2.1, a basic execution flow of a simple interrupt-driven system is displayed. The system executes a function as long as no interrupt occurs. When an interrupt occurs, it switches to the \ac{ISR}, executes it, and then resumes the function executed before the interrupt happened.
 		
-		% Nodes for sidefunction
-		\node (startsidefunction) [startstop, right of=callsidefunction, xshift=4cm, yshift=4cm] {Start sidefunction()};
-		\node (processsidefunction) [process, below of=startsidefunction] {Process in sidefunction()};
-		\node (endsidefunction) [startstop, below of=processsidefunction] {End sidefunction()};
+		The management of interrupts to maintain the fast responsiveness of the system is the most challenging part of an interrupt-driven system. Interrupts occur in unpredictable ways, so you have to consider every possible execution flow. To ensure the execution of critical interrupts, interrupts are often prioritized, so higher-priority events can interrupt lower ones and be handled immediately. When handling an interrupt, the current state of the processor is saved, and the context is switched to the \ac{ISR} \cite{wang2020}.
 		
-		% Arrows for main function
-		\draw [arrow] (start) -- (init);
-		\draw [arrow] (init) -- (callsidefunction);
-		\draw [arrow] (callsidefunction) -- (resume);
-		\draw [arrow] (resume) -- (end);
+		The unpredictability and asynchronous nature of interrupts present many challenges in designing and implementing an interrupt-driven system. One of the biggest challenges is the correct handling of high-priority interrupts without delaying them substantially, which requires a sophisticated scheduling and prioritization mechanism. The execution of the main program and \ac{ISR} needs to be handled properly to ensure data integrity. 
 		
-		% Arrows for sidefunction
-		\draw [arrow] (startsidefunction) -- (processsidefunction);
-		\draw [arrow] (processsidefunction) -- (endsidefunction);
+		\section{Shared Resources}
+		Analyzing the management of shared resources is a large part of data race analysis, which is further explained later. The following is a short introduction to shared resources to better understand them in the context of data races.
 		
-		% Interprocedural arrows
-		\draw [arrow] (callsidefunction.east) -- ++(1,0) |- (startsidefunction);
-		\draw [arrow] (endsidefunction.west) -- ++(-1,0) |- (resume);
+		Shared resources, often referred to as shared memory or shared variables, are data that can be accessed simultaneously by multiple threads or processes. Proper management of these resources is crucial because improper handling can lead to issues like data races, deadlocks, and other synchronization problems. In interrupt-driven systems, shared resources often involve variables or data structures that are accessed by both the main program and \acp{ISR}. Proper management of shared resources is critical to ensuring data consistency and avoiding conflicts \cite{herlihy2008}.
 		
-		% Labels
-		\node [above of=start, yshift=0.5cm, text centered] {\textbf{main() function}};
-		\node [above of=startsidefunction, yshift=0.5cm, xshift=0cm, text centered] {\textbf{sidefunction()}};
+		Proper management of shared resources involves the use of synchronization mechanisms to coordinate access and ensure data consistency. Mutexes, semaphores, and condition variables are common tools used to control access to shared resources. Mutexes provide mutual exclusion, ensuring that only one thread can access the resource at a time. Semaphores can limit the number of threads accessing the resource simultaneously. Condition variables allow threads to wait for certain conditions to be met before proceeding, facilitating complex synchronization scenarios \cite{herlihy2008}. In interrupt-driven software, the synchronization of shared resources often involves disabling and enabling interrupts \cite{chopra2019}.
 		
-	\end{tikzpicture}
-	\caption{Example of Inter-Procedural Control Flow Graph}
-\end{figure}
-In Figure 2.2, a simple ICFG is shown. There are two separate linear control flow graphs where the main function calls the sidefunction in its execution. To interpret the flow of the programme correctly, you need to consider the execution of sidefunction() and where it's called. The ICFG combines the two separate CFGs to ensure correct analysis.
-
-There are multiple techniques to reduce the graph, such as node merging, edge contraction, and the elimination of non-important nodes, without losing any information required for the analysis and reducing the complexity of the RICFG. The reduction of the ICFG makes the analysis of large and complex software a lot more efficient. By minimising the amount of data while retaining enough detail, RICFGs are great for static analysis of data races \cite{wang2020}.
-
-Node merging is combining nodes that represent redundant control flow paths to reduce the number of nodes in the graph. Edge contraction is simplifying the graph by reducing the number of edges between nodes. It collapses edges, that do not significantly affect the control flow of the graph. \cite{muchnick1997} The elimination of nodes is the main tool used in this work to reduce the CFG. Eliminating nodes that do not carry any essential information for the applied data analysis significantly reduces the amount of data the algorithm has to analyze. Overall, these techniques enhance the scalability of static analysis and make it more practical to analyse more complex data \cite{wang2020}.
-
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[node distance=2cm, scale=0.75, transform shape]
+		\section{Reduced Inter-Procedural Control Flow Graphs}
+		\acp{CFG} are representations of all possible paths through a program or function during its execution. An \acp{ICFG} adds possible edges between multiple programs or functions to also show possible control flows between those. A \ac{RICFG} is an optimized version of the ICFG that simplifies the graph to only the necessary information needed for the analysis \cite{engler2003}.
 		
-		% Nodes for main function
-		\node (start) [startstop] {Start main()};
-		\node (init) [process, below of=start] {Initialize};
-		\node (unimportant_main) [process, below of=init] {Reduced path};
-		\node (callisr1) [process, below of=unimportant_main, yshift=-0.5cm] {Call isr1()};
-		\node (resume) [process, below of=callisr1, yshift=-0.5cm] {Resume main()};
-		\node (end) [startstop, below of=resume] {End main()};
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[node distance=2cm, scale=0.85, transform shape]
+				
+				% Nodes for main function
+				\node (start) [startstop] {Start main()};
+				\node (init) [process, below of=start] {Initialize};
+				\node (callsidefunction) [process, below of=init] {Call sidefunction()};
+				\node (resume) [process, below of=callsidefunction, yshift=-0.5cm] {Resume main()};
+				\node (end) [startstop, below of=resume] {End main()};
+				
+				% Nodes for sidefunction
+				\node (startsidefunction) [startstop, right of=callsidefunction, xshift=4cm, yshift=4cm] {Start sidefunction()};
+				\node (processsidefunction) [process, below of=startsidefunction] {Process in sidefunction()};
+				\node (endsidefunction) [startstop, below of=processsidefunction] {End sidefunction()};
+				
+				% Arrows for main function
+				\draw [arrow] (start) -- (init);
+				\draw [arrow] (init) -- (callsidefunction);
+				\draw [arrow] (callsidefunction) -- (resume);
+				\draw [arrow] (resume) -- (end);
+				
+				% Arrows for sidefunction
+				\draw [arrow] (startsidefunction) -- (processsidefunction);
+				\draw [arrow] (processsidefunction) -- (endsidefunction);
+				
+				% Interprocedural arrows
+				\draw [arrow] (callsidefunction.east) -- ++(1,0) |- (startsidefunction);
+				\draw [arrow] (endsidefunction.west) -- ++(-1,0) |- (resume);
+				
+				% Labels
+				\node [above of=start, yshift=0.5cm, text centered] {\textbf{main() function}};
+				\node [above of=startsidefunction, yshift=0.5cm, xshift=0cm, text centered] {\textbf{sidefunction()}};
+				
+			\end{tikzpicture}
+			\caption{Example of an Inter-Procedural Control Flow Graph}
+		\end{figure}
 		
-		% Nodes for isr1 function
-		\node (startisr1) [startstop, right of=callisr1, xshift=4cm, yshift=6.5cm] {Start isr1()};
-		\node (unimportant_isr1) [process, below of=startisr1] {Reduced path};
-		\node (processisr1) [process, below of=unimportant_isr1] {Process in isr1()};
-		\node (endisr1) [startstop, below of=processisr1] {End isr1()};
+		In Figure 2.2, a simple ICFG is shown. There are two separate linear control flow graphs where the main function calls the side function in its execution. To interpret the flow of the program correctly, you need to consider the execution of sidefunction() and where it's called. The ICFG combines the two separate CFGs to ensure correct analysis.
 		
-		% Arrows for main function
-		\draw [arrow] (start) -- (init);
-		\draw [arrow] (init) -- (unimportant_main);
-		\draw [arrow] (unimportant_main) -- (callisr1);
-		\draw [arrow] (callisr1) -- (resume);
-		\draw [arrow] (resume) -- (end);
+		\subsection{Reduction of Control Flow Graphs}
+		There are multiple techniques to reduce the graph, such as node merging, edge contraction, and the elimination of non-important nodes, without losing any information required for the analysis and reducing the complexity of the RICFG. The reduction of the ICFG makes the analysis of large and complex software a lot more efficient. By minimizing the amount of data while retaining enough detail, RICFGs are great for static analysis of data races \cite{wang2020}.
 		
-		% Arrows for isr1 function
-		\draw [arrow] (startisr1) -- (unimportant_isr1);
-		\draw [arrow] (unimportant_isr1) -- (processisr1);
-		\draw [arrow] (processisr1) -- (endisr1);
+		Node merging involves combining nodes that represent redundant control flow paths to reduce the number of nodes in the graph. Edge contraction simplifies the graph by reducing the number of edges between nodes. It collapses edges that do not significantly affect the control flow of the graph \cite{muchnick1997}. The elimination of nodes is the main tool used in this work to reduce the CFG. Eliminating nodes that do not carry any essential information for the applied data analysis significantly reduces the amount of data the algorithm has to analyze. Overall, these techniques enhance the scalability of static analysis and make it more practical to analyze more complex data \cite{wang2020}.
 		
-		% Interprocedural arrows
-		\draw [arrow] (callisr1.east) -- ++(1,0) |- (startisr1);
-		\draw [arrow] (endisr1.west) -- ++(-1,0) |- (resume);
+		\begin{figure}[H]
+			\centering
+			\begin{tikzpicture}[node distance=2cm, scale=0.75, transform shape]
+				
+				% Nodes for main function
+				\node (start) [startstop] {Start main()};
+				\node (init) [process, below of=start] {Initialize};
+				\node (unimportant_main) [process, below of=init] {Reduced path};
+				\node (callisr1) [process, below of=unimportant_main, yshift=-0.5cm] {Call sidefunction()};
+				\node (resume) [process, below of=callisr1, yshift=-0.5cm] {Resume main()};
+				\node (end) [startstop, below of=resume] {End main()};
+				
+				% Nodes for \ac{ISR}1 function
+				\node (startisr1) [startstop, right of=callisr1, xshift=4cm, yshift=6.5cm] {Start sidefunction()};
+				\node (unimportant_isr1) [process, below of=startisr1] {Reduced path};
+				\node (processisr1) [process, below of=unimportant_isr1] {Process in sidefunction()};
+				\node (endisr1) [startstop, below of=processisr1] {End sidefunction()};
+				
+				% Arrows for main function
+				\draw [arrow] (start) -- (init);
+				\draw [arrow] (init) -- (unimportant_main);
+				\draw [arrow] (unimportant_main) -- (callisr1);
+				\draw [arrow] (callisr1) -- (resume);
+				\draw [arrow] (resume) -- (end);
+				
+				% Arrows for \ac{ISR}1 function
+				\draw [arrow] (startisr1) -- (unimportant_isr1);
+				\draw [arrow] (unimportant_isr1) -- (processisr1);
+				\draw [arrow] (processisr1) -- (endisr1);
+				
+				% Interprocedural arrows
+				\draw [arrow] (callisr1.east) -- ++(1,0) |- (startisr1);
+				\draw [arrow] (endisr1.west) -- ++(-1,0) |- (resume);
+				
+				% Red arrows bypassing unimportant information
+				\draw [redarrow] (init.west) -- ++(-1,0) |- (callisr1.west);
+				\draw [redarrow] (startisr1.east) -- ++(1,0) |- (processisr1.east);
+				
+				% Red crosses over unimportant information
+				\draw[red,thick] (unimportant_main.north west) -- (unimportant_main.south east);
+				\draw[red,thick] (unimportant_main.north east) -- (unimportant_main.south west);
+				\draw[red,thick] (unimportant_isr1.north west) -- (unimportant_isr1.south east);
+				\draw[red,thick] (unimportant_isr1.north east) -- (unimportant_isr1.south west);
+				
+				% Labels
+				\node [above of=start, yshift=0.5cm, text centered] {\textbf{main() function}};
+				\node [above of=startisr1, yshift=0.5cm, xshift=0cm, text centered] {\textbf{\ac{ISR}1() function}};
+				
+			\end{tikzpicture}
+			\caption{Example of a Reduced Inter-Procedural Control Flow Graph}
+		\end{figure}
 		
-		% Red arrows bypassing unimportant information
-		\draw [redarrow] (init.west) -- ++(-1,0) |- (callisr1.west);
-		\draw [redarrow] (startisr1.east) -- ++(1,0) |- (processisr1.east);
-		
-		% Red crosses over unimportant information
-		\draw[red,thick] (unimportant_main.north west) -- (unimportant_main.south east);
-		\draw[red,thick] (unimportant_main.north east) -- (unimportant_main.south west);
-		\draw[red,thick] (unimportant_isr1.north west) -- (unimportant_isr1.south east);
-		\draw[red,thick] (unimportant_isr1.north east) -- (unimportant_isr1.south west);
-		
-		% Labels
-		\node [above of=start, yshift=0.5cm, text centered] {\textbf{main() function}};
-		\node [above of=startisr1, yshift=0.5cm, xshift=0cm, text centered] {\textbf{isr1() function}};
-		
-	\end{tikzpicture}
-	\caption{Example of Reduced Inter-Procedural Control Flow Graph}
-\end{figure}
-
-Figure 2.3 shows an example of a simple reduction by eliminating nodes that do not carry any important information for the analysis the RICFG is used for. 
-
-\section{Data Races}
-
-A data race occurs when two or more functions or threads access a shared resource concurrently, without being ordered by a happens-before relationship, and one of those accesses is a write operation \cite{chen2011}. This can lead to unpredictable behaviour and errors in the system, which makes the detection of data races a critical aspect of concurrent programmes.
-Without proper synchronisation, a system with multiple threads or functions that use shared data will lead to data races. The outcome of a programme with data races is non-deterministic \cite{chen2011}. The order of execution of operations can vary, which may result in the generation of bugs that are not reproducible or difficult to reproduce. 
-\begin{figure}[H]
-	\centering
-	\begin{algorithm}[H]
-		\caption{Data Race Example}
-		\KwData{long shared1;}
-		
-		\BlankLine
-		\SetKwFunction{FMain}{main}
-		\SetKwProg{Fn}{Function}{:}{}
-		\Fn{\FMain()}{
-			\BlankLine
-			\textbf{Variables}:\\
-			unsigned char tmp\;
-			\BlankLine
-			\textbf{Code}:\\
-			tmp $\leftarrow$ shared1\;
-		}
-		
-		\BlankLine
-		\SetKwFunction{FIsr}{isr1}
-		\Fn{\FIsr()}{
-			\BlankLine
-			\textbf{Code}:\\
-			idlerun()\;
-			shared1 $\leftarrow$ 1\;
-			idlerun()\;
-		}
-	\end{algorithm}
-	\caption{Simple Example of a Data Race}
-\end{figure}
-
-In Figure 2.4, an example of a simple data race is shown. A global variable shared1 is initiated and accessed in two different functions main() and isr1 (). Since there are no synchronisation tools used and the operation in isr1 is a write, there is a data race between line 5 and line 9.
-
-
-\subsection{Detection Techniques}
-
-Data race detection can be approached by two different analytical methods. Each of those methods provides benefits and challenges.
-
-\subsubsection{Static Data Race Detection \cite{wang2020}}
-\textbf{Advantages:}
-\begin{itemize}
-	\item Comprehensivness: Static analysis inspects the code without executing the programme by analysing every possible execution path and interactions that could lead to data races. 
-	\item Early Detection: Since static analysis does not require execution, it can analyse the code in the development phase, allowing the developer to find issues without deployment.
-\end{itemize}
-\textbf{Disadvantages:}
-\begin{itemize}
-	\item False Positives/Negatives: Static analysis reports all data races that fall under certain conditions. Some of these data races could be very unlikely or even impossible at runtime. On the other hand, due to the approximations and assumptions necessary for tractability, it may miss some races.
-	\item Complexity in Handling Dynamic Behaviour: Dynamic behaviours such as pointers or recursion can be challenging to analyse for static approaches, leading to incomplete or inaccurate results.
-\end{itemize}
-
-\subsubsection{Dynamic Data Race Detection \cite{flanagan2009}}
-\textbf{Advantages:}
-\begin{itemize}
-	\item Precision: Dynamic analysis tools monitor the actual execution of a programme, identifying data races in real-time. Which results in reducing the number of false positives.
-	\item Context-Sensitive Detection: By analysing the actual runtime behaviour, dynamic analysis can understand the context of operations, leading to more accurate detection. 
-\end{itemize}
-\textbf{Disadvantages:}
-\begin{itemize}
-	\item Performance Overhead: The analysis in runtime can slow down the application significantly. 
-	\item Coverage: The effectiveness is heavily dependent on the execution path triggered during the tests. If certain parts of the programme are not passed through in the execution run, they are not analysed.
-\end{itemize}
-
-Both static and dynamic analysis are crucial for a complete analysis of a code. They complement each other's limitations. A combination of both is the best approach to detecting data races most reliable. However, in this work, I am going to focus on the static analysis of data races.
-
-
-\subsection{Strategies for Preventing Data Races}
-
-Preventing data races requires careful design and implementation of concurrent programs. One effective strategy is to use proper synchronisation mechanisms, such as mutexes, semaphores, and condition variables, to control access to shared data. These mechanisms ensure that only one thread can access the shared data at a time, preventing conflicting operations. Avoiding shared mutable states is another effective strategy, where threads operate on local copies of data instead of shared data, reducing the potential for conflicts. Designing thread-safe data structures and algorithms that inherently manage concurrent access also helps prevent data races, ensuring reliable and predictable programme behaviour \cite{herlihy2008}.
-
-Preventing data races requires careful design and implementation of concurrent programs. Effective strategies for general prevention of data races are synchronisation mechanisms such as mutexes, semaphors, and condition variables, which control access to shared data. Those mechanisms ensure that only one thread can access the shared resource at a time \cite{herlihy2008}. Since I am focusing on data races in interrupt driven systems, the main tool to prevent data races is to disable ISRs, which access shared resources in critical areas.
-\begin{figure}[H]
-	\centering
-	\begin{algorithm}[H]
-		\caption{Enable/Disable ISR Call Example}
-		\KwData{long shared1}
-		
-		\SetKwFunction{FMain}{main}
-		\SetKwProg{Fn}{Function}{:}{}
-		
-		\Fn{\textbf{main()}}{
-			\textbf{Variables}:\\
-			unsigned char tmp\;
-			\BlankLine
-			\textbf{Code}:\\
-			disable\_isr(1)\;
-			tmp $\leftarrow$ shared1\;
-			enable\_isr(1)\;
-		}
-		
-		\Fn{\textbf{isr1()}}{
-			\textbf{Code}:\\
-			idlerun()\;
-			shared1 $\leftarrow$ 1\;
-			idlerun()\;
-		}
-		
-		\Fn{\textbf{isr2()}}{
-			\textbf{Code}:\\
-			idlerun()\;
-			int variable1 = 1\;
-			idlerun()\;
-		}
-	\end{algorithm}
-	\caption{Example of a Data Race with Enable/Disable ISR Calls}
-\end{figure}
-Figure 2.5 is an example of a disable ISR call that leads to the save access of the shared data. The main function and isr1 both access the shared resource shared1. Since the read operation in line 6 of the main function is safely accessed by disabling isr1 in line 5 and enabling it in line 7, a possible data race is prevented.
-\section{Static Detection of Data Races in Interrupt-Driven Systems}
-
-The asynchronous nature and concurrent execution of ISRs and the main function introduces significant challenges for data consistency and detecting data races in interrupt-driven systems. Static data race analysis, especially those using RICFGs, are a promising approach to identifying data races without the need for extensive testing and runtime monitoring as in dynamic approaches \cite{wang2020}.
-
-The static approach involves the construction of an RICFG for the programme, which includes both the main code and ISRs, and capturing the control flow and potential interaction between them. Analysing the RICFG, shows paths where shared resources are accessed concurrently without proper synchronisation and indicates potential data races. Integrating the static analysis tool with the development process enables continuous detection of data races during software development, improving the reliability and correctness of interrupt-driven systems \cite{wang2020}.
-
-The methodology for static data race detection in interrupt-driven systems involves the following key steps. First, the RICFGs are constructed for the entire programme, including the main code and the ISRs. This involves analysing the control flow and identifying interactions between the main programme and ISRs. Next, the RICFGs are analysed to find potential data races, focusing on paths where concurrent access of shared data is done without proper synchronization. Finally, the developer can use the analysis results to address identified data races in early development processes \cite{wang2020}.
-
-\begin{figure}[H]
-	\begin{algorithm}[H]
-		\caption{Static Race Detection}
-		\KwIn{RICFGs of P}
-		\KwOut{potential racing pairs (PR)}
-		
-		\BlankLine
-		\For{each $< G_i ; G_j >$ in RICFGs}{
-			\For{each $sv_i \in G_i$}{
-				\For{each $sv_j \in G_j$}{
-					\If{$sv_i.V == sv_j.V$ and $(sv_i.A == W$ or $sv_j.A == W)$ and $G_i.pri < G_j.pri$ and $INTB.get(svi).contains(Gj)$}{
-						$PR = PR \cup \{ <sv_i, sv_j> \}$\;
+		Figure 2.3 shows an example of a simple reduction by eliminating nodes that do not carry any important information for the analysis the RICFG is used for. 
+		 
+		\subsection{Depth-First Search}
+		\ac{DFS} is an algorithm used to traverse a graph systematically. It begins at a source node and extends its exploration through the connected nodes as far as possible before it backtracks. In an algorithm this can be implemented using a recursive approach. The basic idea is to mark a node when its first discovered and then explore all the adjacent nodes that are not visited before. 
+		\begin{figure}[H]
+			\centering
+		\begin{algorithm}[H]
+			\SetAlgoLined
+			\SetKwFunction{FMain}{dfs\_main}
+			\SetKwFunction{DFS}{dfs}
+			\SetKwProg{Fn}{Function}{:}{}
+			
+			\Fn{\DFS{node, visited}}{
+				visited[node] = True\;
+				\For{neighbor \textbf{in} graph[node]}{
+					\If{not visited[neighbor]}{
+						\DFS{neighbor, visited}\;
 					}
 				}
 			}
-		}
-	\end{algorithm}
-	\caption{Static Race Detection Approach by \cite{wang2020}}
-\end{figure}
+		\end{algorithm}
+		\caption{Example Implemenation of a Depth-First Search}
+		\end{figure}
+		In Figure 2.4 a simple example of a \ac{DFS} is shown. The \texttt{dfs} function gets called with the root node of a tree and performs the \ac{DFS} starting from the given node. It recursively calls itself with a new node called \texttt{neighbor} and repeats this until all the reachable nodes are marked as visited \cite{mehl2008}.
+		
+		
+		\section{Data Races}
+		
+		A data race occurs when two or more functions or threads access a shared resource concurrently, without being ordered by a happens-before relationship, and one of those accesses is a write operation \cite{chen2011}. This can lead to unpredictable behavior and errors in the system, which makes the detection of data races a critical aspect of concurrent programs. Without proper synchronization, a system with multiple threads or functions that use shared data will lead to data races. The outcome of a program with data races is non-deterministic \cite{chen2011}. The order of execution of operations can vary, which may result in the generation of bugs that are not reproducible or difficult to reproduce. 
+		
+		\begin{figure}[H]
+			\centering
+			\begin{algorithm}[H]
+				\caption{Data Race Example}
+				\KwData{long shared1;}
+				
+				\BlankLine
+				\SetKwFunction{FMain}{main}
+				\SetKwProg{Fn}{Function}{:}{}
+				\Fn{\FMain()}{
+					\BlankLine
+					\textbf{Variables}:\\
+					unsigned char tmp\;
+					\BlankLine
+					\textbf{Code}:\\
+					tmp $\leftarrow$ shared1\;
+				}
+				
+				\BlankLine
+				\SetKwFunction{FIsr}{isr1}
+				\Fn{\FIsr()}{
+					\BlankLine
+					\textbf{Code}:\\
+					idlerun()\;
+					shared1 $\leftarrow$ 1\;
+					idlerun()\;
+				}
+			\end{algorithm}
+			\caption{Simple Example of a Data Race}
+		\end{figure}
+		
+		In Figure 2.4, an example of a simple data race is shown. A global variable shared1 is initiated and accessed in two different functions, main() and isr1(). Since there are no synchronization tools used and the operation in isr1 is a write, there is a data race between line 5 and line 9.
+		
+		\subsection{Detection Techniques}
+		
+		Data race detection can be approached by two different analytical methods. Each of these methods provides benefits and challenges.
+		
+		\subsubsection{Static Data Race Detection \cite{wang2020}}
+		\textbf{Advantages:}
+		\begin{itemize}
+			\item Comprehensiveness: Static analysis inspects the code without executing the program by analyzing every possible execution path and interaction that could lead to data races.
+			\item Early Detection: Since static analysis does not require execution, it can analyze the code in the development phase, allowing the developer to find issues without deployment.
+		\end{itemize}
+		\textbf{Disadvantages:}
+		\begin{itemize}
+			\item False Positives/Negatives: Static analysis reports all data races that fall under certain conditions. Some of these data races could be very unlikely or even impossible at runtime. On the other hand, due to the approximations and assumptions necessary for tractability, it may miss some races.
+			\item Complexity in Handling Dynamic Behavior: Dynamic behaviors such as pointers or recursion can be challenging to analyze for static approaches, leading to incomplete or inaccurate results.
+		\end{itemize}
+		
+		\subsubsection{Dynamic Data Race Detection \cite{flanagan2009}}
+		\textbf{Advantages:}
+		\begin{itemize}
+			\item Precision: Dynamic analysis tools monitor the actual execution of a program, identifying data races in real-time, which reduces the number of false positives.
+			\item Context-Sensitive Detection: By analyzing the actual runtime behavior, dynamic analysis can understand the context of operations, leading to more accurate detection.
+		\end{itemize}
+		\textbf{Disadvantages:}
+		\begin{itemize}
+			\item Performance Overhead: The analysis at runtime can slow down the application significantly.
+			\item Coverage: The effectiveness is heavily dependent on the execution path triggered during the tests. If certain parts of the program are not passed through in the execution run, they are not analyzed.
+		\end{itemize}
+		
+		Both static and dynamic analyses are crucial for a complete analysis of code. They complement each other's limitations. A combination of both is the best approach to detecting data races most reliably. However, in this work, I am going to focus on the static analysis of data races.
+		
+		\subsection{Strategies for Preventing Data Races}
+		
+		Preventing data races requires careful design and implementation of concurrent programs. Effective strategies for general prevention of data races are synchronization mechanisms such as mutexes, semaphores, and condition variables, which control access to shared data. These mechanisms ensure that only one thread can access the shared resource at a time \cite{herlihy2008}. Since I am focusing on data races in interrupt-driven systems, the main tool to prevent data races is to disable \acp{ISR}, which access shared resources in critical areas.
+		
+		
+		\begin{figure}[H]
+			\centering
+			\begin{algorithm}[H]
+				\caption{Enable/Disable \ac{ISR} Call Example}
+				\KwData{long shared1}
+				
+				\SetKwFunction{FMain}{main}
+				\SetKwProg{Fn}{Function}{:}{}
+				
+				\Fn{\textbf{main()}}{
+					\textbf{Variables}:\\
+					unsigned char tmp\;
+					\BlankLine
+					\textbf{Code}:\\
+					disable\_isr(1)\;
+					tmp $\leftarrow$ shared1\;
+					enable\_isr(1)\;
+				}
+				
+				\Fn{\textbf{isr1()}}{
+					\textbf{Code}:\\
+					idlerun()\;
+					shared1 $\leftarrow$ 1\;
+					idlerun()\;
+				}
+				
+				\Fn{\textbf{isr2()}}{
+					\textbf{Code}:\\
+					idlerun()\;
+					int variable1 = 1\;
+					idlerun()\;
+				}
+			\end{algorithm}
+			\caption{Example of a Data Race with Enable/Disable \ac{ISR} Calls}
+		\end{figure}
+		
+		Figure 2.5 is an example of a disable \ac{ISR} call that leads to the safe access of the shared data. The main function and isr1 both access the shared resource shared1. Since the read operation in line 6 of the main function is safely accessed by disabling isr1 in line 5 and enabling it in line 7, a possible data race is prevented.
+		
+		\section{Static Detection of Data Races in Interrupt-Driven Systems}
+		
+		The asynchronous nature and concurrent execution of \acp{ISR} and the main function introduce significant challenges for data consistency and detecting data races in interrupt-driven systems. Static data race analysis, especially those using \acp{RICFG}, is a promising approach to identifying data races without the need for extensive testing and runtime monitoring as in dynamic approaches \cite{wang2020}.
+		
+		The static approach involves the construction of an \ac{RICFG} for the program, which includes both the main code and \acp{ISR}, and capturing the control flow and potential interaction between them. Analyzing the \ac{RICFG} shows paths where shared resources are accessed concurrently without proper synchronization and indicates potential data races. Integrating the static analysis tool with the development process enables continuous detection of data races during software development, improving the reliability and correctness of interrupt-driven systems \cite{wang2020}.
+		
+		The methodology for static data race detection in interrupt-driven systems involves the following key steps. First, the \acp{RICFG} are constructed for the entire program, including the main code and the \acp{ISR}. This involves analyzing the control flow and identifying interactions between the main program and \acp{ISR}. Next, the \acp{RICFG} are analyzed to find potential data races, focusing on paths where concurrent access to shared data is done without proper synchronization. Finally, the developer can use the analysis results to address identified data races early in the development process \cite{wang2020}.
+		
+		
+		\begin{figure}[H]
+			\begin{algorithm}[H]
+				\caption{Static Race Detection}
+				\KwIn{RICFGs of P}
+				\KwOut{potential racing pairs (PR)}
+				
+				\BlankLine
+				\For{each $< G_i ; G_j >$ in RICFGs}{
+					\For{each $sv_i \in G_i$}{
+						\For{each $sv_j \in G_j$}{
+							\If{$sv_i.V == sv_j.V$ and $(sv_i.A == W$ or $sv_j.A == W)$ and $G_i.pri < G_j.pri$ and $INTB.get(svi).contains(Gj)$}{
+								$PR = PR \cup \{ <sv_i, sv_j> \}$\;
+							}
+						}
+					}
+				}
+			\end{algorithm}
+			\caption{Static Race Detection Approach by \cite{wang2020}}
+		\end{figure}
+		
+		The approach by Wang et al. shows a computation of potential data races using \acp{RICFG}. By running a depth-first search on the \acp{RICFG}, it finds the interrupt status of every instruction. If there is a shared resource in both of the analyzed \acp{RICFG}, at least one of them is a write operation, and the two functions differ in their priority. While the interrupt in this pair is enabled, the two accesses are a potential data race \cite{wang2020}.
+		
+		In the following, I am going to introduce you to the implementation of my static analysis program based on the static race detection approach of Wang et al.
 
-The approach by Wang et al. shows a computation of potential data races using RICFGs. By running a depth-first search on the RICFGs it finds the interrupt status of every instruction. If there is a shared resource in both of the analysed RICFGs, at least one of them is a write operation, and the two functions differ in their priority. While the interrupt in this pair is enabled, the two accesses are a potential data race \cite{wang2020}.
-In the following, I am going to introduce you to the implementation of my static analysis programme based on the static race detection approach of Wang et al..
 
 
 \chapter{Implementation}
-In the following I will provide an indepth explanation of my implemenation. For the generation of the input I used GCC. The command \texttt{gcc -fdump-tree-cfg} provides a cfg-file with all important informations for the intended data race analysis. I have split the explanation of the implementation into the initialization of the basic block class, the parsing of the input, the actual data race analysis and the filter of false positives found in data race analysis.
+In the following, I will provide an in-depth explanation of my implementation. For the generation of the input, I used \ac{GCC}. The command \texttt{gcc -fdump-tree-cfg} provides a cfg-file with all the important information for the intended data race analysis. I have split the explanation of the implementation into the initialization of the basic block class, the parsing of the input, the actual data race analysis, and the filtering of false positives found in data race analysis.
+
+
 \subsection*{Class BasicBlock}
+\begin{figure}[H]
+\centering
 \begin{algorithm}[H]
-	\caption{BasicBlock Class Definition}
+	\caption{BasicBlock Constructor}
 	\DontPrintSemicolon
 	\SetAlgoLined
+	\KwData{function\_name, number, priority, shared\_resources, successors, enable\_disable\_calls, function\_calls}
+	\KwResult{A BasicBlock object}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{function\_name, number, priority, shared\_resources (optional), successors (optional), enable\_disable\_calls (optional), function\_calls (optional)}
+	\KwOut{A BasicBlock object}
+	\BlankLine
 	
-	\textbf{Class BasicBlock}:\\
-	\Indp
-	\textbf{Def} \_\_init\_\_(self, function\_name, number, shared\_resources, successors, enable\_disable\_calls, code):\\
-	self.function\_name $\gets$ function\_name\;
-	self.number $\gets$ number\;
-	self.shared\_resources $\gets$ shared\_resources\;
-	self.successors $\gets$ successors\;
-	self.enable\_disable\_calls $\gets$ enable\_disable\_calls\;
-	self.code $\gets$ code\;
-	\Indm
+	\SetKwFunction{FMain}{BasicBlock}
+	\SetKwProg{Fn}{Function}{:}{}
+	\Fn{\FMain{function\_name, number, priority, shared\_resources, successors, enable\_disable\_calls, function\_calls}}{
+		self.function\_name $\gets$ function\_name\;
+		self.number $\gets$ number\;
+		self.priority $\gets$ priority\;
+		self.shared\_resources $\gets$ shared\_resources \textbf{if} shared\_resources \textbf{else} empty list\;
+		self.successors $\gets$ successors \textbf{if} successors \textbf{else} empty list\;
+		self.enable\_disable\_calls $\gets$ enable\_disable\_calls \textbf{if} enable\_disable\_calls \textbf{else} empty list\;
+		self.function\_calls $\gets$ function\_calls \textbf{if} function\_calls \textbf{else} empty list\;
+	}
 \end{algorithm}
 
-The class \texttt{BasicBlock} is a display of all the information nessessary for the data race analysis found in the input. Those informations include the following attributes:
+\caption{Algorithm: Class BasicBlock}
+\end{figure}
+\vspace{1cm}
+
+The class \texttt{BasicBlock} displays all the information necessary for the data race analysis found in the input. This information includes the following attributes:
 \begin{itemize}
-	\item \texttt{function\_name}: The function name to which the basic block belongs. 
+	\item \texttt{function\_name}: The function name to which the basic block belongs.
 	\item \texttt{number}: The number of the basic block.
-	\item \texttt{shared\_resources}: All accesses of shared resources within the basic block. The access type (read/write) and also the line number of such calls are saved.
-	\item \texttt{successors}: A list of all the successors of each basic block. Important to build all possible paths through the CFG.
-	\item \texttt{enable\_disable\_calls}: All calls that disable or enable an ISR within this basic block and also with the corrsponding line number of those calls to ensure correct order.
-	\item \texttt{code}: The lines of code of the block stored with their line number.
+	\item \texttt{shared\_resources}: All accesses of shared resources within the \ac{BB}. The access type (read/write) and the line number of such calls are saved.
+	\item \texttt{successors}: A list of all the successors of each basic block. Important for building all possible paths through the CFG.
+	\item \texttt{enable\_disable\_calls}: All calls that disable or enable an \ac{ISR} within this basic block and also the corresponding line number of those calls to ensure the correct order.
+	\item \texttt{function\_calls}: The functions that are called within a \ac{BB}.
 \end{itemize}
+Resulting in the following UML class diagramm:
+\begin{figure}[H]
+	\centering
+\begin{tikzpicture}
+	% Define styles for the different elements of the class diagram
+	\tikzstyle{class} = [rectangle, draw, minimum width=10cm, minimum height=1cm, font=\bfseries, fill=blue!20]
+	\tikzstyle{attributes} = [rectangle, draw, minimum width=10cm, minimum height=4cm, anchor=north, align=left, fill=blue!10]
+	\tikzstyle{methods} = [rectangle, draw, minimum width=10cm, minimum height=5cm, anchor=north, align=left, fill=blue!10]
+	
+	% Class name
+	\node[class] (classname) at (0, 0) {BasicBlock};
+	
+	% Attributes
+	\node[attributes, below=0cm of classname] (attributes) {
+		- function\_name: String\\
+		- number: int\\
+		- priority: int\\
+		- shared\_resources: List\\
+		- successors: List\\
+		- enable\_disable\_calls: List\\
+		- function\_calls: List
+	};
+	
+	% Methods
+	\node[methods, below=0cm of attributes] (methods) {
+		+ BasicBlock(\\
+		\hspace*{5mm} function\_name: String,\\
+		\hspace*{5mm} number: int,\\
+		\hspace*{5mm} priority: int,\\
+		\hspace*{5mm} shared\_resources: List = [],\\
+		\hspace*{5mm} successors: List = [],\\
+		\hspace*{5mm} enable\_disable\_calls: List = [],\\
+		\hspace*{5mm} function\_calls: List = [])
+	};
+	
+	% Draw the borders
+	\draw (classname.north west) rectangle (methods.south east);
+	\draw (attributes.north west) -- (attributes.north east);
+	\draw (methods.north west) -- (methods.north east);
+\end{tikzpicture}
+\caption{UML: Class BasicBlock}
+\end{figure}
 
-
-\subsection*{Parsing}
-\begin{algorithm}[H]
-	\caption{Parse Basic Blocks}
-	\DontPrintSemicolon
-	\SetAlgoLined
-	\KwData{file\_path, shared\_resource\_names}
-	\KwResult{Dictionary of BasicBlocks mapping (function name, block number) to BasicBlock instances}
-	blocks $\gets$ empty dictionary\;
-	current\_function $\gets$ None\;
-	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\KwIn{Path to source file, list of shared resource names}
-	\KwOut{Dictionary of basic blocks with details}
-	\BlankLine
-	\For{each line in file at file\_path}{
-		line $\gets$ line.strip()\;
-		Increment line\_number\;
-		\If{line starts new function}{
-			\If{current block is open}{
-				Save current block to blocks\;
-			}
-			Update current\_function and reset current block details\;
-		}
-		\ElseIf{line starts new basic block}{
-			\If{current block is open}{
-				Save current block to blocks\;
-			}
-			Initialize new block details\;
-		}
-		Update shared\_resources and enable\_disable\_calls based on line content\;
-	}
-	\If{current block is open at end of file}{
-		Save last block to blocks\;
-	}
-	\ForEach{line indicating successor blocks}{
-		Parse successor details and update block information in blocks\;
-	}
-	\Return{blocks}
-\end{algorithm}
-
-The function \texttt{parse\_basic\_blocks} starts with the initialisation of a dictionary \texttt{blocks} and a variable \texttt{current\_function}. It opens the file and reads its lines into a list \texttt{lines}.
-
-These variables are initialised to collect information on basic blocks: 
-\begin{itemize}
-	\item \texttt{bb\_num}: Number of the current basic block.
-	\item \texttt{shared\_resources}: List of shared resources in the current block.
-	\item \texttt{enable\_disable\_calls}: List of ISR activation/deactivation calls.
-	\item \texttt{code\_lines}: The lines of code of the current block.
-	\item \texttt{line\_number}: The current line number in the file.
-\end{itemize}
-
-
-The loop runs through each line of the file, removes leading and trailing spaces and increments the line number. If a new function is recognised (by the pattern \texttt{;; Function ... (}), the current block is saved and the current function is updated.
-
-If a new basic block number is detected (\texttt{<bb \(\d+\)>:}), the previous block is saved and the information for the new block is initialised.
-
-This section searches each line for shared resources and ISR activation/deactivation calls. Resources and calls found are added to the corresponding list and the current line is added to \texttt{code\_lines}.
-
-At the end of the loop, the last basic block is saved if there is still an open block.
-
-In a second pass through the lines, the successor blocks for each basic block are identified and linked accordingly. Finally, the function returns the \texttt{blocks} dictionary.
-
-\begin{algorithm}[H]
-	\caption{Track ISR Status}
-	\DontPrintSemicolon
-	\SetAlgoLined
-	\KwData{blocks}
-	\KwResult{List indicating ISR status initialized to zero}
-	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\KwIn{Dictionary of BasicBlocks}
-	\KwOut{List of zeros representing the status of each ISR}
-	\BlankLine
-	isr\_count $\gets$ count unique ISRs in function names from blocks\;
-	\Return{list initialized to zero of length isr\_count}
-\end{algorithm}
-
-The function \texttt{track\_isr\_status} initialises the tracking of the ISR status. It returns a list of zeros whose length corresponds to the number of unique ISRs in the programme. This list is used to track the activation/deactivation status of each ISR.
-
-\begin{algorithm}[H]
-	\caption{Extract ISR Index}
-	\DontPrintSemicolon
-	\SetAlgoLined
-	\KwData{function\_name}
-	\KwResult{Zero-based index of the ISR or None if no ISR is found}
-	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\KwIn{Function name as a string}
-	\KwOut{Integer index or None}
-	\BlankLine
-	match $\gets$ search for pattern 'isr[\_]?(\d+)' in function\_name\;
-	\eIf{match is found}{
-		\Return{integer value of the first group in match minus one}\;
-	}{
-		\Return{None}\;
-	}
-\end{algorithm}
-
-The function \texttt{extract\_isr\_index} extracts the index of an ISR from a function name that follows the pattern \texttt{isr\_\d+}. It returns the index of the ISR reduced by one to enable zero-based indexing.
 
 \subsection*{Data Race Detection}
-The following functions are used to determine all possible data races which are filtered later in the code. The intention of this is to find all possible data races to minimize the amount of false negatives. Since false positives can be evaluated later by interpreting the output.
+The following functions are used to determine all possible data races, which are filtered later in the code. The intention is to find all possible data races to minimize the number of false negatives. Since false positives can be evaluated later by interpreting the output.
 
+
+\begin{figure}[H]
+\centering
 \begin{algorithm}[H]
 	\caption{Initialization and ISR Enabling Map}
 	\DontPrintSemicolon
@@ -537,19 +532,24 @@ The following functions are used to determine all possible data races which are 
 		}
 	}
 \end{algorithm}
+\caption{Algorithm: Initialization and ISR Enabling Map}
+\end{figure}
+\vspace{1cm}
 
 
-The first part of the function \texttt{detect\_data\_races} takes a list of all basic block items as input. It also initializes the empty list of \texttt{potential\_data\_races}, a dictionary for \texttt{resource\_access} and a dictionary for the \texttt{isr\_enabling\_map}. \texttt{Potential\_data\_races} and \texttt{resource\_access} are used later in the code. The main loop of the function iterates through every item in blocks and finds basic blocks with \texttt{enable\_disable\_calls}. If there is an enable call in a block item, the index of the enabled ISR gets read and the basic block gets added to the \texttt{isr\_enabling\_map} with the information which ISR it enables.
+The first part of the function \texttt{detect\_data\_races} takes a list of all basic block items as input. It also initializes the empty list of \texttt{potential\_data\_races}, a dictionary for \texttt{resource\_access}, and a dictionary for the \texttt{isr\_enabling\_map}. \texttt{Potential\_data\_races} and \texttt{resource\_access} are used later in the code. The main loop of the function iterates through every item in blocks and finds basic blocks with \texttt{enable\_disable\_calls}. If there is an enable call in a block item, the index of the enabled \ac{ISR} is read, and the basic block is added to the \texttt{isr\_enabling\_map} with the information on which \ac{ISR} it enables.
 
+\begin{figure}[H]
+\centering
 \begin{algorithm}[H]
 	\caption{Process Block}
 	\DontPrintSemicolon
 	\SetAlgoLined
 	\KwData{block, current\_isr\_status}
-	\KwResult{Updated ISR status and recorded resource accesses}
+	\KwResult{Updated \ac{ISR} status and recorded resource accesses}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\KwIn{A code block and the current ISR status as a list}
-	\KwOut{Updated current ISR status and appended resource accesses to a global list}
+	\KwIn{A code block and the current \ac{ISR} status as a list}
+	\KwOut{Updated current \ac{ISR} status and appended resource accesses to a global list}
 	\BlankLine
 	\ForEach{line, line\_number in block.code}{
 		\If{line contains 'enable\_isr' or 'disable\_isr'}{
@@ -574,155 +574,443 @@ The first part of the function \texttt{detect\_data\_races} takes a list of all 
 		}
 	}
 \end{algorithm}
+\caption{Algorithm: Process Block}
+\end{figure}
+\vspace{1cm}
 
+This part of the code runs through each line of a basic block to find the current \ac{ISR} status while resources are accessed. When a resource is found, all the information is added to the \texttt{resource\_accesses} dictionary, which includes the function name and the block number of the current basic block, as well as the access type, the line number, and the \ac{ISR} status of the access. All this information is used later for the detection of data races.
 
-This part of the code runs thorugh each line of an basic block to find the current ISR status while resources get accessed. When a resource is found all the informations are added to the \texttt{resource\_accesses} dictionary which include the function name and the block number of the current basic block aswell as the access type, the line number and the ISR status of the access. All those informations are used later for the detection of the data races.
-
+\begin{figure}[H]
+\centering
 \begin{algorithm}[H]
-	\caption{Depth-First Search (DFS) for Blocks}
+	\caption{Depth-First Search (DFS) and Initialization}
 	\DontPrintSemicolon
 	\SetAlgoLined
-	\KwData{block, visited\_blocks, current\_isr\_status, path}
-	\KwResult{Recursive processing of blocks and their successors}
+	\KwData{blocks}
+	\KwResult{Updated block ISR statuses and processed blocks}
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\KwIn{A block, set of visited blocks, current ISR status, and path tracing the blocks visited}
-	\KwOut{Processed blocks with updated ISR statuses and path}
+	\KwIn{Dictionary of basic blocks}
+	\KwOut{Updated block ISR statuses}
 	\BlankLine
-	\If{(block.function\_name, block.number) is in visited\_blocks}{
-		\Return  % Stop processing if the block has been visited
-	}
-	\BlankLine
-	visited\_blocks.add((block.function\_name, block.number))\;  % Mark the block as visited
-	path.append((block.function\_name, block.number))\;  % Add the block to the path
-	\BlankLine
-	process\_block(block, current\_isr\_status)\;  % Process the current block
-	\BlankLine
-	\If{block has successors}{
-		\ForEach{successor in block.successors}{
-			dfs(successor, set(visited\_blocks), current\_isr\_status.copy(), path.copy())\;  % Recursive call for each successor
+	
+	\SetKwProg{Fn}{Function}{:}{}
+	\Fn{dfs(block, visited\_blocks, current\_isr\_status, path)}{
+		\If{(block.function\_name, block.number) \textbf{in} visited\_blocks}{
+			block\_isr\_statuses[(block.function\_name, block.number)] $\gets$ merge\_isr\_statuses(block\_isr\_statuses[(block.function\_name, block.number)], current\_isr\_status)\;
+			\Return\;
+		}
+		visited\_blocks.add((block.function\_name, block.number))\;
+		path.append((block.function\_name, block.number))\;
+		
+		block\_isr\_statuses[(block.function\_name, block.number)] $\gets$ current\_isr\_status.copy()\;
+		process\_block(block, current\_isr\_status)\;
+		
+		\If{not block.successors}{
+			\Return\;
+		}
+		\Else{
+			\For{successor \textbf{in} block.successors}{
+				dfs(successor, set(visited\_blocks), current\_isr\_status.copy(), path.copy())\;
+			}
 		}
 	}
-\end{algorithm}
-
-The \texttt{Depth-First Search (DFS)} function is recursively processing each block in a possible path of the RICFG. 
-
-\begin{algorithm}[H]
-	\caption{Initial Processing and Recursive Depth-First Search}
-	\DontPrintSemicolon
-	\SetAlgoLined
-	\KwData{blocks (a dictionary of blocks indexed by function name and block number)}
-	\KwResult{Executes process block and DFS on selected blocks and their successors}
 	
 	\BlankLine
-	\ForEach{(func\_name, bb\_num) and block in blocks}{
-		\If{bb\_num = 2}{
-			initial\_isr\_status $\gets$ track\_isr\_status(blocks)\;
+	\tcp{Initialization and starting DFS from basic blocks with number 2}
+	\For{(func\_name, bb\_num), block \textbf{in} blocks.items()}{
+		\If{bb\_num == 2}{
+			initial\_isr\_status $\gets$ track\_isr\_status(blocks).copy()\;
 			process\_block(block, initial\_isr\_status)\;
-			\ForEach{successor in block.successors}{
-				dfs(successor, \{\}, initial\_isr\_status.copy(), [(func\_name, bb\_num)])\;
+			\For{successor \textbf{in} block.successors}{
+				dfs(successor, set(), initial\_isr\_status.copy(), [(func\_name, bb\_num)])\;
 			}
 		}
 	}
 \end{algorithm}
+\caption{Algorithm: \ac{DFS} and Initialization}
+\end{figure}
+\vspace{1cm}
+
+The \texttt{Depth-First Search (DFS)} function is recursively processing each block in a possible path of the \ac{RICFG}. The set \texttt{visited\_blocks} is used to avoid revisiting already visited blocks. If the block is already visited, the \ac{ISR} status is updated with the stored \ac{ISR} status for that block using the \texttt{merge\_isr\_statuses} function.
+
+\begin{figure}[H]
+	\centering
+\begin{algorithm}[H]
+	\caption{Merge ISR Statuses}
+	\DontPrintSemicolon
+	\SetAlgoLined
+	\KwData{isr\_status1, isr\_status2}
+	\KwResult{Merged ISR status list}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{Two lists of ISR statuses}
+	\KwOut{List of merged ISR statuses}
+	\BlankLine
+	merged\_status $\gets$ empty list\;
+	\For{isr1, isr2 \textbf{in} zip(isr\_status1, isr\_status2)}{
+		merged\_status.append(min(isr1, isr2))\;
+	}
+	\Return{merged\_status}\;
+\end{algorithm}
+\caption{Algorithm: Merge \ac{ISR} Statuses}
+\end{figure}
+\vspace{1cm}
+
+This function takes the worst case of the most enabled \acp{ISR} and uses this for further analysis of the path.
+
+Unvisited blocks get added to the \texttt{visited\_blocks} set and to the path list. After that, the \ac{ISR} status gets updated to the current \ac{ISR} status, and the function \texttt{process\_block} is called to update the \ac{ISR} status and track the shared resource accesses.
+
+When the block is processed, the function checks for possible successors and recursively calls itself with the successor and the updated copy of \texttt{visited\_blocks}, \texttt{current\_isr\_status}, and the path.
+
+The first \ac{BB} in a function is always the \ac{BB} with number two in the generated cfg-files. To initialize the \ac{DFS}, the \ac{BB} number 2 is processed by the \texttt{process\_block} function, and after that, the \ac{DFS} function is called with the successor of the current block.
 
 
-This section initialises the depth search for basic blocks with the number 2 and starts processing and running through the successor blocks.
-
+\begin{figure}[H]
+	\centering
 \begin{algorithm}[H]
 	\caption{Check for Data Races}
 	\DontPrintSemicolon
 	\SetAlgoLined
-	\KwResult{Update global list of potential data races based on access patterns}
-	\SetKwInOut{Output}{output}
-	\KwOut{Updated list of potential data races with detailed conflict info}
+	\KwData{resource\_accesses}
+	\KwResult{List of potential data races}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{Dictionary of resource accesses}
+	\KwOut{List of potential data races}
 	\BlankLine
-	\ForEach{resource, accesses in resource\_accesses}{
-		\For{i $\gets$ 0 \KwTo length(accesses)-1}{
-			func1, bb\_num1, access\_type1, line\_number1, isr\_status1 $\gets$ accesses[i]\;
-			\For{j $\gets$ i+1 \KwTo length(accesses)-1}{
-				func2, bb\_num2, access\_type2, line\_number2, isr\_status2 $\gets$ accesses[j]\;
-				\If{func1 $\neq$ func2 and (access\_type1 = "write" or access\_type2 = "write")}{
-					potential\_data\_races.append((resource, (func1, bb\_num1, access\_type1, line\_number1, isr\_status1), (func2, bb\_num2, access\_type2, line\_number2, isr\_status2)))\;
-				}
-			}
-		}
-	}
-\end{algorithm}
-
-The function \texttt{check\_for\_data\_races} identifies potential data races by comparing pairs of resource accesses. If two accesses to the same resource originate from different functions and at least one of them is a write access, a potential data race is identified.
-
-
-Calling \texttt{check\_for\_data\_races} performs a check of the potential data races.
-\subsection*{Filter Possible Data Races}
-\begin{algorithm}[H]
-	\caption{Filter Data Races}
-	\DontPrintSemicolon
-	\SetAlgoLined
-	\KwData{potential\_data\_races}
-	\KwResult{Filtered list of data races}
-	
-	\SetKwFunction{FMain}{filter\_data\_races}
-	\SetKwFunction{FSubOne}{is\_isr\_disabled}
-	\SetKwFunction{FSubTwo}{is\_isr\_enabled\_by\_another}
-	\SetKwProg{Fn}{Function}{:}{end}
-	
-	\Fn{\FMain{potential\_data\_races}}{
-		filtered\_data\_races $\gets$ empty list\;
-		\ForEach{resource, access1, access2 in potential\_data\_races}{
-			Decompose access1 into func1, bb\_num1, access\_type1, line\_number1, isr\_status1\;
-			Decompose access2 into func2, bb\_num2, access\_type2, line\_number2, isr\_status2\;
-			
-			relevant\_isr\_disabled1 $\gets$ \FSubOne{isr\_status1, func2} and not \FSubTwo{isr\_status1, func2}\;
-			relevant\_isr\_disabled2 $\gets$ \FSubOne{isr\_status2, func1} and not \FSubTwo{isr\_status2, func1}\;
-			
-			\If{not (relevant\_isr\_disabled1 or relevant\_isr\_disabled2)}{
-				filtered\_data\_races.append((resource, access1, access2))\;
-			}
-		}
-		\Return{filtered\_data\_races}\;
-	}
-	
-	\Fn{\FSubOne{isr\_status, func\_name}}{
-		isr\_idx $\gets$ extract\_isr\_index(func\_name)\;
-		\If{isr\_idx is not None and isr\_idx $<$ length of isr\_status}{
-			\Return{isr\_status[isr\_idx] == 1}\; \tcp{1 indicates disabled}
-		}
-		\Return{False}\;
-	}
-	
-	\Fn{\FSubTwo{isr\_status, func\_name}}{
-		isr\_idx $\gets$ extract\_isr\_index(func\_name)\;
-		\If{isr\_idx is not None}{
-			\ForEach{enabler\_isr, enabled\_isrs in isr\_enabling\_map}{
-				enabler\_idx $\gets$ extract\_isr\_index(enabler\_isr)\;
-				\If{enabler\_idx is not None and not \FSubOne{isr\_status, enabler\_isr}}{
-					\If{isr\_idx in enabled\_isrs}{
-						\Return{True}\;
+	\SetKwFunction{FMain}{check\_for\_data\_races}
+	\SetKwProg{Fn}{Function}{:}{}
+	\Fn{\FMain{}}{
+		\For{resource, accesses \textbf{in} resource\_accesses.items()}{
+			\For{i, (func1, bb\_num1, access\_type1, line\_number1, isr\_status1, priority1) \textbf{in} enumerate(accesses)}{
+				\For{j, (func2, bb\_num2, access\_type2, line\_number2, isr\_status2, priority2) \textbf{in} enumerate(accesses)}{
+					\If{i $\geq$ j}{
+						Continue\;
+					}
+					\If{func1 $\neq$ func2 \textbf{and} (access\_type1 == "write" \textbf{or} access\_type2 == "write") \textbf{and} priority1 $\neq$ priority2}{
+						potential\_data\_races.append((resource, (func1, bb\_num1, access\_type1, line\_number1, isr\_status1, priority1),
+						(func2, bb\_num2, access\_type2, line\_number2, isr\_status2, priority2)))\;
 					}
 				}
 			}
 		}
-		\Return{False}\;
 	}
+	\tcp{Call the function to check for data races}
+	checkForDataRaces()\;
+\end{algorithm}
+\caption{Algorithm: Check for Data Races}
+\end{figure}
+\vspace{1cm}
+
+The function \texttt{check\_for\_data\_races} identifies potential data races by comparing the pairs of data accesses that were initiated earlier. It iterates through all possible tuples of accesses. If a tuple is not within the same function, one of the two accesses is a write operation, and the priorities of both accesses are different, the pair is added to the list of possible data races. All the items in the list fulfill the conditions of a possible data race, which do not include the \ac{ISR} status tracking. Since the \ac{ISR} status tracking is the more complex part of the analysis, this makes sure to find all possible data races before filtering to minimize the number of false negatives.
+
+
+
+\subsection*{Filter Possible Data Races}
+
+\begin{figure}[H]
+	\centering
+\begin{algorithm}[H]
+	\caption{Filter Data Races}
+	\DontPrintSemicolon
+	\SetAlgoLined
+	\KwData{potential\_data\_races, isr\_enabling\_map}
+	\KwResult{Filtered list of data races}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{List of potential data races, ISR enabling map}
+	\KwOut{List of filtered data races}
+	\BlankLine
+	
+	filtered\_data\_races $\gets$ empty list\;
+	seen\_races $\gets$ empty set\;
+	
+	\For{resource, access1, access2 \textbf{in} potential\_data\_races}{
+		func1, bb\_num1, access\_type1, line\_number1, isr\_status1, priority1 $\gets$ access1\;
+		func2, bb\_num2, access\_type2, line\_number2, isr\_status2, priority2 $\gets$ access2\;
+		
+		relevant\_isr\_disabled1 $\gets$ is\_isr\_disabled(isr\_status1, func2) \textbf{and} not is\_isr\_enabled\_by\_another(isr\_status1, func2)\;
+		relevant\_isr\_disabled2 $\gets$ is\_isr\_disabled(isr\_status2, func1) \textbf{and} not is\_isr\_enabled\_by\_another(isr\_status2, func1)\;
+		
+		race\_key $\gets$ frozenset(((func1, line\_number1), (func2, line\_number2)))\;
+		
+		\If{not (relevant\_isr\_disabled1 \textbf{or} relevant\_isr\_disabled2) \textbf{and} race\_key not \textbf{in} seen\_races}{
+			filtered\_data\_races.append((resource, access1, access2))\;
+			seen\_races.add(race\_key)\;
+		}
+	}
+	
+	\Return{filtered\_data\_races}\;
+\end{algorithm}
+\caption{Algorithm: Filter Data Races}
+\end{figure}
+\vspace{1cm}
+
+The \texttt{filter\_data\_races} function takes the list of possible data races given by the \texttt{check\_for\_data\_races} function and filters the racing pairs considering the \ac{ISR} statuses of the involved \acp{ISR}. It takes the two accesses of a potential race and extracts the information that is saved in those accesses. After that, it uses two helper functions to determine the \ac{ISR} statuses during the access.
+
+
+\begin{figure}[H]
+	\centering
+\begin{algorithm}[H]
+	\caption{Is ISR Disabled}
+	\DontPrintSemicolon
+	\SetAlgoLined
+	\KwData{isr\_status, func\_name}
+	\KwResult{Boolean indicating if the ISR is disabled}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{List of ISR statuses, function name as a string}
+	\KwOut{Boolean}
+	\BlankLine
+	
+	isr\_idx $\gets$ extract\_isr\_index(func\_name)\;
+	\If{isr\_idx is not None \textbf{and} isr\_idx $<$ length of isr\_status}{
+		\Return{isr\_status[isr\_idx] == 1}\;
+	}
+	\Return{False}\;
+\end{algorithm}
+\caption{Algorithm: Is \ac{ISR} Disabled}
+\end{figure}
+\vspace{1cm}
+
+The \texttt{is\_isr\_disabled} function checks if the bit corresponding to the \ac{ISR} in the \Ac{ISR} status array is set to one. If so, the function returns true to the \texttt{filter\_data\_races} function, and if not, it returns false. 
+
+\begin{figure}[H]
+	\centering
+\begin{algorithm}[H]
+	\caption{Is ISR Enabled by Another}
+	\DontPrintSemicolon
+	\SetAlgoLined
+	\KwData{isr\_status, func\_name, isr\_enabling\_map}
+	\KwResult{Boolean indicating if the ISR is enabled by another function}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{List of ISR statuses, function name as a string, ISR enabling map}
+	\KwOut{Boolean}
+	\BlankLine
+	
+	isr\_idx $\gets$ extract\_isr\_index(func\_name)\;
+	\If{isr\_idx is not None}{
+		\For{enabler\_isr, enabled\_isrs \textbf{in} isr\_enabling\_map.items()}{
+			enabler\_idx $\gets$ extract\_isr\_index(enabler\_isr)\;
+			\If{enabler\_idx is not None \textbf{and} not is\_isr\_disabled(isr\_status, enabler\_isr)}{
+				\If{isr\_idx \textbf{in} enabled\_isrs}{
+					\Return{True}\;
+				}
+			}
+		}
+	}
+	\Return{False}\;
+\end{algorithm}
+\caption{Algorithm: Is \ac{ISR} Enabled by Another}
+\end{figure}
+\vspace{1cm}
+
+The \texttt{is\_isr\_enabled\_by\_another} function looks for possible activations of an \ac{ISR} by another \ac{ISR}. The \texttt{isr\_enabling\_map} was initiated and filled with information at the start of the \texttt{detect\_data\_races} function. This information is used in this function to determine if an \ac{ISR} is enabled by another \ac{ISR} that is enabled, to correctly handle racing pairs with these conditions.
+
+\newpage
+\subsection*{Parsing and Helper Functions}
+In this section the parsing of the input and the helper functions, which are called in the data race analysis, get explained.
+\begin{figure}[H]
+	\scalebox{0.63}{
+\begin{algorithm}[H]
+	\caption{Parse Basic Blocks}
+	\DontPrintSemicolon
+	\SetAlgoLined
+	\KwData{file\_path, shared\_resource\_names}
+	\KwResult{blocks, function\_blocks}
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\KwIn{Path to file, List of shared resource names}
+	\KwOut{Dictionary of BasicBlocks, Dictionary of function blocks}
+	\BlankLine
+	Initialize variables\;
+	lines $\gets$ read lines from file\;
+	
+	\For{line \textbf{in} lines}{
+		line $\gets$ trim(line)\;
+		
+		\If{match function}{
+			\If{bb\_num and current\_function}{
+				Add BasicBlock to blocks and function\_blocks\;
+			}
+			current\_function $\gets$ extract function name\;
+			bb\_num $\gets$ None\;
+			Continue;
+		}
+		
+		\If{match basic block}{
+			\If{bb\_num and current\_function}{
+				Add BasicBlock to blocks and function\_blocks\;
+			}
+			bb\_num $\gets$ extract basic block number\;
+			Reset lists\;
+		}
+		
+		\For{resource\_name \textbf{in} shared\_resource\_names}{
+			\If{resource\_name \textbf{in} line}{
+				\If{resource\_name is written}{
+					Add write to shared\_resources\;
+				}
+				\Else{
+					Add read to shared\_resources\;
+				}
+			}
+		}
+		
+		\If{line contains enable\_isr or disable\_isr}{
+			Add to enable\_disable\_calls\;
+		}
+		
+		\If{match function call}{
+			Add function call to function\_calls\;
+		}
+	}
+	
+	\If{bb\_num and current\_function}{
+		Add BasicBlock to blocks and function\_blocks\;
+	}
+	
+	\For{line \textbf{in} lines}{
+		line $\gets$ trim(line)\;
+		
+		\If{match function}{
+			current\_function $\gets$ extract function name\;
+			bb\_num $\gets$ None\;
+			Continue;
+		}
+		
+		\If{line contains successors}{
+			Extract successors and update BasicBlock successors\;
+		}
+	}
+	
+	\Return{blocks, function\_blocks}\;
 \end{algorithm}
 
-The function \texttt{filter\_data\_races} filters false positives from the list of potential data races. It checks the ISR status during resource accesses and only confirms data races if relevant ISRs were not deactivated at access time or activated by another function. At the end, \texttt{detect\_data\_races} returns the filtered data races.
+}
+	\caption{Algorithm: Parse Basic Blocks}
+\end{figure}
+\vspace{1cm}
+The \texttt{parse\_basic\_block} function iterates two times through the code to extract all the important information of the code and save it in the \ac{BB} items. In the first iteration of the code lines, the \acp{BB} get initiated with the \ac{BB} number and the function it relates to. Additionaly the information of shared resources, enable/disable calls of \acp{ISR} and function calls within the \ac{BB} are added.
+In the second iteration the successors of the \ac{BB} get added. A second iteration is used to ensure all the \acp{BB} items are initialized first to ensure a correct handling of the successors.
 
+\begin{figure}[H]
+	\centering
+	\scalebox{1}{ % Adjust the value to your desired scale
+		\begin{algorithm}[H]
+			\caption{Determine Priority}
+			\DontPrintSemicolon
+			\SetAlgoLined
+			\KwData{function\_name}
+			\KwResult{Priority of the function}
+			\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+			\KwIn{Function name as a string}
+			\KwOut{Priority as an integer}
+			\BlankLine
+			match $\gets$ search for \textit{`isr\_?(\d+)' in function\_name}\;
+			\If{match is found}{
+				\Return{integer value of matched group} \tcp*[f]{Higher priority for lower ISR number}
+			}
+			\Else{
+				\Return{infinity} \tcp*[f]{Lower priority for non-ISR functions}
+			}
+		\end{algorithm}
+		
+	}
+	\caption{Algorithm: Determine Priority}
+\end{figure} 
+
+The \texttt{determine\_priority} function is used to determine the priority of the function which is involved in a possible data race. Since one condition for a data race is two different priorities of the function this is an important check. The priority gets determined in the first place by differentiate between \ac{ISR} functions and normal functions because \acp{ISR} always have a higher priority than non-\ac{ISR} functions. Non-\Ac{ISR} functions have the priority infinity and \acp{ISR} get ordered by the number of it, while lower number \acp{ISR} have a higher priority than higher number ones.
+
+\begin{figure}[H]
+	\centering
+	\scalebox{1}{ % Adjust the value to your desired scale
+		\begin{algorithm}[H]
+			\caption{Track ISR Status}
+			\DontPrintSemicolon
+			\SetAlgoLined
+			\KwData{blocks}
+			\KwResult{List indicating ISR status initialized to zero}
+			\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+			\KwIn{Dictionary of BasicBlocks}
+			\KwOut{List of zeros representing the status of each ISR}
+			\BlankLine
+			isr\_count $\gets$ count unique ISR function names in blocks\;
+			\Return{list of zeros of length isr\_count}
+		\end{algorithm}	
+	}
+	\caption{Algorithm: Track ISR Status}
+\end{figure} 
+
+\begin{figure}[H]
+	\centering
+	\scalebox{1}{ % Adjust the value to your desired scale
+		\begin{algorithm}[H]
+			\caption{Extract ISR Index}
+			\DontPrintSemicolon
+			\SetAlgoLined
+			\KwData{function\_name}
+			\KwResult{Index of the ISR}
+			\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+			\KwIn{Function name as a string}
+			\KwOut{ISR index as an integer}
+			\BlankLine
+			match $\gets$ search for ISR pattern in function\_name\;
+			\If{match}{
+				\Return{integer value of matched group minus one}
+			}
+			\Return{None}
+		\end{algorithm}
+		
+	}
+	\caption{Algorithm: Track ISR Status}
+\end{figure} 
+\begin{figure}[H]
+	\centering
+	\scalebox{1}{ % Adjust the value to your desired scale
+		\begin{algorithm}[H]
+			\caption{Propagate Function Calls}
+			\DontPrintSemicolon
+			\SetAlgoLined
+			\KwData{blocks, function\_blocks}
+			\KwResult{Updated blocks with propagated function call information}
+			\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+			\KwIn{Dictionary of BasicBlocks, Dictionary of function blocks}
+			\KwOut{Updated BasicBlocks with propagated resources and ISR calls}
+			\BlankLine
+			\For{each function \textbf{in} function\_blocks}{
+				\For{each block \textbf{in} function's block list}{
+					\For{each called\_func, line\_number \textbf{in} block's function calls}{
+						\If{called\_func \textbf{in} function\_blocks}{
+							\For{each called\_block \textbf{in} function\_blocks[called\_func]}{
+								block.shared\_resources.extend(called\_block.shared\_resources)\;
+								block.enable\_disable\_calls.extend(called\_block.enable\_disable\_calls)\;
+							}
+						}
+					}
+				}
+			}
+		\end{algorithm}
+	}
+	\caption{Algorithm: Propagate Function Calls}
+\end{figure} 
+The \texttt{propagate\_function\_calls} function is handling the case of a function that calls another function. It checks for \acp{BB} items with a function call in it and adds the critical parts of the called function to the current \ac{BB} to simulate a path through the called function and consider the shared resources and enable/disable calls of that function.
 
 \chapter{Evaluation}
-1,5 Woche 
+
+ Done:\\
+ -Data Race Detection with all necessary criterias for a data race\\
+ -Informations of the cfg brought down to the minimum needed to analyze for data races\\
+ -Inter-Procedural checks of function calls\\
+ -Recursive traversion of the CFG using DFS\\
+ -Implementation of an ISR Status Array that updates thorugh the traversal\\
+ -Considering ISR enabling ISRs\\
+ 
+ 
+ Not Done/ Future work:\\
+ -Pointer analysis\\
+ -Unnecessary nodes in CFG are empty but not deleted\\
+ -ISR enabling ISR with a depth of more than one are not considered (1 activates 2 activates 3 and 3 has data race)\\
 \chapter{Conclusion}
-Indroduction+Conclusion und Allgemeine Überarbeitung 0,5 Woche
-1 Wochen Korrekturlesen und Einarbeitung
-=9 Wochen bei Vollarbeitszeit an BE
+
 \appendix
 }
 \backmatter{}
-\chapter{Bibliography}
-Lightweight Data Race Detection for Production by Swarnendu Biswas, Man Cao, Minjia Zhang, Michael D. Bond, Benjamin P. Wood
-
-
-A Deployable Sampling Strategy for Data Race Detection by Yan Cai1, Jian Zhang, Lingwei Cao, and Jian Liu
 \begin{thebibliography}{9}
 	\bibitem{wang2020}
 	Wang, Y., Gao, F., Wang, L., Yu, T., Zhao, J., \& Li, X. (2020). Automatic Detection, Validation, and Repair of Race Conditions in Interrupt-Driven Embedded Software. IEEE Transactions on Software Engineering.
@@ -747,6 +1035,9 @@ A Deployable Sampling Strategy for Data Race Detection by Yan Cai1, Jian Zhang, 
 	
 	\bibitem{herlihy2008}
 	Herlihy, M., \& Shavit, N. (2008). The Art of Multiprocessor Programming. Morgan Kaufmann.
+	
+	\bibitem{mehl2008}
+	K. Mehlhorn, P. Sanders (2008). Algorithms and Data Structures The Basic Toolbox.
 \end{thebibliography}
 \chapter{Attachments}
 \begin{lstlisting}[language=Python, mathescape, escapeinside={(*}{*)}]

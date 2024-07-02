@@ -1,13 +1,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Flow-Chart des interruptgesteuerten Systems}}{3}{}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of Inter-Procedural Control Flow Graph}}{6}{}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of Reduced Inter-Procedural Control Flow Graph}}{7}{}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Simple Example of a Data Race}}{8}{}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Example of a Data Race with Enable/Disable ISR Calls}}{10}{}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Static Race Detection Approach by \cite {wang2020}}}{11}{}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Flowchart of the Interrupt-Driven System}}{3}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Example of an Inter-Procedural Control Flow Graph}}{5}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of a Reduced Inter-Procedural Control Flow Graph}}{6}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Example Implemenation of a Depth-First Search}}{7}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Simple Example of a Data Race}}{8}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Example of a Data Race with Enable/Disable \ac {ISR} Calls}}{10}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Static Race Detection Approach by \cite {wang2020}}}{11}{figure.caption.19}%
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Algorithm: Class BasicBlock}}{13}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces UML: Class BasicBlock}}{14}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Algorithm: Initialization and ISR Enabling Map}}{15}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Algorithm: Process Block}}{16}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Algorithm: \ac {DFS} and Initialization}}{17}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Algorithm: Merge \ac {ISR} Statuses}}{18}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Algorithm: Check for Data Races}}{19}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Algorithm: Filter Data Races}}{20}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Algorithm: Is \ac {ISR} Disabled}}{21}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Algorithm: Is \ac {ISR} Enabled by Another}}{21}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Algorithm: Parse Basic Blocks}}{23}{figure.caption.36}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Algorithm: Determine Priority}}{24}{figure.caption.37}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Algorithm: Track ISR Status}}{24}{figure.caption.38}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Algorithm: Track ISR Status}}{25}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Algorithm: Propagate Function Calls}}{25}{figure.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
