@@ -2,7 +2,7 @@ import re
 from collections import defaultdict
 
 class BasicBlock:
-    def __init__(self, function_name, number, priority, shared_resources=None, successors=None, enable_disable_calls=None, function_calls=None):
+    def __init__(self, function_name, number, priority, shared_resources=None, successors=None, enable_disable_calls=None, function_calls=None, code_line=None):
         self.function_name = function_name
         self.number = number
         self.priority = priority
@@ -10,6 +10,7 @@ class BasicBlock:
         self.successors = successors if successors else []
         self.enable_disable_calls = enable_disable_calls if enable_disable_calls else []
         self.function_calls = function_calls if function_calls else []
+        self.code = code_line if code_line else []
 
     def __repr__(self):
         return (f"BasicBlock(function_name={self.function_name}, number={self.number}, priority={self.priority}, shared_resources={self.shared_resources}, "
@@ -67,6 +68,8 @@ def parse_basic_blocks(file_path, shared_resource_names):
         call_match = re.match(r'.*call.*\b(\w+)\b', line)
         if call_match:
             function_calls.append((call_match.group(1), line_number))
+
+        code_lines.append((line, line_number))
 
     if bb_num is not None and current_function is not None:
         priority = determine_priority(current_function)
@@ -138,10 +141,13 @@ def detect_data_races(blocks):
                     isr_enabling_map[enabler_isr].add(isr_idx)
 
     def process_block(block, current_isr_status):
-        for call, line_number in block.enable_disable_calls:
+        # Sort enable/disable calls by line number
+        sorted_enable_disable_calls = sorted(block.enable_disable_calls, key=lambda x: x[1])
+        
+        for call, line_number in sorted_enable_disable_calls:
             isr_idx_match = re.search(r'\((\d+)\)', call)
             if isr_idx_match:
-                isr_idx = int(isr_idx_match.group(1)) - 1  
+                isr_idx = int(isr_idx_match.group(1)) - 1  # Convert to 0-based index
                 if "disable_isr" in call:
                     if 0 <= isr_idx < len(current_isr_status):
                         current_isr_status[isr_idx] = 1
