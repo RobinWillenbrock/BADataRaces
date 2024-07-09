@@ -1,0 +1,24 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Interrupt-Driven Systems}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Shared Resources}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Reduced Inter-Procedural Control Flow Graphs}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Reduction of Control Flow Graphs}{6}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Depth-First Search}{7}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Data Races}{7}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Detection Techniques}{8}{subsection.2.4.1}%
+\contentsline {subsubsection}{\nonumberline Static Data Race Detection}{8}{subsubsection*.20}%
+\contentsline {subsubsection}{\nonumberline Dynamic Data Race Detection}{9}{subsubsection*.22}%
+\contentsline {subsection}{\numberline {2.4.2}Strategies for Preventing Data Races}{9}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Static Detection of Data Races in Interrupt-Driven Systems}{10}{section.2.5}%
+\contentsline {section}{\numberline {2.6}\acl {GCC}}{11}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Implementation}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class BasicBlock}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Parsing and Helper Functions}{16}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Data Race Detection}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Filter of Possible Data Races}{23}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Evaluation}{25}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{31}{chapter.6}%
+\contentsline {chapter}{\nonumberline Attachments}{35}{chapter*.36}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

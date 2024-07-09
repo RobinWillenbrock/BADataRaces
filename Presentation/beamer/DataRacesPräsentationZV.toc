@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Data Races}{4}{0}{1}
-\beamer@sectionintoc {2}{Control Flow Graph}{10}{0}{2}
-\beamer@sectionintoc {3}{Interrupt Handling}{13}{0}{3}
-\beamer@sectionintoc {4}{Summary}{13}{0}{4}
